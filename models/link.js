@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   var Link = sequelize.define('Link', {
     image_url: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: null,
       validate: {
         isUrl: true,
         notEmpty: true,

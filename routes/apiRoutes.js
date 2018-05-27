@@ -34,11 +34,8 @@ router.post('/scrape', function(req, res) {
 router.post('/newBoard', function(req, res) {
     db.Board.create({
         name: req.body.name
-    }).then(function(results) {
-        res.json(results);
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 //delete board
@@ -47,15 +44,12 @@ router.delete('/:board', function(req, res) {
         where: {
             id: req.params.board
         }
-    }).then(function(results) {
-        res.json(results);
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 //access a specific board's links
-router.get('/:board', function(req, res) {
+router.get('/:board/links', function(req, res) {
     db.Link.findAll({
         order: [
             ['updatedAt', 'DESC']
@@ -64,15 +58,12 @@ router.get('/:board', function(req, res) {
             BoardId: req.params.board
         },
         include: db.Tags
-    }).then(function(results){
-        res.json(results);
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 //get all board's links by tag
-router.get('/:board/:tagId', function(req, res) {
+router.get('/:board/links/:tagId', function(req, res) {
     db.Link.findAll({
         order: [
             ['updatedAt', 'DESC']
@@ -86,11 +77,8 @@ router.get('/:board/:tagId', function(req, res) {
                 id: req.params.tagId
             }
         }
-    }).then(function(results) {
-        res.json(results);
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 
@@ -104,22 +92,19 @@ router.post('/:board/newLink', function(req, res) {
         image_url: req.body.image_url
     }).then(function(results, err) {
         //tags should be an array of id numbers
+        //if user sends tags, set those tags on newly created link
         if(req.body.tags) {
-            results.setTags(req.body.tags).then(function(result) {
-                res.json([results, result]);
-            }).catch(function(err) {
-                res.json(err);
-            });
+            results.setTags(req.body.tags)
+            .then(result => res.json([results, result]))
+            .catch(err => res.json(err));
         } else {
             res.json(results);
         }
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).catch(err => res.json(err));
 });
 
 //edit link info
-router.put('/:board/updateLink', function(req, res) {
+router.put('/:board/links/:linkId', function(req, res) {
     db.Link.update({
         title: req.body.title,
         description: req.body.description,
@@ -129,41 +114,48 @@ router.put('/:board/updateLink', function(req, res) {
     {
         where: {
             BoardId: req.params.board,
-            id: req.body.id
+            id: req.params.linkId
         }
     }
-    ).then(function(results) {
+    ).then(results => {
         //tags should be an array of id numbers
         //if null is passed in, all associations will be removed,
         //therefore all tags are removed
         if(req.body.tags || req.body.tags === null) {
-            db.Link.findOne({where: {id : req.body.id}}).then(function(result){
-                result.setTags(req.body.tags).then(function(tagResult) {
-                    res.json([result, tagResult]);
-                }).catch(function(err) {
-                    res.json(err);
-                });
-            });
+            db.Link.findOne({
+                where: {
+                    id : req.params.linkId
+                }
+            }).then(result => 
+                result.setTags(req.body.tags)
+                .then(tagResult => res.json([result, tagResult]))
+                .catch(err => res.json(err))
+            ).catch(err => res.json(err));
         } else {
             res.json(results);
         }
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).catch(err => res.json(err));
 });
 
 //delete a link
-router.delete('/:board/destroyLink', function(req, res) {
+router.delete('/:board/links/:linkId', function(req, res) {
     db.Link.destroy({
         where: {
             BoardId: req.params.board,
-            id: req.body.id
+            id: req.params.linkId
         }
-    }).then(function(results) {
-        res.json(results);
-    }).catch(function(err) {
-        res.json(err);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
+
+//get all tags
+router.get('/:board/tags', function(req, res) {
+    db.Tag.findAll({
+        where: {
+            BoardId: req.params.board
+        }
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 //create a tag
@@ -171,15 +163,78 @@ router.post('/:board/newTag', function(req, res) {
     db.Tag.create({
         name: req.body.name,
         BoardId: req.params.board
-    }).then(function(results) {
-        res.json(results);
-    }).catch(function(error){
-        res.json(error);
-    });
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
 });
 
 //delete a tag
+router.delete('/:board/tags/:tagId', function(req, res) {
+    db.Tag.destroy({
+        where: {
+            id: req.params.tagId
+        }
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
 
 //update a tag
+router.put('/:board/tags/:tagId', function(req, res) {
+    db.Tag.update(
+        {
+            name: req.body.name
+        },
+        {
+            where: {
+                id: req.params.tagId
+            }
+        }
+    ).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
+
+//get all messages
+router.get('/:board/msgs', function(req, res){
+    db.Message.findAll({
+        where: {
+            BoardId: req.params.board
+        }
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
+
+//add a message
+router.post('/:board/newMsg', function(req, res) {
+    db.Message.create({
+        msg: req.body.msg,
+        author: req.body.author,
+        BoardId: req.params.board
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
+
+//edit a message
+router.put('/:board/msgs/:msgId', function(req, res) {
+    db.Message.update({
+        msg: req.body.msg,
+        author: req.body.author,
+    },{
+        where: {
+            BoardId: req.params.board,
+            id: req.params.msgId
+        }
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
+
+//delete a message
+router.delete('/:board/msgs/:msgId', function(req, res) {
+    db.Message.destroy({
+        where: {
+            id: req.params.msgId,
+            BoardId: req.params.board
+        }
+    }).then(results => res.json(results))
+    .catch(err => res.json(err));
+});
 
 module.exports = router;

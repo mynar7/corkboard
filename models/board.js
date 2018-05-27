@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Board.hasMany(models.Link, {as: 'links', onDelete: 'CASCADE'});
     Board.hasMany(models.Tag, {as: 'tags', onDelete: 'CASCADE'});
+    Board.hasMany(models.Message, {as: 'messages', onDelete: 'CASCADE'});
   };
   return Board;
 };
