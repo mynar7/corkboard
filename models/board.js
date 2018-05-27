@@ -4,11 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       primaryKey: true,
       type: DataTypes.UUID,
-      defaultValue: sequelize.UUIDV4,
-      allowNull: false,
-      validate: {
-        isUUID: true
-      }
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
@@ -20,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Board.associate = function(models) {
     // associations can be defined here
-    Board.hasMany(models.Link, {as: 'links'});
-    Board.hasMany(models.Tag, {as: 'tags'});
+    Board.hasMany(models.Link, {as: 'links', onDelete: 'CASCADE'});
+    Board.hasMany(models.Tag, {as: 'tags', onDelete: 'CASCADE'});
   };
   return Board;
 };

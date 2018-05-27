@@ -3,10 +3,10 @@ module.exports = (sequelize, DataTypes) => {
   var Tag = sequelize.define('Tag', {
     name: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
       validate: {
-        len: [3, 40],
-        msg: 'Tags must be between 3 and 40 characters'
+        len: [3, 40]
       }
     }
   }, {});

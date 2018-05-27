@@ -1,28 +1,34 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Link = sequelize.define('Link', {
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isUrl: true,
+        notEmpty: true,
+        max: 255
+      }
+    },
     url: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         isUrl: true,
         notEmpty: true,
-        max: 255,
-        msg: 'Must be Valid URL'
+        max: 255
       }
     },
     description: {
       type: DataTypes.TEXT,
       validate: {
-        max: 500,
-        msg: 'Max Length 500 Characters'
+        max: 500
       }
     },
     title: {
       type: DataTypes.STRING,
       validate: {
-        max: 255,
-        msg: 'Max Length 255 Characters'
+        max: 255
       }
     }
   }, {});
