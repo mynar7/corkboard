@@ -1,16 +1,4 @@
 <h1>What's up Guys</h1>
-<<<<<<< HEAD
-{{#if links}}
-    {{#each links}}
-        <p>{{title}}</p>
-        <p>{{description}}</p>
-        <p>{{url}}</p>
-        {{#if image_url}}
-            <p>{{image_url}}</p>
-        {{/if}}
-    {{/each}}
-{{/if}}
-=======
 
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -77,6 +65,37 @@
     </div>
 </nav>
 
+<!--BODY-->
+
+<div class="main">
+    <div id="testArray"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resourceModalLabel">New Resource</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="Insert Link">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary linkitButton">Linkit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--CARDS-->
+    <div class="create"></div>
+    <!-- <div class="create1"></div>
+        <div class="createCards"></div> -->
+
+</div>
 {{#if links}} {{#each links}}
 <p>{{title}}</p>
 <p>{{description}}</p>
@@ -84,4 +103,3 @@
 {{#if image_url}}
 <p>{{image_url}}</p>
 {{/if}} {{/each}} {{/if}}
->>>>>>> 512402ce37c52ef9903224c56cf3f457959fd675
