@@ -1,138 +1,87 @@
 const router = require('express').Router();
 const db = require("../models/index.js");
 
-/*
-//access a specific board's links
-router.get('/:board/links', function(req, res) {
-    db.Link.findAll({
-        order: [
-            ['updatedAt', 'DESC']
-        ],
-        where: {
-            BoardId: req.params.board
-        },
-        include: db.Tags
-    }).then(results => res.render('index', results))
-    .catch(err => res.json(err));
-});
 
-//get all board's links by tag
-router.get('/:board/links/:tagId', function(req, res) {
-    db.Link.findAll({
-        order: [
-            ['updatedAt', 'DESC']
-        ],
+router.get('/boards/:board', function(req, res) {
+    db.Board.findOne({
         where: {
-            BoardId: req.params.board
+            id: req.params.board,
         },
-        include: {
-            model: db.Tag,
-            where: {
-                id: req.params.tagId
-            }
-        }
-    }).then(results => res.render('index', results))
-    .catch(err => res.json(err));
-});
-*/
-//access a specific board's links
-router.get('/:board/links', function(req, res) {
-    let results = {};
-    db.Link.findAll({
         order: [
-            ['updatedAt', 'DESC']
+            [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
+            
         ],
-        where: {
-            BoardId: req.params.board
-        },
         include: [
             {
-                model: db.Tag,
-                attributes: ["name", "id"]
-            }
-        ]
-    }).then(links => {
-        results.links = links;
-        db.Tag.findAll({
-            where: {
-                BoardId: req.params.board
-            }
-        }).then(tags => {
-            results.tags = tags;
-            db.Message.findAll({
-                where: {
-                    BoardId: req.params.board
+                model: db.Link,
+                as: "links",
+                include: {
+                    model: db.Tag,
+                    as: 'Tags',
+                    attributes: ['id', 'name']
                 }
-            }).then(msgs => {
-                results.msgs = msgs;
-                res.render("index", results);
-            }).catch(err => res.json(err));
-        }).catch(err => res.json(err));
-    }).catch(err => res.json(err));
-});
-
-//get all board's links by tag
-router.get('/:board/links/:tagId', function(req, res) {
-    /*
-    db.Link.findAll({
-        order: [
-            ['updatedAt', 'DESC']
-        ],
-        where: {
-            BoardId: req.params.board
-        },
-        include: {
-            model: db.Tag,
-            where: {
-                id: req.params.tagId
-            }
-        }
-    }).then(results => res.json(results))
-    .catch(err => res.json(err));
-    */
-    let results = {};
-    db.Link.findAll({
-        order: [
-            ['updatedAt', 'DESC']
-        ],
-        where: {
-            BoardId: req.params.board
-        },
-        include: [
+            },
             {
                 model: db.Tag,
-                attributes: ["name", "id"],
-                where: {
-                    id: req.params.tagId
-                }
+                as: "tags"
+            },
+            {
+                model: db.Message,
+                as: 'messages'
             }
         ]
-    }).then(links => {
-        results.links = links;
-        db.Tag.findAll({
-            where: {
-                BoardId: req.params.board
-            }
-        }).then(tags => {
-            results.tags = tags;
-            db.Message.findAll({
-                where: {
-                    BoardId: req.params.board
+    }).then(results => res.render('index', {board: results}))
+    .catch(err => res.json(err));
+});
+
+router.get('/boards/:board/tags/:tagId', function(req, res) {
+    db.Board.findOne({
+        where: {
+            id: req.params.board
+        },
+        order: [
+            [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
+            
+        ],
+        include: [
+            {
+                model: db.Link,
+                as: "links",
+                include: {
+                    model: db.Tag,
+                    as: 'Tags',
+                    attributes: ['id', 'name'],
+                    where: {
+                        id: req.params.tagId
+                    }
                 }
-            }).then(msgs => {
-                results.msgs = msgs;
-                res.render("index", results);
-            }).catch(err => res.json(err));
-        }).catch(err => res.json(err));
-    }).catch(err => res.json(err));
+            },
+            {
+                model: db.Tag,
+                as: "tags"
+            },
+            {
+                model: db.Message,
+                as: 'messages'
+            }
+        ]
+    }).then(results => res.render('index', {board: results}))
+    .catch(err => res.json(err));
 });
 
-router.get('/:board', function(req, res) {
-    res.redirect(`/${req.params.board}/links`);
-});
-
-router.get('*', function(req, res) {
+router.get('/', function(req, res) {
     res.render('home');
+});
+
+router.get('/boards/:board/*', function(req, res) {
+    res.redirect(`/boards/${req.params.board}`);
+});
+router.get('*', function(req, res) {
+    res.redirect('/');
 });
 
 module.exports = router;
