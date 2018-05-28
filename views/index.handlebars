@@ -1,8 +1,74 @@
 <h1>What's up Guys</h1>
+
+<!--NAV-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img id="logo" src="/assets/img/logo.png" alt="linkit">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Announcements
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="height:120px;width:350px;overflow: auto;">
+                    <a class="dropdown-item" href="#">
+                        <div style="font:16px/26px Georgia, Garamond, Serif;">
+                            As you can see, once there's enough text</a>
+                    </div>
+                    <a class="dropdown-item" href="#">
+                        <div style="font:16px/26px Georgia, Garamond, Serif;">
+                            As you can see, once there's enough text</a>
+                    </div>
+                    <a class="dropdown-item" href="#">
+                        <div style="font:16px/26px Georgia, Garamond, Serif;">
+                            As you can see, once there's enough text</a>
+                    </div>
+                    <a class="dropdown-item" href="#">
+                        <div style="font:16px/26px Georgia, Garamond, Serif;">
+                            As you can see, once there's enough text</a>
+                    </div>
+                    <a class="dropdown-item" href="#">
+                        <div style="font:16px/26px Georgia, Garamond, Serif;">
+                            As you can see, once there's enough text</a>
+                    </div>
+                    <!-- <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Go team linkit have a great holiday</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">No class this weekend through Monday</a> -->
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <!--MODAL BUTTON-->
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" class="btn newLink" data-toggle="modal" data-target="#resourceModal">
+                    <i class="fas fa-link"></i>
+                </button>
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
 {{#if links}} {{#each links}}
 <p>{{title}}</p>
 <p>{{description}}</p>
 <p>{{url}}</p>
 {{#if image_url}}
 <p>{{image_url}}</p>
-{{/if}} {{/each}} {{/if}} >>>>>>> 1cb4252cd99eed0666ea19674aa2bb3ef35ad344
+{{/if}} {{/each}} {{/if}}
