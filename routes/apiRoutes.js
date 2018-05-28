@@ -50,6 +50,7 @@ router.delete('/:board', function(req, res) {
 
 //access a specific board's links
 router.get('/:board/links', function(req, res) {
+    let results = {};
     db.Link.findAll({
         order: [
             ['updatedAt', 'DESC']
@@ -57,13 +58,35 @@ router.get('/:board/links', function(req, res) {
         where: {
             BoardId: req.params.board
         },
-        include: db.Tags
-    }).then(results => res.json(results))
-    .catch(err => res.json(err));
+        include: [
+            {
+                model: db.Tag,
+                attributes: ["name", "id"]
+            }
+        ]
+    }).then(links => {
+        results.links = links;
+        db.Tag.findAll({
+            where: {
+                BoardId: req.params.board
+            }
+        }).then(tags => {
+            results.tags = tags;
+            db.Message.findAll({
+                where: {
+                    BoardId: req.params.board
+                }
+            }).then(msgs => {
+                results.msgs = msgs;
+                res.json(results);
+            }).catch(err => res.json(err));
+        }).catch(err => res.json(err));
+    }).catch(err => res.json(err));
 });
 
 //get all board's links by tag
 router.get('/:board/links/:tagId', function(req, res) {
+    /*
     db.Link.findAll({
         order: [
             ['updatedAt', 'DESC']
@@ -79,6 +102,42 @@ router.get('/:board/links/:tagId', function(req, res) {
         }
     }).then(results => res.json(results))
     .catch(err => res.json(err));
+    */
+    let results = {};
+    db.Link.findAll({
+        order: [
+            ['updatedAt', 'DESC']
+        ],
+        where: {
+            BoardId: req.params.board
+        },
+        include: [
+            {
+                model: db.Tag,
+                attributes: ["name", "id"],
+                where: {
+                    id: req.params.tagId
+                }
+            }
+        ]
+    }).then(links => {
+        results.links = links;
+        db.Tag.findAll({
+            where: {
+                BoardId: req.params.board
+            }
+        }).then(tags => {
+            results.tags = tags;
+            db.Message.findAll({
+                where: {
+                    BoardId: req.params.board
+                }
+            }).then(msgs => {
+                results.msgs = msgs;
+                res.json(results);
+            }).catch(err => res.json(err));
+        }).catch(err => res.json(err));
+    }).catch(err => res.json(err));
 });
 
 
@@ -93,6 +152,7 @@ router.post('/:board/newLink', function(req, res) {
     }).then(function(results, err) {
         //tags should be an array of id numbers
         //if user sends tags, set those tags on newly created link
+        //tags: [1,2]
         if(req.body.tags) {
             results.setTags(req.body.tags)
             .then(result => res.json([results, result]))
@@ -151,6 +211,9 @@ router.delete('/:board/links/:linkId', function(req, res) {
 //get all tags
 router.get('/:board/tags', function(req, res) {
     db.Tag.findAll({
+        order: [
+            ['updatedAt', 'DESC']
+        ],
         where: {
             BoardId: req.params.board
         }
@@ -195,6 +258,9 @@ router.put('/:board/tags/:tagId', function(req, res) {
 //get all messages
 router.get('/:board/msgs', function(req, res){
     db.Message.findAll({
+        order: [
+            ['updatedAt', 'DESC']
+        ],
         where: {
             BoardId: req.params.board
         }
