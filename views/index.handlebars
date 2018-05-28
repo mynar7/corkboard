@@ -1,8 +1,11 @@
 <h1>What's up Guys</h1>
-{{#if links}} {{#each links}}
-<p>{{title}}</p>
-<p>{{description}}</p>
-<p>{{url}}</p>
-{{#if image_url}}
-<p>{{image_url}}</p>
-{{/if}} {{/each}} {{/if}}
+{{#if links}}
+    {{#each links}}
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+        <p>{{url}}</p>
+        {{#if image_url}}
+            <p>{{image_url}}</p>
+        {{/if}}
+    {{/each}}
+{{/if}}
