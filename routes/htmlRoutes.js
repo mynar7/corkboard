@@ -11,7 +11,7 @@ router.get('/:board/links', function(req, res) {
             BoardId: req.params.board
         },
         include: db.Tags
-    }).then(results => res.json(results))
+    }).then(results => res.render('index', results))
     .catch(err => res.json(err));
 });
 
@@ -30,6 +30,16 @@ router.get('/:board/links/:tagId', function(req, res) {
                 id: req.params.tagId
             }
         }
-    }).then(results => res.json(results))
+    }).then(results => res.render('index', results))
     .catch(err => res.json(err));
 });
+
+router.get('/:board', function(req, res) {
+    res.redirect(`/${req.params.board}/links`);
+});
+
+router.get('*', function(req, res) {
+    res.render('home');
+});
+
+module.exports = router;

@@ -4,11 +4,14 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 const db = require("./models/index.js");
 const apiRouter = require("./routes/apiRoutes.js");
+const htmlRouter = require('./routes/htmlRoutes.js');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
 app.use('/api', apiRouter);
+app.use('/', htmlRouter);
 
 //handelbars
 const exphbs = require('express-handlebars');

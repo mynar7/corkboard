@@ -1,1 +1,11 @@
 <h1>What's up Guys</h1>
+{{#if this}}
+    {{#each this}}
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+        <p>{{url}}</p>
+        {{#if image_url}}
+            <p>{{image_url}}</p>
+        {{/if}}
+    {{/each}}
+{{/if}}
