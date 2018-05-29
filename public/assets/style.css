@@ -1,0 +1,258 @@
+li{
+    list-style: none;
+}
+/*//////NAV/////*/
+
+.navbar {
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+#logo {
+    width: 100px;
+}
+
+#boardID{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.btn,
+.newLink {
+    background-color: #16fd99 !important;
+}
+
+.btn:hover,
+.newLink:hover {
+    background-color: rgb(47, 131, 47) !important;
+}
+
+.modal-body input {
+    width: 100%;
+}
+
+.linkitButton {
+    background: green;
+}
+
+/*//////BODY////*/
+
+body {
+    background: url("../assets/images/corkbg.jpg");
+    font-family: "Lato", sans-serif;
+    /* background: rgb(235, 234, 234); */
+}
+
+.main {
+    /* margin-left: 160px; */
+    /* Same as the width of the sidenav */
+    font-size: 15px;
+    /* Increased text to enable scrolling */
+    margin-top: 80px;
+}
+
+#boardName{
+    text-align: center;
+}
+
+/*///////CARDS/////*/
+
+.card {
+    margin: 0px 20px 10px -20px;
+    background: rgb(255, 250, 232);
+}
+
+.card-body {
+    margin-top: -40px;
+    height: 260px;
+}
+
+#pin {
+    top: 1px;
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+h5 {
+    position: absolute;
+    top: 30px;
+}
+
+.cardImg {
+    float: right;
+    margin-top: -57px;
+    margin-right: -20px;
+    width: 24.6vw;
+    height: 220px;
+    background: url("../assets/img/404img.png");
+}
+
+.card-text {
+    float: left;
+    margin-top: 30px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px; */
+}
+
+.card-header {
+    height: 40px;
+}
+
+#cardEdit {
+    position: absolute;
+    right: 0;
+    color: #16fd99;
+    font-size: 20px;
+    padding: 0px 80px 20px 0px;
+}
+
+/* #cardEdit:hover {
+      background: rgb(33, 134, 33);
+  } */
+
+#cardDelete {
+    position: absolute;
+    right: 0;
+    color: red;
+    font-size: 20px;
+    padding: 0px 40px 20px 0px;
+}
+
+.tags {
+    text-align: center;
+    margin-top: -20px;
+}
+
+/*///////MEDIA QUERIES/////*/
+
+@media screen and (max-width: 991px) {
+    .card-text {
+        margin-top: 20px;
+        /* white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 800px; */
+    }
+    .card-body {
+        height: 10%;
+    }
+    #pin {
+        width: 30px;
+    }
+    .cardImg {
+        margin-top: -50px;
+        width: 18vw;
+        height: 25vh;
+        /* height: 185%; */
+        margin-right: -38%;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-size: 140%;
+    }
+}
+
+@media screen and (max-width: 836px) {
+    .cardImg {
+        margin-top: -55px;
+        width: 20vw;
+        height: 29vh;
+        margin-right: -23%;
+        /* background: url("/assets/img/placeholder.jpg"); */
+    }
+    #pin {
+        width: 3.5%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cardImg {
+        margin-top: -55px;
+        width: 20vw;
+        height: 29vh;
+        margin-right: -23%;
+    }
+    #pin {
+        width: 3.5%;
+    }
+}
+
+@media screen and (max-width: 621px) {
+    .cardImg {
+        margin-top: -55px;
+        width: 25vw;
+        height: 29vh;
+        margin-right: -23%;
+    }
+    #pin {
+        width: 3.5%;
+    }
+}
+
+@media screen and (max-width: 421px) {
+    .card {
+        margin-bottom: 2px;
+    }
+    h5 {
+        font-size: 80%;
+    }
+    .title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 250px;
+    }
+    .card-text {
+        /* display: none; */
+        font-size: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+    }
+    .cardImg {
+        margin-top: -80px;
+        width: 20vw;
+        height: 10vh;
+    }
+    .timestamp {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .card {
+        margin-bottom: 2px;
+    }
+    .cardImg {
+        margin-top: -77px;
+        width: 20vw;
+        height: 10vh;
+        margin-left: 199px;
+    }
+    /* h5 {
+      font-size: 50%;
+    } */
+    /* .card-text {
+        display: none;
+        font-size: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+      }
+      .cardImg {
+        margin-top: -80px;
+        width: 20vw;
+        height: 10vh;
+      } */
+}
