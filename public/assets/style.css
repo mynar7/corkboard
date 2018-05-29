@@ -1,3 +1,6 @@
+li{
+    list-style: none;
+}
 /*//////NAV/////*/
 
 .navbar {
@@ -6,6 +9,11 @@
 
 #logo {
     width: 100px;
+}
+
+#boardID{
+    margin-top: 20px;
+    font-size: 15px;
 }
 
 .btn,
@@ -26,39 +34,10 @@
     background: green;
 }
 
-.sidenav {
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    top: 1;
-    left: 0;
-    background-color: rgb(240, 240, 240);
-    overflow-x: hidden;
-    padding-top: 20px;
-    z-index: -1;
-    margin-top: -120px;
-}
-
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #181818;
-    display: block;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.directory {
-    margin-top: 80px;
-}
-
 /*//////BODY////*/
 
 body {
-    background: url("/assets/img/corkbg.jpg");
+    background: url("../assets/images/corkbg.jpg");
     font-family: "Lato", sans-serif;
     /* background: rgb(235, 234, 234); */
 }
@@ -68,14 +47,17 @@ body {
     /* Same as the width of the sidenav */
     font-size: 15px;
     /* Increased text to enable scrolling */
-    padding: 0px 10px;
-    margin-top: 120px;
+    margin-top: 80px;
+}
+
+#boardName{
+    text-align: center;
 }
 
 /*///////CARDS/////*/
 
 .card {
-    margin-bottom: 20px;
+    margin: 0px 20px 10px -20px;
     background: rgb(255, 250, 232);
 }
 
@@ -103,7 +85,7 @@ h5 {
     margin-right: -20px;
     width: 24.6vw;
     height: 220px;
-    background: url("/assets/img/404img.png");
+    background: url("../assets/img/404img.png");
 }
 
 .card-text {

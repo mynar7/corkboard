@@ -3,7 +3,7 @@
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">
-        <img id="logo" src="/assets/img/logo.png" alt="linkit">
+        <img id="logo" src="../assets/images/logo.png" alt="linkit">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -23,38 +23,27 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    Announcements
+                    Messages
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="height:120px;width:350px;overflow: auto;">
-                    <a class="dropdown-item" href="#">
+                    <div class="dropdown-item">
                         <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            As you can see, once there's enough text</a>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            As you can see, once there's enough text</a>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            As you can see, once there's enough text</a>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            As you can see, once there's enough text</a>
-                    </div>
-                    <a class="dropdown-item" href="#">
-                        <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            As you can see, once there's enough text</a>
-                    </div>
-                    <!-- <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Go team linkit have a great holiday</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">No class this weekend through Monday</a> -->
-                </div>
-            </li>
-        </ul>
-        <ul>
+                            <ul>
+                                {{#each board.messages}}
+                                    <p>{{msg}} by {{author}}</p>
+                                {{/each}}
+                                <br>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            <ul>
+                <li>
+                    <h4 id = "boardID">Board ID: {{board.id}}</h4>
+                </li>
+            </ul>
             <!--MODAL BUTTON-->
+            <ul>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                 <button type="button" class="btn newLink" data-toggle="modal" data-target="#resourceModal">
                     <i class="fas fa-link"></i>
@@ -80,7 +69,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" placeholder="Insert Link">
+                    <input type="text" placeholder="Insert URL">
+                    <br>
+                    <center>
+                        <div>URL Tag
+                            <br>
+                        <select name = "tags">
+                            <option value="html">HTML</option>
+                            <option value="html">CSS</option>
+                            <option value="html">JS</option>
+                            <option value="html">NODE</option>
+                            <option value="html">SQL</option>
+                            <option value="html">REACT</option>
+                        </select>
+                        </div>
+                    </center>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -89,45 +92,59 @@
             </div>
         </div>
     </div>
+<h3 id="boardName">Board Name: {{board.name}}</h3>
 
     <!--CARDS-->
-    <div class="create"></div>
-    <!-- <div class="create1"></div>
-        <div class="createCards"></div> -->
-
-<h3>Board Name: {{board.name}}</h3>
-<h4>ID: {{board.id}}</h4>
 
 {{#if board.links}}
 <ul>
     
     {{#each board.links}}
-    <li>
-        <p>{{title}}</p>
-        <p>{{description}}</p>
-        <p>{{url}}</p>
-        {{#if image_url}}
-            <p>{{image_url}}</p>
-        {{/if}}
-    </li>
+    <div class="card">
+        <div class="card-body">
+            <img id="pin"src="../assets/images/pin.png" />
+            <br>
+            <div class="row">
+                <h5 class="col-lg-12 col-md-9 col-sm-8 title">
+                    title{{title}}
+                </h5>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-9 col-md-9 col-sm-9">
+                    <p class="card-text">
+                        {{description}}
+                        <a href="#"> Read More</a>
+                </div>
+                <div>
+                    {{#if image_url}}
+                    <img class="card-img-top cardImg" src="{{image_url}}">
+                    {{/if}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-header">
+                    <small class="text-muted">
+                        <div class="cardIcons">
+                            <i class="fas fa-pencil-alt" id="cardEdit"></i>
+                            <i class="fas fa-trash-alt" id="cardDelete"></i>
+                        </div>
+                        {{!-- <div class="timestamp"> --}}
+                            url {{url}}
+                            <h3>Tags:</h3>
+                            {{#each board.tags}}
+                                <p>id{{id}}</p>
+                                <p>name{{name}}</p>
+                            {{/each}}
+                        </div>
+                    </small>
+                </div>
+            </div>
+        </div>
     {{/each}}
 </ul>
 {{/if}}
-<h3>Messages:</h3>
-<ul>
-{{#each board.messages}}
-<li>
-    <p>{{msg}}</p>
-    <p>{{author}}</p>
-</li>
-{{/each}}
-</ul>
-<h3>Tags:</h3>
-<ul>
-{{#each board.tags}}
-<li>
-    <p>{{id}}</p>
-    <p>{{name}}</p>
-</li>
-{{/each}}
-</ul>
+
