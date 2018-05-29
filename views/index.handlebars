@@ -94,11 +94,40 @@
     <div class="create"></div>
     <!-- <div class="create1"></div>
         <div class="createCards"></div> -->
-</div>
-{{#if links}} {{#each links}}
-<p>{{title}}</p>
-<p>{{description}}</p>
-<p>{{url}}</p>
-{{#if image_url}}
-<p>{{image_url}}</p>
-{{/if}} {{/each}} {{/if}}
+
+<h3>Board Name: {{board.name}}</h3>
+<h4>ID: {{board.id}}</h4>
+
+{{#if board.links}}
+<ul>
+    
+    {{#each board.links}}
+    <li>
+        <p>{{title}}</p>
+        <p>{{description}}</p>
+        <p>{{url}}</p>
+        {{#if image_url}}
+            <p>{{image_url}}</p>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
+{{/if}}
+<h3>Messages:</h3>
+<ul>
+{{#each board.messages}}
+<li>
+    <p>{{msg}}</p>
+    <p>{{author}}</p>
+</li>
+{{/each}}
+</ul>
+<h3>Tags:</h3>
+<ul>
+{{#each board.tags}}
+<li>
+    <p>{{id}}</p>
+    <p>{{name}}</p>
+</li>
+{{/each}}
+</ul>
