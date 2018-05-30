@@ -113,10 +113,10 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <p class="card-text">
-                        {{description}}
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ratione ducimus beatae odit est, culpa assumenda incidunt. Maxime repellendus, nostrum officiis asperiores dolores assumenda totam id amet delectus molestiae nobis.{{description}}
                         <a href="#"> Read More</a>
                 </div>
-                <div>
+                <div class="imagewrap">
                     {{#if image_url}}
                     <img class="card-img-top cardImg" src="{{image_url}}">
                     {{/if}}
@@ -133,12 +133,15 @@
                             <i class="fas fa-trash-alt" id="cardDelete"></i>
                         </div>
                         {{!-- <div class="timestamp"> --}}
-                            url {{url}}
-                            <h3>Tags:</h3>
+                            {{url}}
+                            <div style="margin-top:-20px;">
+                            <center><h3>Tags:</h3>
                             {{#each board.tags}}
                                 <p>id{{id}}</p>
                                 <p>name{{name}}</p>
                             {{/each}}
+                            </center>
+                            </div>
                         </div>
                     </small>
                 </div>

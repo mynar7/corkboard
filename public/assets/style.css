@@ -79,24 +79,6 @@ h5 {
     top: 25px;
 }
 
-.cardImg {
-    float: right;
-    /* margin-top: -57px;
-    margin-right: -10px;
-    width: 200px;
-    height: 220px;
-    background: url("../assets/img/404img.png"); */
-}
-
-.card-text {
-    float: left;
-    margin-top: 30px;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 400px; */
-}
-
 .card-header {
     height: 50px;
 }
@@ -105,7 +87,7 @@ h5 {
     position: absolute;
     right: 0;
     color: #16fd99;
-    font-size: 20px;
+    font-size: 15px;
     padding: 0px 80px 20px 0px;
 }
 
@@ -117,7 +99,7 @@ h5 {
     position: absolute;
     right: 0;
     color: red;
-    font-size: 20px;
+    font-size: 15px;
     padding: 0px 40px 20px 0px;
 }
 
@@ -125,6 +107,7 @@ h5 {
     text-align: center;
     margin-top: -20px;
 }
+
 
 /*///////MEDIA QUERIES/////*/
 /*==================================================
@@ -160,8 +143,6 @@ h5 {
         .cardImg {
             text-align: center;
             width: 100%;
-            /* height: 10vh; */
-            /* margin-left: 199px; */
 
     }
     .card-text {
@@ -186,20 +167,23 @@ h5 {
         }
         .card {
             margin-bottom: 2px;
+            height: 155px;
         }
         #pin {
             width: 5%;
         }
         .card-text {
-            margin-top: -5px;
-            display: block;
+            display: none;
+        }
+        .imagewrap{
+            position: absolute;
+            right: 0;
         }
         .cardImg {
+            margin-top: -50px;
             float: right;
             text-align: center;
             width: 80%;
-            /* height: 10vh; */
-            /* margin-left: 199px; */
         }
         .timestamp {
             white-space: nowrap;
@@ -226,6 +210,7 @@ h5 {
         }
         .card {
             margin-bottom: 2px;
+            height: 155px;
         }
         #pin {
             width: 5%;
@@ -233,13 +218,20 @@ h5 {
         .card-text {
             margin-top: -5px;
             display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 400px;
+        }
+        .imagewrap{
+            position: absolute;
+            right: 0;
         }
         .cardImg {
+            margin-top: -50px;
             float: right;
             text-align: center;
             width: 80%;
-            /* height: 10vh; */
-            /* margin-left: 199px; */
         }
         .timestamp {
             white-space: nowrap;
@@ -247,6 +239,7 @@ h5 {
             text-overflow: ellipsis;
             width: 200px;
         }
+        
     }
 
     /* Medium Devices, Desktops */
@@ -266,20 +259,27 @@ h5 {
         }
         .card {
             margin-bottom: 2px;
+            width: 100%;
+            height: 100%;
         }
         #pin {
-            width: 5%;
+            width: 4%;
         }
         .card-text {
             margin-top: -5px;
             display: block;
         }
+        .imagewrap{
+            position: absolute;
+            right: 0;
+        }
         .cardImg {
+            margin-top: -50px;
             float: right;
             text-align: center;
-            width: 80%;
+            width: 85%;
             /* height: 10vh; */
-            /* margin-left: 199px; */
+            margin-left: 200px;
         }
         .timestamp {
             white-space: nowrap;
@@ -308,18 +308,23 @@ h5 {
             margin-bottom: 2px;
         }
         #pin {
-            width: 5%;
+            width: 4%;
         }
         .card-text {
             margin-top: -5px;
             display: block;
         }
+        .imagewrap{
+            position: absolute;
+            right: 0;
+        }
         .cardImg {
+            margin-top: -50px;
             float: right;
             text-align: center;
-            width: 80%;
+            width: 85%;
             /* height: 10vh; */
-            /* margin-left: 199px; */
+            margin-left: 200px;
         }
         .timestamp {
             white-space: nowrap;
