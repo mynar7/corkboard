@@ -76,16 +76,16 @@ body {
 
 h5 {
     position: absolute;
-    top: 30px;
+    top: 25px;
 }
 
 .cardImg {
     float: right;
-    margin-top: -57px;
-    margin-right: -20px;
-    width: 24.6vw;
+    /* margin-top: -57px;
+    margin-right: -10px;
+    width: 200px;
     height: 220px;
-    background: url("../assets/img/404img.png");
+    background: url("../assets/img/404img.png"); */
 }
 
 .card-text {
@@ -98,7 +98,7 @@ h5 {
 }
 
 .card-header {
-    height: 40px;
+    height: 50px;
 }
 
 #cardEdit {
@@ -127,132 +127,204 @@ h5 {
 }
 
 /*///////MEDIA QUERIES/////*/
+/*==================================================
+=            Bootstrap 3 Media Queries             =
+==================================================*/
 
-@media screen and (max-width: 991px) {
-    .card-text {
-        margin-top: 20px;
-        /* white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 800px; */
-    }
-    .card-body {
-        height: 10%;
-    }
-    #pin {
-        width: 30px;
-    }
-    .cardImg {
-        margin-top: -50px;
-        width: 18vw;
-        height: 25vh;
-        /* height: 185%; */
-        margin-right: -38%;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        font-size: 140%;
-    }
-}
 
-@media screen and (max-width: 836px) {
-    .cardImg {
-        margin-top: -55px;
-        width: 20vw;
-        height: 29vh;
-        margin-right: -23%;
-        /* background: url("/assets/img/placeholder.jpg"); */
-    }
-    #pin {
-        width: 3.5%;
-    }
-}
 
-@media screen and (max-width: 767px) {
-    .cardImg {
-        margin-top: -55px;
-        width: 20vw;
-        height: 29vh;
-        margin-right: -23%;
-    }
-    #pin {
-        width: 3.5%;
-    }
-}
 
-@media screen and (max-width: 621px) {
-    .cardImg {
-        margin-top: -55px;
-        width: 25vw;
-        height: 29vh;
-        margin-right: -23%;
-    }
-    #pin {
-        width: 3.5%;
-    }
-}
+    /*==========  Mobile First Method  ==========*/
 
-@media screen and (max-width: 421px) {
-    .card {
-        margin-bottom: 2px;
-    }
-    h5 {
-        font-size: 80%;
-    }
-    .title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 250px;
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 120%;
+        }
+        h5{
+            font-size: 100%;
+        }
+        .main {
+            font-size: 15px;
+            margin-top: 80px;
+        }
+        .card {
+            margin-bottom: 2px;
+        }
+        #pin {
+            width: 8%;
+        }
+        .cardImg {
+            text-align: center;
+            width: 100%;
+            /* height: 10vh; */
+            /* margin-left: 199px; */
+
     }
     .card-text {
-        /* display: none; */
-        font-size: 70%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 200px;
-    }
-    .cardImg {
-        margin-top: -80px;
-        width: 20vw;
-        height: 10vh;
-    }
-    .timestamp {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 200px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .card {
-        margin-bottom: 2px;
-    }
-    .cardImg {
-        margin-top: -77px;
-        width: 20vw;
-        height: 10vh;
-        margin-left: 199px;
-    }
-    /* h5 {
-      font-size: 50%;
-    } */
-    /* .card-text {
         display: none;
-        font-size: 70%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        width: 200px;
-      }
-      .cardImg {
-        margin-top: -80px;
-        width: 20vw;
-        height: 10vh;
-      } */
+    }
 }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 120%;
+        }
+        h5{
+            font-size: 100%;
+        }
+        .main {
+            font-size: 15px;
+            margin-top: 80px;
+        }
+        .card {
+            margin-bottom: 2px;
+        }
+        #pin {
+            width: 5%;
+        }
+        .card-text {
+            margin-top: -5px;
+            display: block;
+        }
+        .cardImg {
+            float: right;
+            text-align: center;
+            width: 80%;
+            /* height: 10vh; */
+            /* margin-left: 199px; */
+        }
+        .timestamp {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+        }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 120%;
+        }
+        h5{
+            font-size: 100%;
+        }
+        .main {
+            font-size: 15px;
+            margin-top: 80px;
+        }
+        .card {
+            margin-bottom: 2px;
+        }
+        #pin {
+            width: 5%;
+        }
+        .card-text {
+            margin-top: -5px;
+            display: block;
+        }
+        .cardImg {
+            float: right;
+            text-align: center;
+            width: 80%;
+            /* height: 10vh; */
+            /* margin-left: 199px; */
+        }
+        .timestamp {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+        }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 120%;
+        }
+        h5{
+            font-size: 100%;
+        }
+        .main {
+            font-size: 15px;
+            margin-top: 80px;
+        }
+        .card {
+            margin-bottom: 2px;
+        }
+        #pin {
+            width: 5%;
+        }
+        .card-text {
+            margin-top: -5px;
+            display: block;
+        }
+        .cardImg {
+            float: right;
+            text-align: center;
+            width: 80%;
+            /* height: 10vh; */
+            /* margin-left: 199px; */
+        }
+        .timestamp {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+        }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-size: 120%;
+        }
+        h5{
+            font-size: 100%;
+        }
+        .main {
+            font-size: 15px;
+            margin-top: 80px;
+        }
+        .card {
+            margin-bottom: 2px;
+        }
+        #pin {
+            width: 5%;
+        }
+        .card-text {
+            margin-top: -5px;
+            display: block;
+        }
+        .cardImg {
+            float: right;
+            text-align: center;
+            width: 80%;
+            /* height: 10vh; */
+            /* margin-left: 199px; */
+        }
+        .timestamp {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 200px;
+        }
+    }
