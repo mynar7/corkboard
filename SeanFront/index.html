@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cork Board</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <video autoplay loop class="video-background" muted plays-inline> 
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </header>
+    <div class="box">
+        <img src="cork.png" alt="" class="box-img">
+    </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ul class="list-group join-team">
+          <li class="list-group-item new-item">
+            <form id="todo-form">
+              <div class="container">
+                <div class="row">
+                  <div class="col-10">
+                    <input class="new-item form-control" placeholder="Enter Team Code Here to Join" type="text" />
+                  </div>
+                  <div class="col-2">
+                    <button type="submit" class="btn btn-success">Add Todo</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </li>
+          <span class="todo-container">
+          </span>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Custom Script -->
+  <!-- <script src="js/view.js" type="text/javascript"></script> -->
+  <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <ul class="list-group start-new">
+              <li class="list-group-item new-item">
+                <form id="todo-form">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-10">
+                        <input class="new-item form-control" placeholder="Start New Team" type="text" />
+                      </div>
+                      <div class="col-2">
+                        <button type="submit" class="btn btn-success">Start Team</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <span class="todo-container">
+              </span>
+            </ul>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>
