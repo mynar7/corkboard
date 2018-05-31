@@ -72,16 +72,10 @@
                     <input type="text" placeholder="Insert URL">
                     <br>
                     <center>
-                        <div>URL Tag
-                            <br>
-                        <select name = "tags">
-                            <option value="html">HTML</option>
-                            <option value="html">CSS</option>
-                            <option value="html">JS</option>
-                            <option value="html">NODE</option>
-                            <option value="html">SQL</option>
-                            <option value="html">REACT</option>
-                        </select>
+                        <div>
+                        <button type="button" class=" btn topics">html</button>
+                        <button type="button" class="btn topics">css</button>
+                        <button type="button" class="btn topics">js</button>
                         </div>
                     </center>
                 </div>
@@ -92,7 +86,7 @@
             </div>
         </div>
     </div>
-<h3 id="boardName">Board Name: {{board.name}}</h3>
+<h1 id="boardName">Board Name: {{board.name}}</h1>
 
     <!--CARDS-->
 
@@ -102,21 +96,21 @@
     {{#each board.links}}
     <div class="card">
         <div class="card-body">
-            <img id="pin"src="../assets/images/pin.png" />
+            {{!-- <img id="pin"src="../assets/images/pin.png" /> --}}
             <br>
             <div class="row">
                 <h5 class="col-lg-12 col-md-9 col-sm-8 title">
-                    title{{title}}
+                    {{title}}
                 </h5>
             </div>
             <br>
             <div class="row">
-                <div class="col-lg-9 col-md-9 col-sm-9">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <p class="card-text">
                         {{description}}
                         <a href="#"> Read More</a>
                 </div>
-                <div>
+                <div class="imagewrap">
                     {{#if image_url}}
                     <img class="card-img-top cardImg" src="{{image_url}}">
                     {{/if}}
@@ -133,12 +127,15 @@
                             <i class="fas fa-trash-alt" id="cardDelete"></i>
                         </div>
                         {{!-- <div class="timestamp"> --}}
-                            url {{url}}
-                            <h3>Tags:</h3>
+                            {{url}}
+                            <div style="margin-top:-20px;">
+                            <center><h3>Topics:</h3>
                             {{#each board.tags}}
                                 <p>id{{id}}</p>
                                 <p>name{{name}}</p>
                             {{/each}}
+                            </center>
+                            </div>
                         </div>
                     </small>
                 </div>
