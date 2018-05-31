@@ -4,7 +4,9 @@ li{
 /*//////NAV/////*/
 
 .navbar {
-    border-bottom: 1px solid rgb(238, 238, 238);
+    background: rgb(0, 29, 68);
+    color: white;
+    border-bottom: 1px solid #7173D9;
 }
 
 #logo {
@@ -18,12 +20,12 @@ li{
 
 .btn,
 .newLink {
-    background-color: #16fd99 !important;
+    background-color: blue !important;
 }
 
 .btn:hover,
 .newLink:hover {
-    background-color: rgb(47, 131, 47) !important;
+    background-color: rgb(0, 0, 163) !important;
 }
 
 .modal-body input {
@@ -37,7 +39,7 @@ li{
 /*//////BODY////*/
 
 body {
-    background: rgb(15, 14, 14);
+    background: rgb(23, 22, 42);
     font-family: "Lato", sans-serif;
     /* background: rgb(235, 234, 234); */
 }
@@ -52,13 +54,15 @@ body {
 
 #boardName{
     text-align: center;
+    color: white;
+    font-size: 30px;
 }
 
 /*///////CARDS/////*/
 
 .card {
     margin: 0px 20px 0px -20px;
-    background: rgb(255, 255, 255);
+    background: rgb(129, 234, 255);
 }
 
 .card-body {
@@ -135,9 +139,6 @@ h5 {
         .main {
             font-size: 15px;
             margin-top: 80px;
-        }
-        .card {
-            /* margin-bottom: 2px; */
         }
         #pin {
             width: 8%;
