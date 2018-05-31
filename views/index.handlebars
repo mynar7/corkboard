@@ -72,16 +72,10 @@
                     <input type="text" placeholder="Insert URL">
                     <br>
                     <center>
-                        <div>URL Tag
-                            <br>
-                        <select name = "tags">
-                            <option value="html">HTML</option>
-                            <option value="html">CSS</option>
-                            <option value="html">JS</option>
-                            <option value="html">NODE</option>
-                            <option value="html">SQL</option>
-                            <option value="html">REACT</option>
-                        </select>
+                        <div>
+                        <button type="button" class=" btn topics">html</button>
+                        <button type="button" class="btn topics">css</button>
+                        <button type="button" class="btn topics">js</button>
                         </div>
                     </center>
                 </div>
@@ -102,7 +96,7 @@
     {{#each board.links}}
     <div class="card">
         <div class="card-body">
-            <img id="pin"src="../assets/images/pin.png" />
+            {{!-- <img id="pin"src="../assets/images/pin.png" /> --}}
             <br>
             <div class="row">
                 <h5 class="col-lg-12 col-md-9 col-sm-8 title">
@@ -113,7 +107,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic ratione ducimus beatae odit est, culpa assumenda incidunt. Maxime repellendus, nostrum officiis asperiores dolores assumenda totam id amet delectus molestiae nobis.{{description}}
+                        {{description}}
                         <a href="#"> Read More</a>
                 </div>
                 <div class="imagewrap">
@@ -135,7 +129,7 @@
                         {{!-- <div class="timestamp"> --}}
                             {{url}}
                             <div style="margin-top:-20px;">
-                            <center><h3>Tags:</h3>
+                            <center><h3>Topics:</h3>
                             {{#each board.tags}}
                                 <p>id{{id}}</p>
                                 <p>name{{name}}</p>
