@@ -1,0 +1,63 @@
+.start-new {
+    margin: 0 auto;
+    margin-top: 70px;
+  }
+  .join-team {
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  .box {
+    text-align: center;
+    margin: 3% auto;
+  }
+  .box-img {
+    width: 370px;
+    height: 370px;
+  }
+  .video-background{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+  }
+  
+  input.new-item:focus {
+    outline: none;
+  }
+  .list-group-item:first-child {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    margin-bottom: -1px;
+    background-color: rgba(10, 1, 1, 0.925);
+    padding: 0.75rem 3.25rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(151, 7, 7, 0.125);
+    border-image: initial;
+}
+.btn-success {
+  color: #fff;
+  background-color: #158cba;
+  border-color: rgb(58, 58, 228);
+}
+  
+  .list-group-item > button.delete,
+  .list-group-item > button.complete {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+  }
+  
+  .edit {
+    width: 100%;
+  }
+  
