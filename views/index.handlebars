@@ -1,116 +1,243 @@
-<h1>What's up Guys</h1>
-
 <!--NAV-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">
-        <img id="logo" src="../assets/images/logo.png" alt="linkit">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-lg navbar-light">
+{{!-- <ul class="navbar-nav mr-auto"> --}}
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li> -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Messages
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="height:120px;width:350px;overflow: auto;">
-                    <div class="dropdown-item">
-                        <div style="font:16px/26px Georgia, Garamond, Serif;">
-                            <ul>
-                                {{#each board.messages}}
-                                    <p>{{msg}} by {{author}}</p>
-                                {{/each}}
-                                <br>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            <ul>
-                <li>
-                    <h4 id = "boardID">Board ID: {{board.id}}</h4>
-                </li>
-            </ul>
-            <!--MODAL BUTTON-->
-            <ul>
+<!--FILTERS-->
+<div class="card">
+  <div class="card-body filterCard" >
+    <center><h2>SORT BY</h2></center>
+    <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
+        {{#each board.tags}}
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" class="btn newLink" data-toggle="modal" data-target="#resourceModal">
-                    <i class="fas fa-link"></i>
+                <button type="button" style="width:100px;" class="btn filterButton" data-filterId={{id}}>
+                    {{name}}
                 </button>
-
             </li>
-        </ul>
+        {{/each}}
+        <div class="row col-lg-12" style="margin-top:30px;">
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
+                    SUBMIT
+                </button>
+            </li>
+        <br>
+    </ul>
     </div>
+  </div>
+</div>
+</div>
+</li>
+</div>
+</ul>
+<br>
 </nav>
 
-<!--BODY-->
 
-<div class="main">
-    <div id="testArray"></div>
-    <!-- Modal -->
-    <div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="resourceModalLabel">New Resource</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input type="text" placeholder="Insert URL">
-                    <br>
-                    <center>
-                        <div>
-                        <button type="button" class=" btn topics">html</button>
-                        <button type="button" class="btn topics">css</button>
-                        <button type="button" class="btn topics">js</button>
-                        </div>
-                    </center>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary linkitButton">Linkit</button>
-                </div>
+<!--NAVBAR SECTION-->
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <ul class="navbar-nav mr-auto">
+
+    <a class="navbar-brand" href="#">
+        <img id="logo" src="../assets/images/cork.png" alt="corkboard">
+    </a></ul>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+aria-expanded="false" aria-label="Toggle navigation">
+    <i style="color:white" class="fas fa-bars"></i>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!--DISPLAYS THE BOARD ID-->
+
+{{!-- <ul>
+<li>
+<h4 id = "boardID">Board ID: {{board.id}}</h4>
+</li>
+</ul> --}}
+
+<!--DROPDOWN FOR ADDING-->
+
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-plus-circle"></i>
+        </button>
+
+<!--MODALS FOR TOPIC, POST & ANNOUNCE-->
+
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item">
+        <ul>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
+                <i class="fas fa-comment"></i>
+                    Topic
+                </button>
+            </li>
+        </ul>
+        </a>
+    <a class="dropdown-item">
+        <ul>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                    <i class="far fa-newspaper"></i>
+                        Post
+                </button>
+            </li>
+        </ul>
+    </a>
+    <a class="dropdown-item">
+        <ul>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
+                <i class="fas fa-bullhorn"></i>
+                    Announcement
+                </button>
+            </li>
+        </ul>
+    </a>
+</div>
+</div>
+</div>
+
+<!--ALERTS AND FILTER BUTTONS-->
+
+<ul>
+<a id="announce" href="#">
+Alerts<i class="fas fa-external-link-square-alt"></i>
+</a>
+</ul>
+<ul>
+    <a id="filter" href="#">
+        Filter<i class="fas fa-filter"></i>
+    </a>
+</ul>
+</div>
+</nav>
+
+<!-- Modal for new topic -->
+<div class="modal fade" id="topicModal" tabindex="-1" role="dialog" aria-labelledby="topicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="topicModalLabel">New Topic</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" placeholder="Topic">
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary linkitButton">Submit</button>
             </div>
         </div>
     </div>
-<h1 id="boardName">Board Name: {{board.name}}</h1>
+</div>
 
-    <!--CARDS-->
+<!-- Modal for new post -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="postModalLabel">New Post</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+<div class="modal-body modal-post">
+    <input type="text" placeholder="Title">
+    <br>
+    <br>
+    <input type="text" placeholder="URL">
+    <br>
+    <br>
+    <input type="text" placeholder="Description">
+    <br>
+    <br>
+    <input type="text" placeholder="Image URL">
+    <br>
+    <br>
+    <center>
+        <h2>Topic</h2>
+        
+    <select>
+        <center>
+            {{#each board.tags}}
+            <option>{{name}}</option>
+        {{/each}}
+        </select>
+    </center>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary linkitButton">Submit</button>
+</div>
+</div>
+</div>
+</div>
 
-{{#if board.links}}
-<ul>
-    
-    {{#each board.links}}
-    <div class="card">
-        <div class="card-body">
-            {{!-- <img id="pin"src="../assets/images/pin.png" /> --}}
-            <br>
-            <div class="row">
-                <h5 class="col-lg-12 col-md-9 col-sm-8 title">
-                    {{title}}
-                </h5>
+<!-- Modal for new announcement -->
+<div class="modal fade" id="announcementModal" tabindex="-1" role="dialog" aria-labelledby="announcementModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="announcementModalLabel">New Announcent</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body modal-post">
+                <input type="text" placeholder="Topic">
+                <br>
+                <br>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" placeholder="Message">
+                <br>
+                <br>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" placeholder="Topic">
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary linkitButton">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--BODY-->
+<h1 id="boardName">{{board.name}}</h1>
+<!--CARDS-->
+<div class="main">
+    <div class="cardWrapper col-lg-12 col-md-8">
+        {{#if board.links}}
+        <ul>
+        {{#each board.links}}
+            <div class="card">
+                <div class="card-body">
+                <br>
+                    <div class="row">
+                    <h5 class="col-lg-12 col-md-9 col-sm-8 title">
+                        {{title}}
+                    </h5>
+                <div class = "col-lg-6" id="url">
+                    <a href="{{url}}">
+                </div>
+            </div></a>
             <br>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <p class="card-text">
+                    <p class="card-text cardDescription">
                         {{description}}
-                        <a href="#"> Read More</a>
+                    <a href="#"> Read More</a>
                 </div>
-                <div class="imagewrap">
+                <div class="col-lg-3 col-md-4 col-sm-4 imagewrap">
                     {{#if image_url}}
                     <img class="card-img-top cardImg" src="{{image_url}}">
                     {{/if}}
@@ -118,30 +245,50 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row bottomsec">
             <div class="col-lg-12">
-                <div class="card-header">
-                    <small class="text-muted">
-                        <div class="cardIcons">
-                            <i class="fas fa-pencil-alt" id="cardEdit"></i>
-                            <i class="fas fa-trash-alt" id="cardDelete"></i>
-                        </div>
-                        {{!-- <div class="timestamp"> --}}
-                            {{url}}
-                            <div style="margin-top:-20px;">
-                            <center><h3>Topics:</h3>
-                            {{#each board.tags}}
-                                <p>id{{id}}</p>
-                                <p>name{{name}}</p>
-                            {{/each}}
-                            </center>
-                            </div>
-                        </div>
-                    </small>
+            <div class="card-header">
+                <small class="text-muted">
+            <div class="cardIcons">
+                <i class="fas fa-pencil-alt" id="cardEdit"></i>
+                <i class="fas fa-trash-alt" id="cardDelete"></i>
+            </div>
+{{!-- <div class="timestamp"> --}}
+            <div class="tags">
+                <h3>Topics:</h3>
+                    {{#each board.tags}}
+                    <p>id{{id}}</p>
+                    <p>name{{name}}</p>
+                    {{/each}}
+                    </div>
                 </div>
+                </small>
             </div>
         </div>
-    {{/each}}
+    </div>
+{{/each}}
 </ul>
 {{/if}}
+</div>
+
+
+<!--ANNOUNCEMENTS-->
+
+<div class="card sidebar col-lg-12 col-md-4 announceBox">
+    <div class="card-header">
+        Announcements
+        </div>
+        <div class="card-body" style="overflow-y: scroll;
+  position: absolute;
+  height: 100%;">
+        {{#each board.messages}}
+            <p class="card-text" style="padding-bottom:10px;">
+                <i class="fas fa-dot-circle" style="color:#031244;"></i>
+                {{msg}} by {{author}}
+            </p>
+        {{/each}}
+    {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+    </div>
+</div>
+
 
