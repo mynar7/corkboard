@@ -3,7 +3,7 @@ $('document').ready(()=>{
 
     //filter buttons
     $('#filter').click(()=>{
-        $('#filterDropdown').toggle('blind');
+        $('.filterCard').toggle('blind');
     })
 
 
