@@ -1,337 +1,461 @@
 li{
     list-style: none;
-}
-/*//////NAV/////*/
-
-.navbar {
-    border-bottom: 1px solid rgb(238, 238, 238);
-}
-
-#logo {
-    width: 100px;
-}
-
-#boardID{
+    }
+    
+    a{
+    color:#0094DD;
+    }
+    /*//////NAV/////*/
+    
+    .navbar {
+    background: rgb(0, 29, 68);
+    color: white;
+    border-bottom: 1px solid #7173D9;
+    }
+    .navbar-toggler collapsed{
+    color: white;
+    }
+    #filterDropdown{
+        height: 190px;
+        background: white;
+        color: black;
+        display: none;
+    }
+    #filterDropdown button{
+        font-size: 12px;
+    }
+    #filterSubmit{
+        position: absolute;
+        text-align: center;
+    }
+    #logo {
+    float: left;
+    width: 50px;
+    }
+    
+    .dropdown-menu{
+    background: #001945;
+    }
+    
+    #boardID{
     margin-top: 20px;
     font-size: 15px;
-}
-
-.btn,
-.newLink {
-    background-color: #16fd99 !important;
-}
-
-.btn:hover,
-.newLink:hover {
-    background-color: rgb(47, 131, 47) !important;
-}
-
-.modal-body input {
+    }
+    
+    #filter{
+    position: absolute;
+    margin-top: -10px;
+    right: 0;
+    }
+    
+    .btn,
+    .newLink {
+    background-color: #0094DD !important;
+    }
+    
+    .btn:hover,
+    .newLink:hover {
+    background-color: rgb(0, 83, 124) !important;
+    }
+    
+    .modal-body input {
     width: 100%;
-}
-
-.linkitButton {
+    }
+    
+    .linkitButton {
     background: green;
-}
-
-/*//////BODY////*/
-
-body {
-    background: rgb(15, 14, 14);
+    }
+    
+    /*//////BODY////*/
+    
+    body {
+    background: url("https://sewsweetness.com/wp-content/uploads/2016/11/jeansblue.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* background: rgb(23, 22, 42); */
     font-family: "Lato", sans-serif;
     /* background: rgb(235, 234, 234); */
-}
-
-.main {
-    /* margin-left: 160px; */
+    }
+    
+    .main {
+    margin-right: 400px;
     /* Same as the width of the sidenav */
     font-size: 15px;
     /* Increased text to enable scrolling */
-    margin-top: 80px;
-}
-
-#boardName{
+    margin-top: 150px;
+    }
+    
+    #boardName{
     text-align: center;
-}
-
-/*///////CARDS/////*/
-
-.card {
+    color: white;
+    font-size: 30px;
+    margin-top: 90px;
+    }
+    
+    /*///////CARDS/////*/
+    
+    .card {
     margin: 0px 20px 0px -20px;
-    background: rgb(255, 255, 255);
-}
-
-.card-body {
-    margin-top: -40px;
+    /* background: rgb(169, 197, 211); */
+    }
+    
+    .card-body {
     height: 260px;
-}
-
-#pin {
-    top: 1px;
+    background: white;
+    /* background: #6985b6; */
+    /* opacity: .8; */
+    color: black;
+    }
+    
+    h5 {
     position: absolute;
-    display: inline-block;
-    width: 50px;
-    text-align: center;
-}
-
-h5 {
-    position: absolute;
-    top: 25px;
-}
-
-.card-header {
+    top: -25px;
+    }
+    
+    .card-header {
     height: 50px;
-}
-
-#cardEdit {
+    }
+    .bottomsec{
+    background: #001945;
+    /* opacity: .9; */
+    }
+    #url{
+    float: left;
+    /* margin-left: -40px; */
+    }
+    #cardEdit {
     position: absolute;
     right: 0;
     color: #16fd99;
     font-size: 15px;
     padding: 0px 80px 20px 0px;
-}
-
-/* #cardEdit:hover {
-      background: rgb(33, 134, 33);
-  } */
-
-#cardDelete {
+    }
+    
+    /* #cardEdit:hover {
+    background: rgb(33, 134, 33);
+    } */
+    
+    #cardDelete {
     position: absolute;
     right: 0;
     color: red;
     font-size: 15px;
     padding: 0px 40px 20px 0px;
-}
-
-.tags {
-    text-align: center;
-    margin-top: -20px;
-}
-.topics{
+    }
+    
+    .tags {
+    /* text-align: center; */
+    margin-top: 5px;
+    }
+    .topics{
     margin-right: 1px;
-}
-
-/*///////MEDIA QUERIES/////*/
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-
-
-
-    /*==========  Mobile First Method  ==========*/
-
-    /* Custom, iPhone Retina */ 
+    }
+    .sidebar{
+    position: absolute;
+    right: 0;
+    top: 168px;
+    width: 400px;
+    }
+    
+    
+    /*///////MEDIA QUERIES/////*/
+    /*==================================================
+    = Bootstrap 3 Media Queries =
+    ==================================================*/
+    
+    
+    
+    
+    /*========== Mobile First Method ==========*/
+    
+    /* Custom, iPhone Retina */
     @media only screen and (min-width : 320px) {
         h1,
         h2,
         h3,
         h4 {
-            font-size: 120%;
+        font-size: 120%;
         }
         h5{
-            font-size: 100%;
+        font-size: 100%;
+        }
+        #filterDropdown{
+            height: 300px;
+        }
+        .filterButtons{
+                width: 400px;
+            }
+        #filterDropdown button li{
+            width: 10%;
+        }
+        #announce{
+            position: absolute;
+            margin-top: 0px;
+            right: 0;
+            }
+        #filter{
+        position: absolute;
+        margin-top: -50px;
+        right: 0;
+        }
+        #boardName{
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        margin-top: 120px;
         }
         .main {
-            font-size: 15px;
-            margin-top: 80px;
+        font-size: 15px;
+        margin-top: -5px;
+        margin-right: 0px;
         }
-        .card {
-            /* margin-bottom: 2px; */
+        .card-text{
+        display: none;
         }
-        #pin {
-            width: 8%;
+        .imagewrap{
+        position: absolute;
+        top: 80px;
+        right: 0;
         }
         .cardImg {
-            text-align: center;
-            width: 100%;
-
+        text-align: center;
+        width: 100%;
+        height: 80%;
+        }
+        #url{
+        margin-top: -40px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+        }
+        .sidebar{
+            position: fixed;
+            display: none;
+            width: 300px;
+            margin-top: -40px;
+        }
+    
     }
-    .card-text {
-        display: none;
-    }
-}
-
-    /* Extra Small Devices, Phones */ 
+    
+    /* Extra Small Devices, Phones */
     @media only screen and (min-width : 480px) {
         h1,
         h2,
         h3,
         h4 {
-            font-size: 120%;
+        font-size: 120%;
         }
         h5{
-            font-size: 100%;
+        font-size: 100%;
+        }
+        #filterDropdown{
+            width: 300px;
+        }
+        #announce{
+            position: absolute;
+            margin-top: 0px;
+            right: 0;
+            }
+        #filter{
+        position: absolute;
+        margin-top: -50px;
+        right: 0;
+        }
+        #boardName{
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        margin-top: 120px;
         }
         .main {
-            font-size: 15px;
-            margin-top: 80px;
+        font-size: 15px;
+        margin-top: -5px;
+        margin-right: 0px;
         }
-        .card {
-            /* margin-bottom: 2px; */
-            height: 155px;
-        }
-        #pin {
-            width: 5%;
-        }
-        .card-text {
-            display: none;
+        .card-text{
+        margin-top: -20px;
         }
         .imagewrap{
-            position: absolute;
-            right: 0;
+            width: 90%;
         }
-        .cardImg {
-            margin-top: -50px;
-            float: right;
-            text-align: center;
-            width: 80%;
+        #url{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 250px;
         }
-        .timestamp {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 200px;
+        .sidebar{
+        display: none;
         }
     }
-
+    
     /* Small Devices, Tablets */
     @media only screen and (min-width : 768px) {
         h1,
         h2,
         h3,
         h4 {
-            font-size: 120%;
+        font-size: 120%;
         }
         h5{
-            font-size: 100%;
+        font-size: 150%;
+        }
+        #announce{
+            display: none;
+            }
+        #filter{
+        position: absolute;
+        margin-top: -40px;
+        right: 0;
+        }
+        #boardName{
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        margin-top: 120px;
         }
         .main {
-            font-size: 15px;
-            margin-top: 80px;
+        font-size: 15px;
+        margin-top: -5px;
+        margin-right: 0px;
         }
-        .card {
-            /* margin-bottom: 2px; */
-            height: 155px;
-        }
-        #pin {
-            width: 5%;
-        }
-        .card-text {
-            margin-top: -5px;
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 400px;
-        }
-        .imagewrap{
-            position: absolute;
-            right: 0;
-        }
-        .cardImg {
-            margin-top: -50px;
-            float: right;
-            text-align: center;
-            width: 80%;
-        }
-        .timestamp {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 200px;
+        .card-text{
+        margin-top: -20px;
+        display: block;
         }
         
+        .timestamp {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 300px;
+        }
+        .sidebar{
+            position: fixed;
+            display: block;
+            }
     }
-
+    
     /* Medium Devices, Desktops */
     @media only screen and (min-width : 992px) {
         h1,
         h2,
         h3,
         h4 {
-            font-size: 120%;
+        font-size: 120%;
         }
         h5{
-            font-size: 100%;
+        font-size: 200%;
         }
+        
+        #announce{
+        display: none;
+        }
+        #filter{
+            position: absolute;
+            margin-top: 0px;
+            right: 0;
+            }
         .main {
-            font-size: 15px;
-            margin-top: 80px;
-        }
-        .card {
-            /* margin-bottom: .5px; */
-            width: 100%;
-            height: 100%;
-        }
-        #pin {
-            width: 4%;
+        font-size: 15px;
+        margin-top: -5px;
+        margin-right: 400px;
         }
         .card-text {
-            margin-top: -5px;
-            display: block;
+        margin-top: -5px;
+        display: block;
         }
         .imagewrap{
-            position: absolute;
-            right: 0;
+        position: absolute;
+        right: 0;
         }
-        .cardImg {
-            margin-top: -50px;
-            float: right;
-            text-align: center;
-            width: 85%;
-            /* height: 10vh; */
-            margin-left: 200px;
-        }
+        /* .cardImg {
+        margin-top: -50px;
+        float: right;
+        text-align: center;
+        width: 85%;
+        height: 10vh;
+        margin-left: 200px;
+        } */
         .timestamp {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
         }
+        #url{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 450px;
+        }
+        .sidebar{
+            display: block;
+            position: fixed;
+            }
     }
-
+    
     /* Large Devices, Wide Screens */
     @media only screen and (min-width : 1200px) {
         h1,
         h2,
         h3,
         h4 {
-            font-size: 120%;
+        font-size: 120%;
         }
         h5{
-            font-size: 100%;
+        font-size: 200%;
+        }
+        /* #dropFeed{
+        display: none;
+        } */
+        #filter{
+        position: absolute;
+        margin-top: 0px;
+        right: 0;
         }
         .main {
-            font-size: 15px;
-            margin-top: 80px;
-        }
-        /* .card {
-            margin-bottom: .5px;
-        } */
-        #pin {
-            width: 4%;
+        font-size: 15px;
+        margin-top: 0px;
+        /* margin-right: 600px; */
         }
         .card-text {
-            margin-top: -5px;
-            display: block;
+        margin-top: -5px;
+        display: block;
         }
         .imagewrap{
-            position: absolute;
-            right: 0;
+        position: absolute;
+        right: 0;
         }
-        .cardImg {
-            margin-top: -50px;
-            float: right;
-            text-align: center;
-            width: 85%;
-            /* height: 10vh; */
-            margin-left: 200px;
-        }
+        /* .cardImg {
+        margin-top: -50px;
+        float: right;
+        text-align: center;
+        width: 85%;
+        /* height: 10vh;
+        margin-left: 200px;
+        }*/
         .timestamp {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
         }
+        #url{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 450px;
+        }
+        .tags{
+        color: white;
+        }
+        .sidebar{
+            margin-top: -92px;
+            position: fixed;
+            display: block;
+            }
     }
