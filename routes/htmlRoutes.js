@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const db = require("../models/index.js");
+const path = require("path");
 
 
 router.get('/boards/:board', function(req, res) {
@@ -74,7 +75,7 @@ router.get('/boards/:board/tags/:tagId', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-    res.render('home');
+    res.sendFile(path.join(__dirname, "../public/front/index.html"));
 });
 
 router.get('/boards/:board/*', function(req, res) {
