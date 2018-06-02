@@ -1,118 +1,220 @@
 <!--NAV-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-<ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light">
+{{!-- <ul class="navbar-nav mr-auto"> --}}
 
 <!--FILTERS-->
-
-<div id="filterDropdown" class="row col-lg-12 col-md-4 col-sm-4">
-        <li class="nav-item">
-    <div style="border:1px solid white;height:120px;width:1200px;">
-    <div style="font:16px/26px Georgia, Garamond, Serif;">
-    <ul>
-        <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
+<div class="card">
+  <div class="card-body filterCard" >
+    <center><h2>SORT BY</h2></center>
+    <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterHtml">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterHtml">
                     HTML
                 </button>
             </li>
         <br>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterCss">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterCss">
                     CSS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterJs">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterJs">
                     JS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterJquery">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterJquery">
                     JQUERY
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterNode">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterNode">
                     NODE
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterHandlebars">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterHandlebars">
                     HANDLEBARS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterSequelize">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterSequelize">
                     SEQUELIZE
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterFirebase">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterFirebase">
                     FIREBASE
                 </button>
             </li>
         </div>
-        <div class="row col-lg-12" style="margin-top:20px;">
+        <div class="row col-lg-12 col-md-2 col-sm-4" style="margin-top:20px;">
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterBootstrap">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterBootstrap">
                     BOOTSTRAP
                 </button>
             </li>
         <br>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterMaterialize">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterMaterialize">
                     MATERIALIZE
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterTips">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterTips">
                     TIPS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterTutorials">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterTutorials">
                     TUTORIALS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterVideos">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterVideos">
                     VIDEOS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterDocs">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterDocs">
                     DOCS
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterCheat">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterCheat">
                     CHEAT SHEET
                 </button>
             </li>
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterMisc">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterMisc">
                     MISC.
                 </button>
             </li>
         </div>
         <div class="row col-lg-12" style="margin-top:30px;">
             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn" id="filterSubmit">
+                <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
                     SUBMIT
                 </button>
             </li>
         <br>
     </ul>
     </div>
+  </div>
+</div>
+{{!-- <div id="filterDropdown" class="col-lg-12 col-md-4 col-sm-4">
+        <li class="nav-item">
+    <div style="height:120px;width:100%;">
+    <div style="font:16px/26px Georgia, Garamond, Serif;">
+        <center><h2>SORT BY</h2></center>
+    <ul>
+        <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterHtml">
+                    HTML
+                </button>
+            </li>
+        <br>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterCss">
+                    CSS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterJs">
+                    JS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterJquery">
+                    JQUERY
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterNode">
+                    NODE
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterHandlebars">
+                    HANDLEBARS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterSequelize">
+                    SEQUELIZE
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterFirebase">
+                    FIREBASE
+                </button>
+            </li>
+        </div>
+        <div class="row col-lg-12" style="margin-top:20px;">
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterBootstrap">
+                    BOOTSTRAP
+                </button>
+            </li>
+        <br>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterMaterialize">
+                    MATERIALIZE
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterTips">
+                    TIPS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterTutorials">
+                    TUTORIALS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterVideos">
+                    VIDEOS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterDocs">
+                    DOCS
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterCheat">
+                    CHEAT SHEET
+                </button>
+            </li>
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;" class="btn filterButton" id="filterMisc">
+                    MISC.
+                </button>
+            </li>
+        </div>
+        <div class="row col-lg-12" style="margin-top:30px;">
+            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
+                    SUBMIT
+                </button>
+            </li>
+        <br>
+    </ul>
+    </div> --}}
 </div>
 </li>
 </div>
 </ul>
 <br>
+</nav>
+
 
 <!--NAVBAR SECTION-->
 
-{{!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top"> --}}
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <ul class="navbar-nav mr-auto">
 
     <a class="navbar-brand" href="#">
@@ -322,7 +424,7 @@ Alerts<i class="fas fa-external-link-square-alt"></i>
             <br>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <p class="card-text">
+                    <p class="card-text cardDescription">
                         {{description}}
                     <a href="#"> Read More</a>
                 </div>
@@ -360,16 +462,22 @@ Alerts<i class="fas fa-external-link-square-alt"></i>
 {{/if}}
 </div>
 
-<div class="card sidebar col-lg-12 col-md-4">
+
+<!--ANNOUNCEMENTS-->
+
+<div class="card sidebar col-lg-12 col-md-4 announceBox">
     <div class="card-header">
         Announcements
         </div>
-        <div class="card-body">
-        <h2 class="card-title">Filtered topics</h2>
+        <div class="card-body" style="overflow-y: scroll;
+  position: absolute;
+  height: 100%;">
         {{#each board.messages}}
-        <p class="card-text">These messages are responsive text
-    {{msg}} by {{author}}
-    {{/each}}</p>
+            <p class="card-text" style="padding-bottom:10px;">
+                <i class="fas fa-dot-circle" style="color:#031244;"></i>
+                {{msg}} by {{author}}
+            </p>
+        {{/each}}
     {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
     </div>
 </div>
