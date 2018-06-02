@@ -166,7 +166,7 @@ li{
     height: 100%;
     }
     .filterCard{
-        margin-top: 90px;
+        margin-top: 15px;
         width: 100%;
         height: 100%;
         color: black;
@@ -212,6 +212,7 @@ li{
             display: none;
             overflow: scroll;
             z-index: 1;
+            margin-top: 100px;
         }
         .filterButton{
             margin-right: -25px;
