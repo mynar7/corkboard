@@ -1,35 +1,33 @@
 <!--NAV-->
 <nav class="navbar navbar-expand-lg navbar-light">
-{{!-- <ul class="navbar-nav mr-auto"> --}}
 
-<!--FILTERS-->
-<div class="card">
-  <div class="card-body filterCard" >
-    <center><h2>SORT BY</h2></center>
-    <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
-        {{#each board.tags}}
-            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;" class="btn filterButton" data-filterId={{id}}>
-                    {{name}}
-                </button>
-            </li>
-        {{/each}}
-        <div class="row col-lg-12" style="margin-top:30px;">
-            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
-                    SUBMIT
-                </button>
-            </li>
-        <br>
-    </ul>
+    <!--FILTERS-->
+
+    <div class="card">
+        <div class="card-body filterCard">
+            <center>
+                <h2>SORT BY</h2>
+            </center>
+            <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
+                {{#each board.tags}}
+                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                    <button type="button" style="width:100px;" class="btn filterButton" data-filterId={{id}}>
+                        {{name}}
+                    </button>
+                </li>
+                {{/each}}
+                <div class="row col-lg-12" style="margin-top:30px;">
+                    <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                        <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
+                            SUBMIT
+                        </button>
+                    </li>
+                    <br>
+
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
-</li>
-</div>
-</ul>
-<br>
 </nav>
 
 
@@ -38,82 +36,122 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <ul class="navbar-nav mr-auto">
 
-    <a class="navbar-brand" href="#">
-        <img id="logo" src="../assets/images/cork.png" alt="corkboard">
-    </a></ul>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-aria-expanded="false" aria-label="Toggle navigation">
-    <i style="color:white" class="fas fa-bars"></i>
-</button>
-
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-    <!--DISPLAYS THE BOARD ID-->
-
-{{!-- <ul>
-<li>
-<h4 id = "boardID">Board ID: {{board.id}}</h4>
-</li>
-</ul> --}}
-
-<!--DROPDOWN FOR ADDING-->
-
-<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-plus-circle"></i>
-        </button>
-
-<!--MODALS FOR TOPIC, POST & ANNOUNCE-->
-
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item">
-        <ul>
-            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
-                <i class="fas fa-comment"></i>
-                    Topic
-                </button>
-            </li>
-        </ul>
+        <a class="navbar-brand" href="#">
+            <img id="logo" src="../assets/images/cork.png" alt="corkboard">
         </a>
-    <a class="dropdown-item">
+    </ul>
+    <ul>
+        <h1 id="boardName" data-boardId={{board.id}}>{{board.name}}</h1>
+    </ul>
+    <button class="navbar-toggler smallMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <i style="color:white" class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!--DISPLAYS THE BOARD ID-->
+
+        {{!--
         <ul>
-            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                    <i class="far fa-newspaper"></i>
+            <li>
+                <h4 id="boardID">Board ID: {{board.id}}</h4>
+            </li>
+        </ul> --}}
+        <!--NAV MENU-->
+
+        <div class="topMenu">
+
+            <ul>
+                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                    <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
+                        <i class="fas fa-comment"></i>
+                        Topic
+                    </button>
+                </li>
+            </ul>
+            <ul>
+                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                    <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                        <i class="far fa-newspaper"></i>
                         Post
-                </button>
-            </li>
-        </ul>
-    </a>
-    <a class="dropdown-item">
+                    </button>
+                </li>
+            </ul>
+            <ul>
+                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                    <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
+                        <i class="fas fa-bullhorn"></i>
+                        Announcement
+                    </button>
+                </li>
+            </ul>
+        </div>
         <ul>
-            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
-                <i class="fas fa-bullhorn"></i>
-                    Announcement
-                </button>
-            </li>
+            <h1 id="boardNameFull" data-boardId={{board.id}}>{{board.name}}</h1>
         </ul>
-    </a>
-</div>
-</div>
-</div>
+        <!--DROPDOWN FOR ADDING-->
 
-<!--ALERTS AND FILTER BUTTONS-->
+        <div class="btn-group smallAdd" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="fas fa-plus-circle"></i>
+                </button>
 
-<ul>
-<a id="announce" href="#">
-Alerts<i class="fas fa-external-link-square-alt"></i>
-</a>
-</ul>
-<ul>
-    <a id="filter" href="#">
-        Filter<i class="fas fa-filter"></i>
-    </a>
-</ul>
-</div>
+                <!-- MENU ITEMS FOR TOPIC, POST & ANNOUNCE-->
+
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item">
+                        <ul>
+                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
+                                    <i class="fas fa-comment"></i>
+                                    Topic
+                                </button>
+                            </li>
+                        </ul>
+                    </a>
+                    <a class="dropdown-item">
+                        <ul>
+                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                                    <i class="far fa-newspaper"></i>
+                                    Post
+                                </button>
+                            </li>
+                        </ul>
+                    </a>
+                    <a class="dropdown-item">
+                        <ul>
+                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                                <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
+                                    <i class="fas fa-bullhorn"></i>
+                                    Announcement
+                                </button>
+                            </li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--ALERTS AND FILTER BUTTONS-->
+
+        <ul>
+
+            <a id="announce" href="#">
+                Alerts
+                <i class="fas fa-external-link-square-alt"></i>
+            </a>
+        </ul>
+        <ul>
+            <a id="filter" href="#">
+                Filter
+                <i class="fas fa-filter"></i>
+            </a>
+        </ul>
+    </div>
 </nav>
 
 <!-- Modal for new topic -->
@@ -127,12 +165,35 @@ Alerts<i class="fas fa-external-link-square-alt"></i>
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" placeholder="Topic">
+                <input type="text" id="title" placeholder="Topic">
                 <br>
                 <br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary linkitButton">Submit</button>
+                <button type="button" class="btn btn-primary link">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--MODAL FOR EDIT CARD-->
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editModalLabel">Edit</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" id="putMsg" placeholder="Edit">
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary editSubmit">Submit</button>
             </div>
         </div>
     </div>
@@ -144,39 +205,38 @@ Alerts<i class="fas fa-external-link-square-alt"></i>
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="postModalLabel">New Post</h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" id="postTitle" placeholder="Title">
+                <br>
+                <br>
+                <input type="text" id="postUrl" placeholder="URL">
+                <br>
+                <br>
+                <input type="text" id="postDescription" placeholder="Description">
+                <br>
+                <br>
+                <input type="text" id="postImgUrl" placeholder="Image URL">
+                <br>
+                <br>
+                <center>
+                    <h2>Topic</h2>
+                    <select>
+                        <center>
+                            {{#each board.tags}}
+                            <option>{{name}}</option>
+                            {{/each}}
+                    </select>
+                    </center>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary postButton">Submit</button>
+            </div>
         </div>
-<div class="modal-body modal-post">
-    <input type="text" placeholder="Title">
-    <br>
-    <br>
-    <input type="text" placeholder="URL">
-    <br>
-    <br>
-    <input type="text" placeholder="Description">
-    <br>
-    <br>
-    <input type="text" placeholder="Image URL">
-    <br>
-    <br>
-    <center>
-        <h2>Topic</h2>
-        
-    <select>
-        <center>
-            {{#each board.tags}}
-            <option>{{name}}</option>
-        {{/each}}
-        </select>
-    </center>
-</div>
-<div class="modal-footer">
-    <button type="button" class="btn btn-primary linkitButton">Submit</button>
-</div>
-</div>
-</div>
+    </div>
 </div>
 
 <!-- Modal for new announcement -->
@@ -190,105 +250,107 @@ Alerts<i class="fas fa-external-link-square-alt"></i>
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" placeholder="Topic">
+                <input type="text" id="postMsg" placeholder="Topic">
                 <br>
                 <br>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" placeholder="Message">
-                <br>
-                <br>
-            </div>
-            <div class="modal-body modal-post">
-                <input type="text" placeholder="Topic">
-                <br>
+                <input type="text" id="postAuthor" placeholder="Author">
                 <br>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary linkitButton">Submit</button>
-            </div>
+            <center>
+                <h2>Topic</h2>
+                <select>
+                    <center>
+                        {{#each board.tags}}
+                        <option>{{name}}</option>
+                        {{/each}}
+                </select>
+                </center>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary announcementButton">Submit</button>
+                </div>
         </div>
     </div>
 </div>
 
 <!--BODY-->
-<h1 id="boardName">{{board.name}}</h1>
+
 <!--CARDS-->
 <div class="main">
     <div class="cardWrapper col-lg-12 col-md-8">
         {{#if board.links}}
         <ul>
-        {{#each board.links}}
+            {{#each board.links}}
             <div class="card">
                 <div class="card-body">
-                <br>
+                    <br>
                     <div class="row">
-                    <h5 class="col-lg-12 col-md-9 col-sm-8 title">
-                        {{title}}
-                    </h5>
-                <div class = "col-lg-6" id="url">
-                    <a href="{{url}}">
-                </div>
-            </div></a>
-            <br>
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <p class="card-text cardDescription">
-                        {{description}}
-                    <a href="#"> Read More</a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-4 imagewrap">
-                    {{#if image_url}}
-                    <img class="card-img-top cardImg" src="{{image_url}}">
-                    {{/if}}
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row bottomsec">
-            <div class="col-lg-12">
-            <div class="card-header">
-                <small class="text-muted">
-            <div class="cardIcons">
-                <i class="fas fa-pencil-alt" id="cardEdit"></i>
-                <i class="fas fa-trash-alt" id="cardDelete"></i>
-            </div>
-{{!-- <div class="timestamp"> --}}
-            <div class="tags">
-                <h3>Topics:</h3>
-                    {{#each board.tags}}
-                    <p>id{{id}}</p>
-                    <p>name{{name}}</p>
-                    {{/each}}
+                        <h5 class="col-lg-12 col-md-9 col-sm-8 title">
+                            {{title}}
+                        </h5>
+                        <div class="col-lg-6" id="url">
+                            <a href="{{url}}">{{url}}</a>
+                        </div>
+                    </div>
+                    </a>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <p class="card-text cardDescription" data-descId={{description}}>
+                                {{description}}
+                                <a href="#"> Read More</a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 imagewrap">
+                            {{#if image_url}}
+                            <img class="card-img-top cardImg" src="{{image_url}}"> {{/if}}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                </small>
+                <div class="row bottomsec">
+                    <div class="col-lg-12">
+                        <div class="card-header">
+                            <small class="text-muted">
+                                <div class="cardIcons">
+                                    <i class="fas fa-pencil-alt" id="cardEdit" data-toggle="modal" data-target="#editModal"></i>
+                                    <i class="fas fa-trash-alt" id="cardDelete" data-toggle="modal" data-target="#deleteModal"></i>
+                                    </button>
+                                </div>
+                                <div class="tagsId">
+                                    <h3>Topics:</h3>
+                                    {{#each board.tags}}
+                                    <p>id{{id}}</p>
+                                    <p>name{{name}}</p>
+                                    {{/each}}
+                                </div>
+                        </div>
+                        </small>
+                    </div>
+                </div>
             </div>
-        </div>
+            {{/each}}
+        </ul>
+        {{/if}}
     </div>
-{{/each}}
-</ul>
-{{/if}}
-</div>
 
 
-<!--ANNOUNCEMENTS-->
+    <!--ANNOUNCEMENTS-->
 
-<div class="card sidebar col-lg-12 col-md-4 announceBox">
-    <div class="card-header">
-        Announcements
+    <div class="card sidebar col-lg-12 col-md-4 announceBox">
+        <div class="card-header">
+            Announcements
         </div>
         <div class="card-body" style="overflow-y: scroll;
-  position: absolute;
-  height: 100%;">
-        {{#each board.messages}}
+            position: absolute;
+            height: 100%; width:95%;">
+            {{#each board.messages}}
             <p class="card-text" style="padding-bottom:10px;">
                 <i class="fas fa-dot-circle" style="color:#031244;"></i>
-                {{msg}} by {{author}}
+                {{msg}} by
+                <span id="author">{{author}}</span>
             </p>
-        {{/each}}
-    {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+            {{/each}} {{!--
+            <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+        </div>
     </div>
-</div>
-
-
