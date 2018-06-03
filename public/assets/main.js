@@ -1,3 +1,5 @@
+let urlField;
+
 $('document').ready(() => {
     console.log('ready')
 
@@ -110,4 +112,23 @@ $('.postButton').click((e) => {
             location.reload();
         });
     });
-})
+
+    $('#postUrl').change(function(event){
+        let urlInput = event.target.value;
+        if(!urlInput.startsWith('http')) {
+            urlInput = 'http://' + urlInput;
+            //$('#postUrl').val(urlInput);
+        } 
+        if(urlInput !== urlField) {
+            urlField = urlInput;
+            console.log(urlField);
+            $.post('/api/scrape', {url: urlField}, function(data){
+                console.log(data);
+                $('#postTitle').val(data.title);
+                $('#postDescription').val(data.description);
+                $('#postUrl').val(data.url);
+                $('#postImgUrl').val(data.image);    
+            });
+        }
+    });
+})//end document.ready
