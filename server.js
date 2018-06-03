@@ -10,7 +10,7 @@ const htmlRouter = require('./routes/htmlRoutes.js');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
+app.use(express.static('public/'));
 app.use('/api', apiRouter);
 app.use('/', htmlRouter);
 

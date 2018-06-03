@@ -37,7 +37,7 @@
     <ul class="navbar-nav mr-auto">
 
         <a class="navbar-brand" href="#">
-            <img id="logo" src="../assets/images/cork.png" alt="corkboard">
+            <img id="logo" src="/assets/images/cork.png" alt="corkboard">
         </a>
     </ul>
     <ul>
@@ -318,10 +318,9 @@
                                     </button>
                                 </div>
                                 <div class="tagsId">
-                                    <h3>Topics:</h3>
-                                    {{#each board.tags}}
-                                    <p>id{{id}}</p>
-                                    <p>name{{name}}</p>
+                                    <h3 style="float: left">Topics:</h3>
+                                    {{#each Tags}}
+                                        <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
                                     {{/each}}
                                 </div>
                         </div>
