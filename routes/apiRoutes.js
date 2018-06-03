@@ -1,6 +1,13 @@
 const router = require('express').Router();
 const db = require("../models/index.js");
 const scrape = require('metatag-crawler');
+const mail = require('./mailer.js');
+
+router.post('/mail', function(req, res){
+    //sendMail(to, subject, bodyText, htmlText)
+    mail(req.body.to, req.body.subject, req.body.bodyText, req.body.htmlText);
+    res.json("mail sent");
+});
 
 //this route returns meta data from a url that's posted
 router.post('/scrape', function(req, res) {
