@@ -52,12 +52,12 @@
           <form>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Send Invites To Your Board: (Use a Comma to Send to Multiple Email Address)</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" required="required" placeholder="name@example.com, name2@example.com"
+              <input type="email" class="form-control" id="inviteEmails" required="required" placeholder="name@example.com, name2@example.com"
                 multiple>
             </div>
             <div class="form-group">
               <label for="message-text" class="col-form-label">Message:</label>
-              <textarea class="form-control" id="message-text"></textarea>
+              <textarea class="form-control" id="inviteEmailMsg"></textarea>
             </div>
           </form>
 
@@ -67,8 +67,8 @@
               <!-- <span aria-hidden="true">&times;</span> -->
             </button>
             <!-- Send Message Button on Modal -->
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Skip</button>
+            <button type="button" class="btn btn-primary" id="sendInvites">Send Invite</button>
           </div>
         </div>
       </div>
