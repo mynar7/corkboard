@@ -68,23 +68,22 @@ $('.announcementButton').click((e)=>{
 });
 //_____________________________________________________________
 //edit message
-$('.editSubmit').click((e)=>{
-    const id =$('#boardName').attr("data-boardId")
-    const msgId =$('.cardDescription').attr('data-descId')
+$('.editSubmit').click((e) => {
+    const id = 'dec37c71-aa04-4dfc-945e-7cfd29c26945'//$('#boardName').attr("data-boardId")
+    const linkId = 11 //$('.cardDescription').attr('data-descId')
     e.preventDefault();
     var updateMsg = $('#putMsg').val().trim();
     //var updateAuthor = $('#putAuthor').val().trim();
-    
+
     let data = {
-        msg: updateMsg,
-        //author: updateAuthor        
+        title: 'cowboys',
+        description: 'football',
+        url: 'www.cowboys.com',
+        image_url: 'http://via.placeholder.com/350x150'
     }
-    $.put('/boards/:boardId/' +id+ '/msgs/' + msgId, data, function(data){
+    $.put('/api/boards/' + id + '/links/' + linkId, data, function (data) {
         console.log(data);
         location.reload();
-        });
+    });
 });
-
-
-
-});
+})
