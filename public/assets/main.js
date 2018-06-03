@@ -1,4 +1,20 @@
 let urlField;
+const put = function(url, data, callback){
+
+    if ( $.isFunction(data) ){
+      type = type || callback,
+      callback = data,
+      data = {}
+    }
+   
+    return $.ajax({
+      url: url,
+      type: 'PUT',
+      success: callback,
+      data: JSON.stringify(data),
+      contentType:'application/json'
+    });
+   }
 
 $('document').ready(() => {
     console.log('ready')
@@ -98,16 +114,17 @@ $('.postButton').click((e) => {
     //edit message
     $('.editSubmit').click((e) => {
         const id = $('#boardName').attr("data-boardId")
-        const msgId = $('.cardDescription').attr('data-descId')
+        const linkId = $('.cardDescription').attr('data-descId')
         e.preventDefault();
         var updateMsg = $('#putMsg').val().trim();
-        //var updateAuthor = $('#putAuthor').val().trim();
-
+            
         let data = {
-            msg: updateMsg,
-            //author: updateAuthor
+            title: newTitle,
+            description: newDescription,
+            url: newUrl,
+            image_url: newImageUrl
         }
-        $.put('/api/boards/' + id + '/msgs/' + id.description, data, function (data) {
+        put('/api/boards/' + id + '/links/' + linkId, data, function (data) {
             console.log(data);
             location.reload();
         });
