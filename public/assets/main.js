@@ -10,25 +10,9 @@ $('document').ready(() => {
 
     //show/hide announcements
     $('#announce').click(() => {
-
         $('.sidebar').toggle('blind');
-        })
+    }) 
         
-        
-        //topic submit function
-        $('.link').click((e)=>{
-        const id =$('#boardName').attr("data-boardId")
-        e.preventDefault();
-        var field = $('#title').val().trim();
-        console.log(field);
-        let data = {
-        name: field
-        }
-        $.post('/api/boards/'+id+'/tags/new', data, function(data){
-        console.log(data);
-        location.reload();
-        });
-    })
 
     //Small menu button
     $('.smallMenu').click(() => {
@@ -58,7 +42,7 @@ $('document').ready(() => {
     })
 
     //post submit function
-$('.postButton').click((e) => {
+    $('.postButton').click((e) => {
         const id = $('#boardName').attr("data-boardId")
         e.preventDefault();
         var newTitle = $('#postTitle').val().trim();
