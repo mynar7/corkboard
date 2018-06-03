@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   var Tag = sequelize.define('Tag', {
     name: {
       type: DataTypes.STRING,
-      unique: true,
+      unique: false,
       allowNull: false,
       validate: {
         len: [3, 40]

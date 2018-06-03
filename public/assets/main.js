@@ -28,8 +28,8 @@ $('document').ready(() => {
 
     //topic submit function
     $('.link').click((e) => {
-        const id = $('#boardName').attr("data-boardId")
         e.preventDefault();
+        const id = $('#boardName').attr("data-boardId")
         var field = $('#title').val().trim();
         console.log(field);
         let data = {
