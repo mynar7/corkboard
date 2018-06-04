@@ -10,9 +10,8 @@
             </center>
             <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
                 {{#each board.tags}}
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" style="width:100px;" class="btn filterButton" data-filterId={{id}}>
-                        {{name}}
+                <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                    <input type="checkbox" class="checkboxBtn" data-filterId={{id}}> {{name}}
                     </button>
                 </li>
                 {{/each}}
@@ -86,10 +85,14 @@
                     </button>
                 </li>
             </ul>
+
         </div>
         <ul>
             <h1 id="boardNameFull" data-boardId={{board.id}}>{{board.name}}</h1>
         </ul>
+
+
+
         <!--DROPDOWN FOR ADDING-->
 
         <div class="btn-group smallAdd" role="group" aria-label="Button group with nested dropdown">
@@ -146,6 +149,9 @@
             </a>
         </ul>
         <ul>
+            <a id="close" href="#">
+                <i class="fas fa-times"></i>
+            </a>
             <a id="filter" href="#">
                 Filter
                 <i class="fas fa-filter"></i>
@@ -176,7 +182,7 @@
     </div>
 </div>
 
-<!--MODAL FOR EDIT CARD-->
+<!--MODAL FOR EDIT CARD editModalLabel-->
 
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -188,12 +194,30 @@
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="putMsg" placeholder="Edit">
+                <input type="text" id="editTitle" placeholder="Title">
                 <br>
                 <br>
+                <input type="text" id="editUrl" placeholder="URL">
+                <br>
+                <br>
+                <input type="text" id="editDescription" placeholder="Description">
+                <br>
+                <br>
+                <input type="text" id="editImgUrl" placeholder="Image URL">
+                <br>
+                <br>
+                <center>
+                    <h2>Topic</h2>
+                    <select>
+                        <center>
+                            {{#each board.tags}}
+                            <option>{{name}}</option>
+                            {{/each}}
+                    </select>
+                    </center>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary editSubmit">Submit</button>
+                <button type="button" class="btn btn-primary editButton">Submit</button>
             </div>
         </div>
     </div>
@@ -204,7 +228,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="postModalLabel">New Post</h2>
+                <h2 class="modal-title" id="postModalLabel">Post Message</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -286,22 +310,21 @@
                 <div class="card-body">
                     <br>
                     <div class="row">
-                        <h5 class="col-lg-12 col-md-9 col-sm-8 title">
+                        <h5 id="cardTitleLinkNum{{id}}" class="col-lg-8 col-md-6 col-sm-5 title">
                             {{title}}
                         </h5>
-                        <div class="col-lg-6" id="url">
-                            <a href="{{url}}">{{url}}</a>
+                        <div class="col-lg-8" id="url">
+                            <a href="{{url}}" target="_blank">{{url}}</a>
                         </div>
                     </div>
                     </a>
                     <br>
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="col-lg-7 col-md-6 col-sm-6">
                             <p class="card-text cardDescription" data-descId={{description}}>
                                 {{description}}
-                                <a href="#"> Read More</a>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-4 imagewrap">
+                        <div class="col-lg-4 col-md-4 col-sm-4 imagewrap">
                             {{#if image_url}}
                             <img class="card-img-top cardImg" src="{{image_url}}"> {{/if}}
                             </p>
@@ -313,14 +336,14 @@
                         <div class="card-header">
                             <small class="text-muted">
                                 <div class="cardIcons">
-                                    <i class="fas fa-pencil-alt" id="cardEdit" data-toggle="modal" data-target="#editModal"></i>
+                                    <i class="fas fa-pencil-alt cardEdit" data-toggle="modal" data-target="#editModal" data-linkId="{{id}}"></i>
                                     <i class="fas fa-trash-alt" id="cardDelete" data-toggle="modal" data-target="#deleteModal"></i>
                                     </button>
                                 </div>
                                 <div class="tagsId">
                                     <h3 style="float: left">Topics:</h3>
                                     {{#each Tags}}
-                                        <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
+                                    <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
                                     {{/each}}
                                 </div>
                         </div>
@@ -341,8 +364,8 @@
             Announcements
         </div>
         <div class="card-body" style="overflow-y: scroll;
-            position: absolute;
-            height: 100%; width:95%;">
+position: absolute;
+height: 100%; width:95%;">
             {{#each board.messages}}
             <p class="card-text" style="padding-bottom:10px;">
                 <i class="fas fa-dot-circle" style="color:#031244;"></i>

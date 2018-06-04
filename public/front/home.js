@@ -46,6 +46,10 @@ $('document').ready(() => {
             $('#errorModal').modal();
         }
     });
+    $("#skipBtn").click((e)=>{
+        e.preventDefault();
+        location.href = actualUrl;
+    });
 
     $('#sendInvites').click((e)=> {
         e.preventDefault();
@@ -54,7 +58,6 @@ $('document').ready(() => {
         let aTag = actualUrl;
         let emailList = $('#inviteEmails').val().trim();
         let emailMsg = $('#inviteEmailMsg').val().trim();
-        console.log(emailList);
         if(emailList) {
             $('#inviteEmails').val("");
             $('#inviteEmailMsg').val("");
