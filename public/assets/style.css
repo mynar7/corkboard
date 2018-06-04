@@ -181,7 +181,7 @@ h5 {
 background: rgb(33, 134, 33);
 } */
 
-#cardDelete {
+.cardDelete {
     position: absolute;
     right: 0;
     color: red;
@@ -422,7 +422,7 @@ right: 0; */
     }
     .main {
         font-size: 15px;
-        margin-top: 75px;
+        margin-top: 85px;
         margin-right: 0px;
     }
     .cardDescription {
@@ -436,7 +436,7 @@ right: 0; */
         text-align: center;
     }
     .cardImg {
-        width: 60%;
+        width: 50%;
         /*height: 200px; */
         margin-top: 20px;
         height: 50%;
@@ -486,7 +486,7 @@ right: 0; */
         text-align: center;
     }
     .cardImg {
-        width: 90%;
+        width: 75%;
         /*height: 200px; */
         margin-top: 20px;
         height: 50%;
@@ -579,10 +579,11 @@ right: 0; */
         text-align: center;
     }
     .cardImg {
-        width: 100%;
-        /*height: 200px; */
+        width: 75%;
+        height: auto;
         margin-top: 20px;
-        height: 50%;
+        /* height: 50%; */
+        /*height: 200px; */
     }
     .cardDescription {
         margin-top: -20px;

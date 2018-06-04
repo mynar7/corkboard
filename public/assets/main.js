@@ -29,6 +29,19 @@ $('document').ready(() => {
 
     })
 
+    //delete link
+    $('.cardDelete').click((event)=>{
+        let linkId = $(event.target).attr("data-linkId");
+        const boardId = $('#boardName').attr("data-boardId");
+        $.ajax({
+            method: "DELETE",
+            url: `/api/boards/${boardId}/links/${linkId}`,
+            success: function(results){
+                location.reload();
+            }
+        });
+    });
+
     //show/hide announcements
     $('#announce').click(() => {
         $('.dropAnnounce').show('blind');
