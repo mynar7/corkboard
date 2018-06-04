@@ -3,13 +3,19 @@ li {
 }
 
 a {
-    color: #0094DD;
+    color: #D0B45A;
+}
+
+a:hover {
+    color: rgb(149, 130, 65);
 }
 
 /*//////NAV/////*/
 
 .navbar {
-    background: rgb(0, 29, 68);
+    background: #1E6E5F;
+    /* background: url("http://angelcitybrigade.net/wp-content/themes/acbv2.0/images/wallpapers/acb1-pattern_16x9_blue_locon.jpg"); */
+    /* background: rgb(0, 29, 68); */
     color: white;
     border-bottom: 1px solid #7173D9;
 }
@@ -37,11 +43,11 @@ a {
 
 #logo {
     float: left;
-    width: 50px;
+    width: 200px;
 }
 
 .dropdown-menu {
-    background: #001945;
+    background: #1E6E5F;
 }
 
 #boardID {
@@ -67,12 +73,18 @@ a {
 
 .btn,
 .newLink {
-    background-color: #0094DD !important;
+    background-color: #D0B45A !important;
+}
+
+.newLink {
+    margin-top: 30px;
+    margin-left: -35px;
+    color: white;
 }
 
 .btn:hover,
 .newLink:hover {
-    background-color: rgb(0, 83, 124) !important;
+    background-color: rgb(129, 112, 57) !important;
 }
 
 .modal-body input {
@@ -86,7 +98,8 @@ a {
 /*//////BODY////*/
 
 body {
-    background: url("https://sewsweetness.com/wp-content/uploads/2016/11/jeansblue.jpg")no-repeat center center fixed;
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsnF53qYkxpaMRCE5neDUQKj9CC6foQ1uAgvx5BRYxoH-LCWuGUg")no-repeat center center fixed;
+    /* background: url("https://sewsweetness.com/wp-content/uploads/2016/11/jeansblue.jpg")no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -145,7 +158,7 @@ h5 {
 }
 
 .bottomsec {
-    background: #001945;
+    background: #376e61;
     /* opacity: .9; */
     margin-bottom: -1px;
 }
@@ -196,7 +209,7 @@ h5 {
 }
 
 #author {
-    color: rgb(0, 199, 60);
+    color: rgb(1, 165, 50);
 }
 
 #close {
@@ -212,6 +225,21 @@ h5 {
     width: 100%;
     height: 100%;
     color: black;
+}
+
+/* #announce {
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+
+#dropAnnounce {
+    display: none;
+}
+
+.smallAdd {
+    position: absolute;
+    margin-top: -10px;
 }
 
 /*///////MEDIA QUERIES/////*/
@@ -240,19 +268,25 @@ h5 {
     .title {
         font-size: 15px;
     }
+    .smallMenu {
+        margin-top: 25px;
+    }
     #filterDropdown {
         display: none;
     }
+    .menuRight {
+        margin-top: 45px;
+    }
     #announce {
         position: absolute;
-        margin-top: -10px;
+        margin-top: -20px;
         right: 0;
-        height: 100%;
+        /* height: 100%; */
     }
     #close {
         display: none;
         position: absolute;
-        margin-top: -60px;
+        margin-top: -55px;
         right: 10px;
         font-size: 25px;
     }
@@ -261,15 +295,15 @@ h5 {
         margin-top: -50px;
         right: 0;
     }
+    .filterButton {
+        margin-right: -25px;
+    }
     .filterCard {
         position: fixed;
         display: none;
         overflow: scroll;
         z-index: 1;
         margin-top: 130px;
-    }
-    .filterButton {
-        margin-right: -25px;
     }
     #boardName {
         text-align: center;
@@ -282,7 +316,7 @@ h5 {
     }
     .main {
         font-size: 15px;
-        margin-top: 55px;
+        margin-top: 75px;
         margin-right: 0px;
     }
     .cardDescription {
@@ -313,10 +347,26 @@ h5 {
         display: none;
         width: 400px;
         margin-right: -20px;
-        margin-top: -24px;
+        margin-top: -30px;
     }
     .sidebar p {
         color: black;
+    }
+    .dropAnnounce {
+        position: fixed;
+        display: none;
+        width: 400px;
+        top: 70px;
+        right: -20px;
+        margin-top: 60px;
+        height: 100%;
+    }
+    #closeAnn {
+        display: none;
+        position: absolute;
+        margin-top: -25px;
+        right: 20px;
+        font-size: 25px;
     }
 }
 
@@ -335,13 +385,16 @@ h5 {
     h5 {
         font-size: 120%;
     }
+    .smallMenu {
+        margin-top: 25px;
+    }
     #filterDropdown {
         display: none;
     }
     #announce {
-        position: absolute;
+        /* position: absolute;
         margin-top: 0px;
-        right: 0;
+        right: 0; */
     }
     #close {
         display: none;
@@ -356,18 +409,20 @@ h5 {
         right: 0;
     }
     #boardName {
+        position: absolute;
+        display: block;
         text-align: center;
         color: white;
-        font-size: 15px;
-        position: absolute;
-        left: 100px;
+        font-size: 20px;
+        margin-top: 35px;
+        margin-left: 200px;
     }
     #boardNameFull {
         display: none;
     }
     .main {
         font-size: 15px;
-        margin-top: 55px;
+        margin-top: 75px;
         margin-right: 0px;
     }
     .cardDescription {
@@ -399,6 +454,22 @@ h5 {
         margin-right: -20px;
         margin-top: -24px;
     }
+    .dropAnnounce {
+        position: fixed;
+        display: none;
+        width: 400px;
+        top: 70px;
+        right: -20px;
+        margin-top: 60px;
+        height: 100%;
+    }
+    #closeAnn {
+        display: none;
+        position: absolute;
+        margin-top: -25px;
+        right: 20px;
+        font-size: 25px;
+    }
 }
 
 @media only screen and (min-width: 575px) {
@@ -418,11 +489,29 @@ h5 {
         height: 50%;
     }
     #boardName {
+        position: absolute;
         display: block;
         text-align: center;
         color: white;
         font-size: 20px;
-        margin: 10px 500px 0px 0px;
+        margin-top: 35px;
+        margin-left: 220px;
+    }
+    .dropAnnounce {
+        position: fixed;
+        display: none;
+        width: 400px;
+        top: 80px;
+        right: -20px;
+        margin-top: 50px;
+        height: 100%;
+    }
+    #closeAnn {
+        display: none;
+        position: absolute;
+        margin-top: -25px;
+        right: 20px;
+        font-size: 25px;
     }
 }
 
@@ -444,11 +533,14 @@ h5 {
     #announce {
         display: none;
     }
+    #closeAnn {
+        display: none;
+    }
     #close {
         display: none;
         position: absolute;
-        margin-top: -5px;
-        right: 10px;
+        margin-top: -45px;
+        right: 20px;
         font-size: 25px;
     }
     #filter {
@@ -461,18 +553,20 @@ h5 {
         height: 50%;
     }
     #boardName {
+        position: absolute;
         display: block;
         text-align: center;
         color: white;
         font-size: 20px;
-        margin: 10px 500px 0px 0px;
+        margin-top: 35px;
+        margin-left: 220px;
     }
     #boardNameFull {
         display: none;
     }
     .main {
         font-size: 15px;
-        margin-top: 55px;
+        margin-top: 85px;
         margin-right: 0px;
     }
     .imagewrap {
@@ -501,7 +595,7 @@ h5 {
         position: fixed;
         display: block;
         width: 300px;
-        top: 100px;
+        top: 110px;
     }
 }
 
@@ -521,7 +615,7 @@ h5 {
     }
     .topMenu li {
         display: inline;
-        /* margin-right: -100px; */
+        margin-left: 40px;
     }
     h1,
     h2,
@@ -538,24 +632,32 @@ h5 {
     #announce {
         display: none;
     }
+    #closeAnn {
+        display: none;
+    }
+    #closeAnn {
+        display: none;
+    }
     #close {
         display: none;
         position: absolute;
-        margin-top: -5px;
-        right: 10px;
-        font-size: 25px;
+        margin-top: -25px;
+        right: 25px;
+        font-size: 35px;
     }
     #filter {
         position: absolute;
-        margin-top: 0px;
-        right: 0;
+        margin-top: -15px;
+        right: 10px;
+        text-align: center;
     }
     .filterCard {
-        margin-top: 65px;
+        margin-top: 80px;
         height: 50%;
     }
     .filterButton {
         font-size: 15px;
+        width: 250px;
     }
     #boardName {
         display: none;
@@ -565,11 +667,11 @@ h5 {
         text-align: center;
         color: white;
         font-size: 25px;
-        margin: 0px 90px 0px 20px;
+        margin: 30px 90px 0px 20px;
     }
     .main {
         font-size: 15px;
-        margin-top: 65px;
+        margin-top: 85px;
         margin-right: 400px;
     }
     .cardDescription {
@@ -596,7 +698,7 @@ h5 {
     .sidebar {
         display: block;
         position: fixed;
-        margin-top: -30px;
+        margin-top: -15px;
     }
 }
 
@@ -608,6 +710,15 @@ h5 {
     }
     .topMenu {
         display: block;
+        margin-left: -70px;
+    }
+    .topMenu ul {
+        display: inline-block;
+        margin-right: -80px;
+    }
+    .topMenu li {
+        display: inline;
+        margin-left: 40px;
     }
     h1,
     h2,
@@ -621,21 +732,24 @@ h5 {
     nav {
         margin-bottom: -30px;
     }
+    #closeAnn {
+        display: none;
+    }
     #close {
         display: none;
         position: absolute;
-        margin-top: -5px;
-        right: 10px;
-        font-size: 25px;
+        margin-top: -25px;
+        right: 25px;
+        font-size: 35px;
     }
     #filter {
         position: absolute;
-        margin-top: 0px;
-        right: 0;
+        margin-top: -15px;
+        right: 10px;
         text-align: center;
     }
     .filterCard {
-        margin-top: 65px;
+        margin-top: 80px;
         height: 50%;
     }
     .filterButton {
@@ -650,11 +764,11 @@ h5 {
         text-align: center;
         color: white;
         font-size: 25px;
-        margin: 0px 90px 0px 20px;
+        margin: 30px 90px 0px 20px;
     }
     .main {
         font-size: 15px;
-        margin-top: 98px;
+        margin-top: 115px;
     }
     .cardDescription {
         margin-top: -5px;
@@ -682,12 +796,16 @@ h5 {
         color: white;
     }
     .sidebar {
-        margin-top: -92px;
+        margin-top: -10px;
         position: fixed;
         display: block;
     }
     #announce {
+        display: none;
         width: 100%;
         height: 100%;
+    }
+    #dropAnnounce {
+        display: none;
     }
 }

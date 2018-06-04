@@ -6,24 +6,59 @@ $('document').ready(() => {
     //filter buttons
     $('#filter').click(() => {
         $('.filterCard').toggle('blind');
+        $('#close').show();
+        $('#filter').hide();
+        $('.dropAnnounce').hide('blind');
+
+
     })
 
     //show/hide announcements
     $('#announce').click(() => {
-        $('.sidebar').toggle('blind');
-    }) 
-        
+        $('.dropAnnounce').show('blind');
+        $('#announce').hide();
+        $('#closeAnn').show();
+        $('#close').hide();
+        $('#filter').show();
+
+
+    })
+
+    $('#closeAnn').click(() => {
+        $('.dropAnnounce').hide('blind');
+        $('#announce').show();
+        $('#closeAnn').hide();
+
+    })
 
     //Small menu button
     $('.smallMenu').click(() => {
         $('.filterCard').hide();
-        $('.sidebar').hide();
+        $('.dropAnnounce').hide();
     })
 
     //Small add button
     $('.smallAdd').click(() => {
         $('.filterCard').hide();
-        $('.sidebar').hide();
+        $('#close').hide();
+        $('#filter').show();
+        $('.dropAnnounce').hide();
+
+    })
+
+    //X for close
+    $('#close').click(() => {
+        $('.filterCard').hide('blind');
+        $('#filter').show();
+        $('#close').hide();
+    })
+
+    //close filter when clicking topMenu buttons
+    $('.newLink').click(() => {
+        $('.filterCard').hide('blind');
+        $('#filter').show();
+        $('#close').hide();
+
     })
 
     //topic submit function
@@ -97,22 +132,24 @@ $('document').ready(() => {
         });
     });
 
-    $('#postUrl').change(function(event){
+    $('#postUrl').change(function (event) {
         let urlInput = event.target.value;
-        if(!urlInput.startsWith('http')) {
+        if (!urlInput.startsWith('http')) {
             urlInput = 'http://' + urlInput;
             //$('#postUrl').val(urlInput);
-        } 
-        if(urlInput !== urlField) {
+        }
+        if (urlInput !== urlField) {
             urlField = urlInput;
             console.log(urlField);
-            $.post('/api/scrape', {url: urlField}, function(data){
+            $.post('/api/scrape', {
+                url: urlField
+            }, function (data) {
                 console.log(data);
                 $('#postTitle').val(data.title);
                 $('#postDescription').val(data.description);
                 $('#postUrl').val(data.url);
-                $('#postImgUrl').val(data.image);    
+                $('#postImgUrl').val(data.image);
             });
         }
     });
-})//end document.ready
+}) //end document.ready
