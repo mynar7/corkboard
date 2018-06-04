@@ -49,15 +49,20 @@ a {
     font-size: 15px;
 }
 
+#close {
+    position: absolute;
+    margin-top: -10px;
+    right: 0;
+}
+
 #filter {
     position: absolute;
     margin-top: -10px;
     right: 0;
 }
 
-.filterButton {
-    font-size: 12px;
-    margin-left: 70%;
+.checkboxBtn {
+    background: blue;
 }
 
 .btn,
@@ -114,7 +119,7 @@ body {
 /*///////CARDS/////*/
 
 .card {
-    margin: 0px 20px 0px -20px;
+    margin: 0px 20px 10px -20px;
     /* background: rgb(169, 197, 211); */
 }
 
@@ -131,6 +136,10 @@ h5 {
     top: -25px;
 }
 
+.title {
+    font-size: 20px;
+}
+
 .card-header {
     height: 50px;
 }
@@ -138,6 +147,7 @@ h5 {
 .bottomsec {
     background: #001945;
     /* opacity: .9; */
+    margin-bottom: -1px;
 }
 
 #url {
@@ -145,7 +155,7 @@ h5 {
     /* margin-left: -40px; */
 }
 
-#cardEdit {
+.cardEdit {
     position: absolute;
     right: 0;
     color: #16fd99;
@@ -154,7 +164,7 @@ h5 {
     cursor: pointer;
 }
 
-/* #cardEdit:hover {
+/* .cardEdit:hover {
     background: rgb(33, 134, 33);
     } */
 
@@ -189,8 +199,16 @@ h5 {
     color: rgb(0, 199, 60);
 }
 
+#close {
+    display: none;
+    position: absolute;
+    margin-top: -5px;
+    right: 10px;
+    font-size: 25px;
+}
+
 .filterCard {
-    margin-top: 15px;
+    margin-top: 20px;
     width: 100%;
     height: 100%;
     color: black;
@@ -219,14 +237,24 @@ h5 {
     h5 {
         font-size: 90%;
     }
+    .title {
+        font-size: 15px;
+    }
     #filterDropdown {
         display: none;
     }
     #announce {
         position: absolute;
-        margin-top: 0px;
+        margin-top: -10px;
         right: 0;
         height: 100%;
+    }
+    #close {
+        display: none;
+        position: absolute;
+        margin-top: -60px;
+        right: 10px;
+        font-size: 25px;
     }
     #filter {
         position: absolute;
@@ -238,7 +266,7 @@ h5 {
         display: none;
         overflow: scroll;
         z-index: 1;
-        margin-top: 100px;
+        margin-top: 130px;
     }
     .filterButton {
         margin-right: -25px;
@@ -263,13 +291,15 @@ h5 {
     }
     .imagewrap {
         position: absolute;
-        top: 80px;
+        top: 50px;
         right: 0;
+        text-align: center;
     }
     .cardImg {
-        /* width: 100%;
-        height: 200px; */
-        margin-top: -20px;
+        width: 70%;
+        /*height: 200px; */
+        margin-top: 20px;
+        height: 50%;
     }
     #url {
         margin-top: -40px;
@@ -281,8 +311,9 @@ h5 {
     .sidebar {
         position: fixed;
         display: none;
-        width: 300px;
-        margin-top: 0px;
+        width: 400px;
+        margin-right: -20px;
+        margin-top: -24px;
     }
     .sidebar p {
         color: black;
@@ -312,6 +343,13 @@ h5 {
         margin-top: 0px;
         right: 0;
     }
+    #close {
+        display: none;
+        position: absolute;
+        margin-top: -55px;
+        right: 10px;
+        font-size: 25px;
+    }
     #filter {
         position: absolute;
         margin-top: -50px;
@@ -334,14 +372,19 @@ h5 {
     }
     .cardDescription {
         margin-top: -20px;
+        display: none;
     }
     .imagewrap {
-        width: 100%;
+        position: absolute;
+        top: 45px;
+        right: 0;
+        text-align: center;
     }
     .cardImg {
-        /* width: 100%; */
-        /* height: 200px; */
-        margin-top: -40px;
+        width: 60%;
+        /*height: 200px; */
+        margin-top: 20px;
+        height: 50%;
     }
     #url {
         white-space: nowrap;
@@ -352,8 +395,34 @@ h5 {
     .sidebar {
         position: fixed;
         display: none;
-        width: 300px;
-        margin-top: -23px;
+        width: 400px;
+        margin-right: -20px;
+        margin-top: -24px;
+    }
+}
+
+@media only screen and (min-width: 575px) {
+    .cardDescription {
+        display: block;
+    }
+    .imagewrap {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        text-align: center;
+    }
+    .cardImg {
+        width: 90%;
+        /*height: 200px; */
+        margin-top: 20px;
+        height: 50%;
+    }
+    #boardName {
+        display: block;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        margin: 10px 500px 0px 0px;
     }
 }
 
@@ -374,6 +443,13 @@ h5 {
     }
     #announce {
         display: none;
+    }
+    #close {
+        display: none;
+        position: absolute;
+        margin-top: -5px;
+        right: 10px;
+        font-size: 25px;
     }
     #filter {
         position: absolute;
@@ -398,6 +474,18 @@ h5 {
         font-size: 15px;
         margin-top: 55px;
         margin-right: 0px;
+    }
+    .imagewrap {
+        position: absolute;
+        top: 45px;
+        right: 0;
+        text-align: center;
+    }
+    .cardImg {
+        width: 100%;
+        /*height: 200px; */
+        margin-top: 20px;
+        height: 50%;
     }
     .cardDescription {
         margin-top: -20px;
@@ -425,6 +513,7 @@ h5 {
     }
     .topMenu {
         display: block;
+        margin-left: -70px;
     }
     .topMenu ul {
         display: inline-block;
@@ -443,8 +532,18 @@ h5 {
     h5 {
         font-size: 200%;
     }
+    .title {
+        font-size: 20px;
+    }
     #announce {
         display: none;
+    }
+    #close {
+        display: none;
+        position: absolute;
+        margin-top: -5px;
+        right: 10px;
+        font-size: 25px;
     }
     #filter {
         position: absolute;
@@ -470,14 +569,15 @@ h5 {
     }
     .main {
         font-size: 15px;
-        margin-top: 55px;
+        margin-top: 65px;
         margin-right: 400px;
     }
     .cardDescription {
-        margin-top: -5px;
+        margin-top: -30px;
         display: block;
     }
     .imagewrap {
+        margin-top: 10px;
         position: absolute;
         right: 0;
     }
@@ -496,6 +596,7 @@ h5 {
     .sidebar {
         display: block;
         position: fixed;
+        margin-top: -30px;
     }
 }
 
@@ -520,6 +621,13 @@ h5 {
     nav {
         margin-bottom: -30px;
     }
+    #close {
+        display: none;
+        position: absolute;
+        margin-top: -5px;
+        right: 10px;
+        font-size: 25px;
+    }
     #filter {
         position: absolute;
         margin-top: 0px;
@@ -542,11 +650,11 @@ h5 {
         text-align: center;
         color: white;
         font-size: 25px;
-        margin: -100px 90px 0px 20px;
+        margin: 0px 90px 0px 20px;
     }
     .main {
         font-size: 15px;
-        margin-top: 88px;
+        margin-top: 98px;
     }
     .cardDescription {
         margin-top: -5px;
@@ -555,6 +663,7 @@ h5 {
     .imagewrap {
         position: absolute;
         right: 0;
+        margin-top: -30px;
     }
     .timestamp {
         white-space: nowrap;
@@ -567,6 +676,7 @@ h5 {
         overflow: hidden;
         text-overflow: ellipsis;
         width: 450px;
+        padding-top: 15px;
     }
     .tags {
         color: white;
