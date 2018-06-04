@@ -181,7 +181,7 @@ h5 {
 background: rgb(33, 134, 33);
 } */
 
-#cardDelete {
+.cardDelete {
     position: absolute;
     right: 0;
     color: red;
