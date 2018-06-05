@@ -11,8 +11,7 @@
             <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                    <input type="checkbox" class="checkboxBtn" data-filterId={{id}}> {{name}}
-                    </button>
+                    <label><input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
                 </li>
                 {{/each}}
                 <div class="row col-lg-12" style="margin-top:30px;">
@@ -38,9 +37,9 @@
         <a class="navbar-brand" href="#">
             <img id="logo" src="/assets/images/cork.png" alt="corkboard">
         </a>
-        <h1 id="boardName" data-boardId={{board.id}}>{{board.name}}</h1>
     </ul>
-
+    <ul>
+        <h1 id="boardName" data-boardId={{board.id}}>{{board.name}}</h1>
     </ul>
     <button class="navbar-toggler smallMenu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +96,7 @@
 
         <div class="btn-group smallAdd" role="group" aria-label="Button group with nested dropdown">
             <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle smallAdd" data-toggle="dropdown" aria-haspopup="true"
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <i class="fas fa-plus-circle"></i>
                 </button>
@@ -312,23 +311,23 @@
                 <div class="card-body">
                     <br>
                     <div class="row">
-                        <h5 id="cardTitleLinkNum{{id}}" class="col-lg-8 col-md-6 col-sm-4 title">
+                        <h5 id="cardTitleLinkNum{{id}}" class="col-lg-8 col-md-6 col-sm-5 title">
                             {{title}}
                         </h5>
                         <div class="col-lg-8" id="url">
-                            <a href="{{url}}" target="_blank">{{url}}</a>
+                            <a href="{{url}}" target="_blank" id="cardUrlLinkNum{{id}}">{{url}}</a>
                         </div>
                     </div>
                     </a>
                     <br>
                     <div class="row">
                         <div class="col-lg-7 col-md-6 col-sm-6">
-                            <p class="card-text cardDescription" data-descId={{description}}>
+                            <p class="card-text cardDescription" id="cardDescLinkNum{{id}}">
                                 {{description}}
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 imagewrap">
                             {{#if image_url}}
-                            <img class="card-img-top cardImg" src="{{image_url}}"> {{/if}}
+                            <img id="cardImgLinkNum{{id}}" class="card-img-top cardImg" src="{{image_url}}"> {{/if}}
                             </p>
                         </div>
                     </div>
@@ -339,7 +338,7 @@
                             <small class="text-muted">
                                 <div class="cardIcons">
                                     <i class="fas fa-pencil-alt cardEdit" data-toggle="modal" data-target="#editModal" data-linkId="{{id}}"></i>
-                                    <i class="fas fa-trash-alt" id="cardDelete" data-toggle="modal" data-target="#deleteModal"></i>
+                                    <i class="fas fa-trash-alt cardDelete" data-toggle="modal" data-target="#deleteModal" data-linkId="{{id}}"></i>
                                     </button>
                                 </div>
                                 <div class="tagsId">
@@ -362,7 +361,7 @@
     <!--ANNOUNCEMENTS-->
 
     <div class="card sidebar col-lg-12 col-md-4">
-        <div class="card-header" style="background:#1E6E5F;color:white;">
+        <div class="card-header" style="background:#100F4E;color:white;">
             Announcements
         </div>
         <div class="card-body" style="overflow-y: scroll;position: absolute;height: 100%; width:95%;">
@@ -379,7 +378,8 @@
 
     <!--dropdown announcement-->
 
-    <div class="card col-lg-12 col-md-4 dropAnnounce" style="background:#1E6E5F;color:white;">
+    <div class="card col-lg-12 col-md-4 dropAnnounce" style="background:#100F4E;color:white;">
+
         <div class="card-header">
             Announcements
         </div>
