@@ -34,9 +34,16 @@ a:hover {
     font-size: 12px;
 }
 
-#filterSubmit {
+.tagWrapper {
     position: absolute;
+    top: 50%;
+    margin-left: 40%;
     text-align: center;
+    display: inline-block;
+}
+
+.filterSubmit {
+    color: white;
 }
 
 #logo {
@@ -63,10 +70,12 @@ a:hover {
     position: absolute;
     margin-top: -10px;
     right: 0;
+    color: white;
 }
 
-.checkboxBtn {
+.checkboxBtn input[type=text] {
     background: blue;
+    margin-right: 10px;
 }
 
 .btn,
@@ -135,7 +144,7 @@ body {
 /*///////CARDS/////*/
 
 .card {
-    margin: 0px 20px 10px -20px;
+    margin: 0px 0px 10px -50px;
     /* background: rgb(169, 197, 211); */
 }
 
@@ -199,15 +208,19 @@ background: rgb(33, 134, 33);
     color: white;
 }
 
+.tagsId {
+    color: white;
+}
+
 .topics {
     margin-right: 1px;
 }
 
 .sidebar {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 168px;
-    width: 400px;
+    width: 100%;
     height: 100%;
 }
 
@@ -231,7 +244,15 @@ background: rgb(33, 134, 33);
 }
 
 .newAnn {
-    background: blue;
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    right: 30px;
+}
+
+.newAnn:hover {
+    cursor: pointer;
+    color: #0094DD;
 }
 
 /* #announce {
@@ -299,8 +320,9 @@ height: 100%;
     }
     #filter {
         position: absolute;
-        margin-top: -50px;
+        margin-top: -60px;
         right: 0;
+        color: white;
     }
     .filterButton {
         margin-right: -25px;
@@ -311,6 +333,7 @@ height: 100%;
         overflow: scroll;
         z-index: 1;
         margin-top: 130px;
+        height: 100%
     }
     #boardName {
         text-align: center;
@@ -409,6 +432,7 @@ height: 100%;
         position: absolute;
         margin-top: -50px;
         right: 0;
+        color: white;
     }
     #boardName {
         position: absolute;
@@ -552,10 +576,12 @@ height: 100%;
         position: absolute;
         margin-top: -40px;
         right: 0;
+        color: white;
     }
     .filterCard {
-        margin-top: 105px;
+        margin: 105px 0px 0px 20px;
         height: 50%;
+        height: 100%;
     }
     #boardName {
         position: absolute;
@@ -600,7 +626,7 @@ height: 100%;
     .sidebar {
         position: fixed;
         display: block;
-        width: 300px;
+        width: 400px;
         top: 110px;
     }
 }
@@ -653,13 +679,14 @@ height: 100%;
     }
     #filter {
         position: absolute;
-        margin-top: -15px;
-        right: 10px;
+        margin-top: 5px;
+        right: -15px;
         text-align: center;
+        color: white;
     }
     .filterCard {
-        margin-top: 80px;
-        height: 50%;
+        margin: 80px 0px 0px 20px;
+        height: 100%;
     }
     .filterButton {
         font-size: 15px;
@@ -750,13 +777,15 @@ height: 100%;
     }
     #filter {
         position: absolute;
-        margin-top: -15px;
+        margin-top: -5px;
         right: 10px;
         text-align: center;
+        color: white;
     }
     .filterCard {
-        margin-top: 80px;
-        height: 50%;
+        margin: 80px 0px 0px 20px;
+        height: 100%;
+        overflow: hidden;
     }
     .filterButton {
         font-size: 15px;
