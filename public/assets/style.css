@@ -63,14 +63,23 @@ a:hover {
 #close {
     position: absolute;
     margin-top: -10px;
-    right: 0;
+    right: 40px;
 }
 
 #filter {
     position: absolute;
     margin-top: -10px;
+    right: 40px;
+    color: white;
+    display: inline-block;
+}
+
+#bookmark {
+    position: absolute;
+    margin-top: -34px;
     right: 0;
     color: white;
+    display: inline-block;
 }
 
 .checkboxBtn input[type=text] {
@@ -170,7 +179,7 @@ h5 {
 }
 
 .bottomsec {
-    background: #0B1950;
+    background: #001945;
     /* opacity: .9; */
     margin-bottom: -1px;
 }
@@ -424,15 +433,21 @@ height: 100%;
     #close {
         display: none;
         position: absolute;
-        margin-top: -55px;
-        right: 10px;
-        font-size: 25px;
+        margin-top: -15px;
+        right: 230px;
+        font-size: 35px;
     }
     #filter {
         position: absolute;
-        margin-top: -50px;
-        right: 0;
+        margin-top: -10px;
+        right: 200px;
+        text-align: center;
         color: white;
+    }
+    .filterCard {
+        margin: 105px 0px 0px 20px;
+        height: 50%;
+        height: 100%;
     }
     #boardName {
         position: absolute;
@@ -568,14 +583,15 @@ height: 100%;
     #close {
         display: none;
         position: absolute;
-        margin-top: -45px;
-        right: 20px;
-        font-size: 25px;
+        margin-top: -15px;
+        right: 230px;
+        font-size: 35px;
     }
     #filter {
         position: absolute;
-        margin-top: -40px;
-        right: 0;
+        margin-top: -5px;
+        right: 200px;
+        text-align: center;
         color: white;
     }
     .filterCard {
@@ -626,7 +642,7 @@ height: 100%;
     .sidebar {
         position: fixed;
         display: block;
-        width: 400px;
+        width: 34%;
         top: 110px;
     }
 }
@@ -673,14 +689,14 @@ height: 100%;
     #close {
         display: none;
         position: absolute;
-        margin-top: -25px;
-        right: 25px;
+        margin-top: -15px;
+        right: 230px;
         font-size: 35px;
     }
     #filter {
         position: absolute;
-        margin-top: 5px;
-        right: -15px;
+        margin-top: -5px;
+        right: 200px;
         text-align: center;
         color: white;
     }
@@ -729,9 +745,7 @@ height: 100%;
         width: 450px;
     }
     .sidebar {
-        display: block;
-        position: fixed;
-        margin-top: -15px;
+        width: 400px;
     }
 }
 
@@ -771,14 +785,14 @@ height: 100%;
     #close {
         display: none;
         position: absolute;
-        margin-top: -25px;
-        right: 25px;
+        margin-top: -15px;
+        right: 230px;
         font-size: 35px;
     }
     #filter {
         position: absolute;
         margin-top: -5px;
-        right: 10px;
+        right: 200px;
         text-align: center;
         color: white;
     }
@@ -831,9 +845,7 @@ height: 100%;
         color: white;
     }
     .sidebar {
-        margin-top: -10px;
-        position: fixed;
-        display: block;
+        width: 400px;
     }
     #announce {
         display: none;
