@@ -11,8 +11,7 @@
             <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                    <input type="checkbox" class="checkboxBtn" data-filterId={{id}}> {{name}}
-                    </button>
+                    <label><input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
                 </li>
                 {{/each}}
                 <div class="row col-lg-12" style="margin-top:30px;">
