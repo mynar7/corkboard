@@ -359,7 +359,26 @@
 
     <!--ANNOUNCEMENTS-->
 
-    <div class="card sidebar col-lg-12 col-md-4 announceBox">
+    <div class="card sidebar col-lg-12 col-md-4">
+        <div class="card-header" style="background:#100F4E;color:white;">
+            Announcements
+        </div>
+        <div class="card-body" style="overflow-y: scroll;position: absolute;height: 100%; width:95%;">
+            {{#each board.messages}}
+            <p class="card-text" style="padding-bottom:10px;">
+                <i class="fas fa-dot-circle" style="color:#031244;"></i>
+                {{msg}} by
+                <span id="author">{{author}}</span>
+            </p>
+            {{/each}} {{!--
+            <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+        </div>
+    </div>
+
+    <!--dropdown announcement-->
+
+    <div class="card col-lg-12 col-md-4 dropAnnounce" style="background:#100F4E;color:white;">
+
         <div class="card-header">
             Announcements
         </div>
