@@ -11,7 +11,8 @@
             <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                    <label><input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    <label>
+                        <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
                 </li>
                 {{/each}}
                 <div class="row col-lg-12" style="margin-top:30px;">
@@ -27,7 +28,6 @@
         </div>
     </div>
 </nav>
-
 
 <!--NAVBAR SECTION-->
 
@@ -64,7 +64,7 @@
                 <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                     <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
                         <i class="fas fa-comment"></i>
-                        Topic
+                        Add Tag
                     </button>
                 </li>
             </ul>
@@ -76,14 +76,7 @@
                     </button>
                 </li>
             </ul>
-            <ul>
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
-                        <i class="fas fa-bullhorn"></i>
-                        Announcement
-                    </button>
-                </li>
-            </ul>
+
 
         </div>
         <ul>
@@ -109,7 +102,7 @@
                             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                                 <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
                                     <i class="fas fa-comment"></i>
-                                    Topic
+                                    Add Tag
                                 </button>
                             </li>
                         </ul>
@@ -143,7 +136,7 @@
         <ul>
 
             <a id="announce" href="#">
-                Alerts
+                Announcements
                 <i class="fas fa-external-link-square-alt"></i>
             </a>
         </ul>
@@ -152,7 +145,7 @@
                 <i class="fas fa-times"></i>
             </a>
             <a id="filter" href="#">
-                Filter
+                Filter by Topic
                 <i class="fas fa-filter"></i>
             </a>
         </ul>
@@ -207,13 +200,14 @@
                 <br>
                 <center>
                     <h2>Topic</h2>
-                    <select>
-                        <center>
-                            {{#each board.tags}}
-                            <option>{{name}}</option>
-                            {{/each}}
-                    </select>
-                    </center>
+                    {{#each board.tags}}
+                    <span style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                        <label style="min-width:40px;">
+                            <label>
+                                <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    </span>
+                    {{/each}}
+                </center>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary editButton">Submit</button>
@@ -247,13 +241,14 @@
                 <br>
                 <center>
                     <h2>Topic</h2>
-                    <select>
-                        <center>
-                            {{#each board.tags}}
-                            <option>{{name}}</option>
-                            {{/each}}
-                    </select>
-                    </center>
+                    {{#each board.tags}}
+                    <span style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                        <label style="min-width:40px;">
+                            <label>
+                                <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    </span>
+                    {{/each}}
+                </center>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary postButton">Submit</button>
@@ -361,7 +356,11 @@
     <div class="card sidebar col-lg-12 col-md-4">
         <div class="card-header" style="background:#100F4E;color:white;">
             Announcements
+            <i class="fas fa-plus-circle newAnn" data-toggle="modal" data-target="#announcementModal"></i>
+
+
         </div>
+
         <div class="card-body" style="overflow-y: scroll;position: absolute;height: 100%; width:95%;">
             {{#each board.messages}}
             <p class="card-text" style="padding-bottom:10px;">
