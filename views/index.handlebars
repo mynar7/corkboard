@@ -31,7 +31,10 @@
                     ADD TAG
                 </button>
                 <button type="button" class="btn filterSubmit">
-                    SORT
+                    EDIT
+                </button>
+                <button type="button" class="btn filterSubmit" id="tagDelete">
+                    DELETE
                 </button>
                 <br>
             </div>
@@ -69,16 +72,7 @@
         </ul> --}}
         <!--NAV MENU-->
 
-        <div class="topMenu">
-            <ul>
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                        <i class="fas fa-bookmark"></i>
-                        Add Bookmark
-                    </button>
-                </li>
-            </ul>
-        </div>
+
         <ul>
             <h1 id="boardNameFull" data-boardId={{board.id}}>{{board.name}}</h1>
         </ul>
@@ -116,7 +110,9 @@
 
         <ul>
             <a id="close" href="#">
-                <i class="fas fa-times"></i>
+                <button type="button" style="width:155px;color:white;" class="btn filter">
+                    <i class="fas fa-times"></i>
+                </button>
             </a>
             <a id="filter" href="#">
                 <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
@@ -126,8 +122,13 @@
                     </button>
                 </li>
             </a>
+            <li id="bookmark" style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                    <i class="fas fa-bookmark"></i>
+                    Add Bookmark
+                </button>
+            </li>
         </ul>
-
         <ul class="menuRight">
             <li>
                 <a id="close" href="#">
@@ -344,7 +345,7 @@
     <!--ANNOUNCEMENTS-->
 
     <div class="card sidebar">
-        <div class="card-header" style="background:#100F4E;color:white;">
+        <div class="card-header" style="background:#001945;color:white;">
             Announcements
             <i class="fas fa-plus-circle newAnn" data-toggle="modal" data-target="#announcementModal"></i>
             </button>
@@ -359,8 +360,7 @@
                 {{msg}} by
                 <span id="author">{{author}}</span>
             </p>
-            {{/each}} {{!--
-            <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+            {{/each}}
         </div>
     </div>
 
