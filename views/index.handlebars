@@ -188,10 +188,10 @@
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="editTitle" placeholder="Title">
-                <br>
-                <br>
                 <input type="text" id="editUrl" placeholder="URL">
+                <br>
+                <br>
+                <input type="text" id="editTitle" placeholder="Title">
                 <br>
                 <br>
                 <input type="text" id="editDescription" placeholder="Description">
@@ -200,7 +200,7 @@
                 <input type="text" id="editImgUrl" placeholder="Image URL">
                 <br>
                 <br>
-                <center>
+                <center class="editTags">
                     {{#each board.tags}}
                     <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
                         <label>
@@ -240,7 +240,7 @@
                 <input type="text" id="postImgUrl" placeholder="Image URL">
                 <br>
                 <br>
-                <center>
+                <center class="postTags">
                     <h2>Tags</h2>
                     {{#each board.tags}}
                     <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
@@ -325,7 +325,7 @@
                                     <i class="fas fa-trash-alt cardDelete" data-toggle="modal" data-target="#deleteModal" data-linkId="{{id}}"></i>
                                     </button>
                                 </div>
-                                <div class="tagsId">
+                                <div class="tagsId tags{{id}}">
                                     <h3 style="float: left">Tags:</h3>
                                     {{#each Tags}}
                                     <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>

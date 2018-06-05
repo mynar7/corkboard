@@ -95,7 +95,7 @@ router.put('/boards/:boardId/links/:linkId', function(req, res) {
         //tags should be an array of id numbers
         //if null is passed in, all associations will be removed,
         //therefore all tags are removed
-        if(req.body.tags || req.body.tags === null) {
+        if(true) {
             db.Link.findOne({
                 where: {
                     id : req.params.linkId
