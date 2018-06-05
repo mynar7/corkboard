@@ -160,7 +160,10 @@ $('document').ready(() => {
         let title = $('#cardTitleLinkNum' + linkId).text().trim();
         let url = $('#cardUrlLinkNum' + linkId).text().trim();
         let desc = $('#cardDescLinkNum' + linkId).text().trim();
-        let imgUrl = $('#cardImgLinkNum' + linkId).attr("src").trim();
+        let imgUrl = $('#cardImgLinkNum' + linkId).attr("src");
+        if(imgUrl) {
+            imgUrl = imgUrl.trim();
+        }
 
         let currentTags = [];
         //grab current tags off of card
