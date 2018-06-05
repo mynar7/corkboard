@@ -64,16 +64,16 @@
             <ul>
                 <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                     <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
-                        <i class="fas fa-comment"></i>
-                        Topic
+                        <i class="fas fa-tags"></i>
+                        Add Tags
                     </button>
                 </li>
             </ul>
             <ul>
                 <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                     <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                        <i class="far fa-newspaper"></i>
-                        Post
+                        <i class="fas fa-bookmark"></i>
+                        Add Bookmark
                     </button>
                 </li>
             </ul>
@@ -102,15 +102,15 @@
                     <i class="fas fa-plus-circle"></i>
                 </button>
 
-                <!-- MENU ITEMS FOR TOPIC, POST & ANNOUNCE-->
+                <!-- MENU ITEMS FOR TAGS, BOOKMARKS & ANNOUNCE-->
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item">
                         <ul>
                             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                                 <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
-                                    <i class="fas fa-comment"></i>
-                                    Topic
+                                    <i class="fas fa-tags"></i>
+                                    Tags
                                 </button>
                             </li>
                         </ul>
@@ -119,8 +119,8 @@
                         <ul>
                             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                                 <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                                    <i class="far fa-newspaper"></i>
-                                    Post
+                                    <i class="fas fa-bookmark"></i>
+                                    Bookmarks
                                 </button>
                             </li>
                         </ul>
@@ -146,10 +146,10 @@
                 <a id="close" href="#">
                     <i class="fas fa-times"></i>
                 </a>
-                <a id="filter" href="#">
+                {{!-- <a id="filter" href="#">
                     Filter
                     <i class="fas fa-filter"></i>
-                </a>
+                </a> --}}
                 <a id="closeAnn" href="#">
                     <i class="fas fa-times"></i>
                 </a>
@@ -167,13 +167,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="topicModalLabel">New Topic</h2>
+                <h2 class="modal-title" id="topicModalLabel">Tags</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="title" placeholder="Topic">
+                <input type="text" id="title" placeholder="Tags">
                 <br>
                 <br>
             </div>
@@ -190,7 +190,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="editModalLabel">Edit</h2>
+                <h2 class="modal-title" id="editModalLabel">Edit Bookmark</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -209,7 +209,7 @@
                 <br>
                 <br>
                 <center>
-                    <h2>Topic</h2>
+                    <h2>Tags</h2>
                     <select>
                         <center>
                             {{#each board.tags}}
@@ -230,7 +230,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="postModalLabel">Post Message</h2>
+                <h2 class="modal-title" id="postModalLabel">Add Bookmark</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -249,7 +249,7 @@
                 <br>
                 <br>
                 <center>
-                    <h2>Topic</h2>
+                    <h2>Tags</h2>
                     <select>
                         <center>
                             {{#each board.tags}}
@@ -276,7 +276,7 @@
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="postMsg" placeholder="Topic">
+                <input type="text" id="postMsg" placeholder="Title">
                 <br>
                 <br>
             </div>
@@ -285,7 +285,7 @@
                 <br>
             </div>
             <center>
-                <h2>Topic</h2>
+                <h2>Tag</h2>
                 <select>
                     <center>
                         {{#each board.tags}}
@@ -343,7 +343,7 @@
                                     </button>
                                 </div>
                                 <div class="tagsId">
-                                    <h3 style="float: left">Topics:</h3>
+                                    <h3 style="float: left">Tags:</h3>
                                     {{#each Tags}}
                                     <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
                                     {{/each}}
