@@ -6,8 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       defaultValue: null,
       validate: {
-        isUrl: true,
-        notEmpty: true,
         max: 255
       }
     },

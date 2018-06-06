@@ -6,29 +6,42 @@
     <div class="card">
         <div class="card-body filterCard">
             <center>
-                <h2>SORT BY</h2>
+
+                <h2>
+                    <i class="fas fa-tags">ALL TAGS
+
+                    </i>
+                    <h2>
+
             </center>
             <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                    <input type="checkbox" class="checkboxBtn" data-filterId={{id}}> {{name}}
-                    </button>
+                    <label>
+                        <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
                 </li>
                 {{/each}}
-                <div class="row col-lg-12" style="margin-top:30px;">
-                    <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                        <button type="button" style="width:100px;left:50%;" class="btn" id="filterSubmit">
-                            SUBMIT
-                        </button>
-                    </li>
-                    <br>
+            </div>
+            <div class="tagWrapper">
 
-                </div>
+                <button type="button" class="btn filterSubmit">
+                    SORT
+                </button>
+                <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
+                    ADD TAG
+                </button>
+                <button type="button" class="btn filterSubmit">
+                    EDIT
+                </button>
+                <button type="button" class="btn filterSubmit" id="tagDelete">
+                    DELETE
+                </button>
+                <br>
             </div>
         </div>
     </div>
+    </div>
 </nav>
-
 
 <!--NAVBAR SECTION-->
 
@@ -59,34 +72,7 @@
         </ul> --}}
         <!--NAV MENU-->
 
-        <div class="topMenu">
 
-            <ul>
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
-                        <i class="fas fa-comment"></i>
-                        Topic
-                    </button>
-                </li>
-            </ul>
-            <ul>
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                        <i class="far fa-newspaper"></i>
-                        Post
-                    </button>
-                </li>
-            </ul>
-            <ul>
-                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                    <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
-                        <i class="fas fa-bullhorn"></i>
-                        Announcement
-                    </button>
-                </li>
-            </ul>
-
-        </div>
         <ul>
             <h1 id="boardNameFull" data-boardId={{board.id}}>{{board.name}}</h1>
         </ul>
@@ -102,35 +88,15 @@
                     <i class="fas fa-plus-circle"></i>
                 </button>
 
-                <!-- MENU ITEMS FOR TOPIC, POST & ANNOUNCE-->
+                <!-- MENU ITEMS FOR TAGS, BOOKMARKS & ANNOUNCE-->
 
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item">
                         <ul>
                             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#topicModal">
-                                    <i class="fas fa-comment"></i>
-                                    Topic
-                                </button>
-                            </li>
-                        </ul>
-                    </a>
-                    <a class="dropdown-item">
-                        <ul>
-                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
                                 <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
-                                    <i class="far fa-newspaper"></i>
-                                    Post
-                                </button>
-                            </li>
-                        </ul>
-                    </a>
-                    <a class="dropdown-item">
-                        <ul>
-                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                                <button type="button" class="btn newLink" data-toggle="modal" data-target="#announcementModal">
-                                    <i class="fas fa-bullhorn"></i>
-                                    Announcement
+                                    <i class="fas fa-bookmark"></i>
+                                    Bookmarks
                                 </button>
                             </li>
                         </ul>
@@ -141,21 +107,47 @@
 
         <!--ALERTS AND FILTER BUTTONS-->
 
-        <ul>
 
-            <a id="announce" href="#">
-                Alerts
-                <i class="fas fa-external-link-square-alt"></i>
-            </a>
-        </ul>
         <ul>
             <a id="close" href="#">
-                <i class="fas fa-times"></i>
+                <button type="button" style="width:155px;color:white;" class="btn filter">
+                    <i class="fas fa-times"></i>
+                </button>
             </a>
             <a id="filter" href="#">
-                Filter
-                <i class="fas fa-filter"></i>
+                <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                    <button type="button" style="width:155px;color:white;" class="btn filter">
+                        <i class="fas fa-tags"></i>
+                        Tags
+                    </button>
+                </li>
             </a>
+            <li id="bookmark" style="list-style-type: none; padding-right: 30px; font-size: 20px;">
+                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                    <i class="fas fa-bookmark"></i>
+                    Add Bookmark
+                </button>
+            </li>
+        </ul>
+        <ul class="menuRight">
+            <li>
+                <a id="close" href="#">
+                    <i class="fas fa-times"></i>
+                </a>
+                {{!--
+                <a id="filter" href="#">
+                    Filter
+                    <i class="fas fa-filter"></i>
+                </a> --}}
+                <a id="closeAnn" href="#">
+                    <i class="fas fa-times"></i>
+                </a>
+
+                <a id="announce" href="#">
+                    Announcements
+                    <i class="fas fa-external-link-square-alt"></i>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -165,13 +157,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="topicModalLabel">New Topic</h2>
+                <h2 class="modal-title" id="topicModalLabel">Tags</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="title" placeholder="Topic">
+                <input type="text" id="title" placeholder="Tags">
                 <br>
                 <br>
             </div>
@@ -188,16 +180,18 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="editModalLabel">Edit</h2>
+                <i class="fas fa-pencil-alt">
+                    <h2 class="modal-title" id="editModalLabel">Edit Bookmark</h2>
+                </i>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="editTitle" placeholder="Title">
-                <br>
-                <br>
                 <input type="text" id="editUrl" placeholder="URL">
+                <br>
+                <br>
+                <input type="text" id="editTitle" placeholder="Title">
                 <br>
                 <br>
                 <input type="text" id="editDescription" placeholder="Description">
@@ -206,15 +200,14 @@
                 <input type="text" id="editImgUrl" placeholder="Image URL">
                 <br>
                 <br>
-                <center>
-                    <h2>Topic</h2>
-                    <select>
-                        <center>
-                            {{#each board.tags}}
-                            <option>{{name}}</option>
-                            {{/each}}
-                    </select>
-                    </center>
+                <center class="editTags">
+                    {{#each board.tags}}
+                    <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                        <label>
+                            <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    </li>
+                    {{/each}}
+                </center>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary editButton">Submit</button>
@@ -228,7 +221,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="postModalLabel">Post Message</h2>
+                <i class="fas fa-bookmark"></i>
+                <h2 class="modal-title" id="postModalLabel">Add Bookmark</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -246,15 +240,15 @@
                 <input type="text" id="postImgUrl" placeholder="Image URL">
                 <br>
                 <br>
-                <center>
-                    <h2>Topic</h2>
-                    <select>
-                        <center>
-                            {{#each board.tags}}
-                            <option>{{name}}</option>
-                            {{/each}}
-                    </select>
-                    </center>
+                <center class="postTags">
+                    <h2>Tags</h2>
+                    {{#each board.tags}}
+                    <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                        <label>
+                            <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    </li>
+                    {{/each}}
+                </center>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary postButton">Submit</button>
@@ -274,7 +268,7 @@
                 </button>
             </div>
             <div class="modal-body modal-post">
-                <input type="text" id="postMsg" placeholder="Topic">
+                <textarea rows="4" cols="50" id="postMsg" placeholder="Message"></textarea>
                 <br>
                 <br>
             </div>
@@ -282,18 +276,9 @@
                 <input type="text" id="postAuthor" placeholder="Author">
                 <br>
             </div>
-            <center>
-                <h2>Topic</h2>
-                <select>
-                    <center>
-                        {{#each board.tags}}
-                        <option>{{name}}</option>
-                        {{/each}}
-                </select>
-                </center>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary announcementButton">Submit</button>
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary announcementButton">Submit</button>
+            </div>
         </div>
     </div>
 </div>
@@ -340,8 +325,8 @@
                                     <i class="fas fa-trash-alt cardDelete" data-toggle="modal" data-target="#deleteModal" data-linkId="{{id}}"></i>
                                     </button>
                                 </div>
-                                <div class="tagsId">
-                                    <h3 style="float: left">Topics:</h3>
+                                <div class="tagsId tags{{id}}">
+                                    <h3 style="float: left">Tags:</h3>
                                     {{#each Tags}}
                                     <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
                                     {{/each}}
@@ -359,7 +344,30 @@
 
     <!--ANNOUNCEMENTS-->
 
-    <div class="card sidebar col-lg-12 col-md-4 announceBox">
+    <div class="card sidebar">
+        <div class="card-header" style="background:#001945;color:white;">
+            Announcements
+            <i class="fas fa-plus-circle newAnn" data-toggle="modal" data-target="#announcementModal"></i>
+            </button>
+
+
+        </div>
+
+        <div class="card-body" style="overflow-y: scroll;position: absolute;height: 100%; width:95%;">
+            {{#each board.messages}}
+            <p class="card-text" style="padding-bottom:10px;">
+                <i class="fas fa-dot-circle" style="color:#031244;"></i>
+                {{msg}} by
+                <span id="author">{{author}}</span>
+            </p>
+            {{/each}}
+        </div>
+    </div>
+
+    <!--dropdown announcement-->
+
+    <div class="card col-lg-12 col-md-4 dropAnnounce" style="background:#100F4E;color:white;">
+
         <div class="card-header">
             Announcements
         </div>
