@@ -37,9 +37,9 @@ a:hover {
 .tagWrapper {
     position: absolute;
     top: 50%;
-    margin-left: 40%;
-    text-align: center;
-    display: inline-block;
+    /* margin-left: 40%; */
+    /* text-align: center; */
+    display: list-item;
 }
 
 .filterSubmit {
