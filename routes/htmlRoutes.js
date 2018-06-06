@@ -10,7 +10,7 @@ router.get('/boards/:board', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'name', 'ASC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
             
         ],
@@ -44,7 +44,7 @@ router.get('/boards/:board/tags/:tagId', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'name', 'ASC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
             
         ],
