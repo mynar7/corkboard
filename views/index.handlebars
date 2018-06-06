@@ -23,20 +23,29 @@
                 {{/each}}
             </div>
             <div class="tagWrapper">
+                <ul>
+                    <li>
+                        <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
+                            <i class="fas fa-plus-circle"> Add</i>
+                        </button> Add a tag to the list.</li>
+                    <br>
+                    <li>
+                        <button type="button" class="btn filterSubmit">
+                            <i class="fas fa-pencil-alt"> Edit</i>
+                        </button> Edit an existing tag. </li>
+                    <br>
+                    <li>
+                        <button type="button" class="btn filterSubmit" id="tagDelete">
+                            <i class="fas fa-minus-circle"> Delete</i>
+                        </button> Delete an existing tag.</li>
+                    <br>
+                    <li>
+                        <button type="button" class="btn filterSubmit">
+                            <i class="fas fa-search"> Search</i>
+                        </button> Select tag(s) to display bookmarks associated with each tag.</li>
+                    <br>
+                </ul>
 
-                <button type="button" class="btn filterSubmit">
-                    SORT
-                </button>
-                <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
-                    ADD TAG
-                </button>
-                <button type="button" class="btn filterSubmit">
-                    EDIT
-                </button>
-                <button type="button" class="btn filterSubmit" id="tagDelete">
-                    DELETE
-                </button>
-                <br>
             </div>
         </div>
     </div>
