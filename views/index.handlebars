@@ -93,8 +93,15 @@
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item">
                         <ul>
+
+                            <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn">
+                                    <i class="fas fa-tags"></i>
+                                    Tags
+                                </button>
+                            </li>
                             <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                                <button type="button" style="width:155px;" class="btn newLink2" data-toggle="modal" data-target="#postModal">
                                     <i class="fas fa-bookmark"></i>
                                     Bookmarks
                                 </button>
@@ -295,7 +302,7 @@
                 <div class="card-body">
                     <br>
                     <div class="row">
-                        <h5 id="cardTitleLinkNum{{id}}" class="col-lg-8 col-md-6 col-sm-5 title">
+                        <h5 id="cardTitleLinkNum{{id}}" class="col-lg-8 col-md-8 col-sm-8 title">
                             {{title}}
                         </h5>
                         <div class="col-lg-8" id="url">
@@ -326,8 +333,8 @@
                                     </button>
                                 </div>
                                 <div class="tagsId tags{{id}}">
-                                    <h3 style="float: left">Tags:</h3>
-                                    {{#each Tags}}
+                                    {{!--
+                                    <h3 style="float: left">Tags:</h3> --}} {{#each Tags}} |
                                     <a href="/boards/{{../../board.id}}/tags/{{id}}" data-tagId={{id}}>{{name}}</a>
                                     {{/each}}
                                 </div>
@@ -348,7 +355,6 @@
         <div class="card-header" style="background:#001945;color:white;">
             Announcements
             <i class="fas fa-plus-circle newAnn" data-toggle="modal" data-target="#announcementModal"></i>
-            </button>
 
 
         </div>
@@ -370,6 +376,7 @@
 
         <div class="card-header">
             Announcements
+            <i class="fas fa-plus-circle newAnn" data-toggle="modal" data-target="#announcementModal"></i>
         </div>
         <div class="card-body" style="overflow-y: scroll;
 position: absolute;

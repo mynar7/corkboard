@@ -4,25 +4,13 @@ $('document').ready(() => {
     // console.log('ready')
 
     //filter buttons
-    $('#filter').click(() => {
+    $('#filter, .filterBtn').click(() => {
         $('.filterCard').toggle('blind');
         $('#close').show();
         $('#filter').hide();
         $('.dropAnnounce').hide('blind');
     });
 
-    //delete link
-    $('.cardDelete').click((event)=>{
-        let linkId = $(event.target).attr("data-linkId");
-        const boardId = $('#boardName').attr("data-boardId");
-        $.ajax({
-            method: "DELETE",
-            url: `/api/boards/${boardId}/links/${linkId}`,
-            success: function(results){
-                location.reload();
-            }
-        });
-    });
 
     //show/hide announcements
     $('#announce').click(() => {
@@ -30,7 +18,7 @@ $('document').ready(() => {
         $('#announce').hide();
         $('#closeAnn').show();
         $('#close').hide();
-        $('#filter').show();
+        // $('#filter').show();
 
 
     })
@@ -50,9 +38,7 @@ $('document').ready(() => {
 
     //Small add button
     $('.smallAdd').click(() => {
-        $('.filterCard').hide();
         $('#close').hide();
-        $('#filter').show();
         $('.dropAnnounce').hide();
 
     })
@@ -65,12 +51,24 @@ $('document').ready(() => {
     })
 
     //close filter when clicking topMenu buttons
-    $('.newLink').click(() => {
+    $('.newLink, .newLink2').click(() => {
         $('.filterCard').hide('blind');
-        $('#filter').show();
+        // $('#filter').show();
         $('#close').hide();
 
     })
+    //delete link
+    $('.cardDelete').click((event) => {
+        let linkId = $(event.target).attr("data-linkId");
+        const boardId = $('#boardName').attr("data-boardId");
+        $.ajax({
+            method: "DELETE",
+            url: `/api/boards/${boardId}/links/${linkId}`,
+            success: function (results) {
+                location.reload();
+            }
+        });
+    });
 
     //topic submit function
     $('.link').click((e) => {
@@ -104,7 +102,7 @@ $('document').ready(() => {
         }
         let tags = [];
         //loop through checkboxes and push checked box values to array
-        $('.postTags').find('input').each((index, element)=>{
+        $('.postTags').find('input').each((index, element) => {
             if ($(element).is(":checked")) {
                 tags.push($(element).val());
             }
@@ -119,8 +117,8 @@ $('document').ready(() => {
     });
 
     //submit edit card data to DB
-    $('.editButton').click((e)=>{
-        const boardId = $('#boardName').attr("data-boardId");        
+    $('.editButton').click((e) => {
+        const boardId = $('#boardName').attr("data-boardId");
         let linkId = $(e.target).attr('data-linkid');
         let data = {
             title: $('#editTitle').val().trim(),
@@ -131,17 +129,17 @@ $('document').ready(() => {
 
         let tags = [];
         //loop through checkboxes and push checked box values to array
-        $('.editTags').find('input').each((index, element)=>{
+        $('.editTags').find('input').each((index, element) => {
             if ($(element).is(":checked")) {
                 tags.push($(element).val());
             }
         });
-        if(tags.length > 0) {
+        if (tags.length > 0) {
             data.tags = tags;
         } else {
             data.tags = null;
         }
-        
+
         //console.log(linkId, data);
         $.ajax({
             method: "PUT",
@@ -154,32 +152,32 @@ $('document').ready(() => {
     });
 
     //populates edit modal with data
-    $('.cardEdit').click((e)=>{
+    $('.cardEdit').click((e) => {
         //grab card data
         let linkId = $(e.target).attr("data-linkid").trim();
         let title = $('#cardTitleLinkNum' + linkId).text().trim();
         let url = $('#cardUrlLinkNum' + linkId).text().trim();
         let desc = $('#cardDescLinkNum' + linkId).text().trim();
         let imgUrl = $('#cardImgLinkNum' + linkId).attr("src");
-        if(imgUrl) {
+        if (imgUrl) {
             imgUrl = imgUrl.trim();
         }
 
         let currentTags = [];
         //grab current tags off of card
-        $('.tags' + linkId).find('a').each((index, element)=>{            
+        $('.tags' + linkId).find('a').each((index, element) => {
             currentTags.push($(element).attr("data-tagid"));
         });
 
         //loop through checkboxes and check those that are currently tags of card
-        $('.editTags').find('input').each((index, element)=>{
-            if(currentTags.indexOf( $(element).val() ) > -1 ) {
+        $('.editTags').find('input').each((index, element) => {
+            if (currentTags.indexOf($(element).val()) > -1) {
                 $(element).prop("checked", true);
             } else {
-                $(element).prop("checked", false);    
+                $(element).prop("checked", false);
             }
         });
-        
+
         //populate edit modal fields with current card data
         $('#editTitle').val(title);
         $('#editUrl').val(url);

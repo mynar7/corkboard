@@ -92,7 +92,8 @@ a:hover {
     background-color: #0094DD !important;
 }
 
-.newLink {
+.newLink,
+.newLink2 {
     margin-top: 30px;
     margin-left: -35px;
     color: white;
@@ -138,7 +139,8 @@ body {
     margin-top: 150px;
 }
 
-#boardName {
+#boardName,
+#dropAnnounce {
     display: none;
 }
 
@@ -219,6 +221,7 @@ background: rgb(33, 134, 33);
 
 .tagsId {
     color: white;
+    font-size: 15px;
 }
 
 .topics {
@@ -264,16 +267,6 @@ background: rgb(33, 134, 33);
     color: #0094DD;
 }
 
-/* #announce {
-display: block;
-width: 100%;
-height: 100%;
-} */
-
-#dropAnnounce {
-    display: none;
-}
-
 .smallAdd {
     position: absolute;
     margin-top: -10px;
@@ -308,7 +301,10 @@ height: 100%;
     .smallMenu {
         margin-top: 25px;
     }
-    #filterDropdown {
+    #filterDropdown,
+    #filter,
+    .newLink,
+    #boardNameFull {
         display: none;
     }
     .menuRight {
@@ -349,9 +345,6 @@ height: 100%;
         color: white;
         font-size: 15px;
         margin: 0px 90px 0px 0px;
-    }
-    #boardNameFull {
-        display: none;
     }
     .main {
         font-size: 15px;
@@ -412,7 +405,9 @@ height: 100%;
 /* Extra Small Devices, Phones */
 
 @media only screen and (min-width: 480px) {
-    .topMenu {
+    .topMenu,
+    #filterDropdown,
+    #boardNameFull {
         display: none;
     }
     h1,
@@ -426,9 +421,6 @@ height: 100%;
     }
     .smallMenu {
         margin-top: 25px;
-    }
-    #filterDropdown {
-        display: none;
     }
     #close {
         display: none;
@@ -457,9 +449,6 @@ height: 100%;
         font-size: 20px;
         margin-top: 35px;
         margin-left: 200px;
-    }
-    #boardNameFull {
-        display: none;
     }
     .main {
         font-size: 15px;
@@ -574,9 +563,7 @@ height: 100%;
     h5 {
         font-size: 150%;
     }
-    #announce {
-        display: none;
-    }
+    #announce,
     #closeAnn {
         display: none;
     }
@@ -610,6 +597,9 @@ height: 100%;
     }
     #boardNameFull {
         display: none;
+    }
+    .smallAdd {
+        display: block;
     }
     .main {
         font-size: 15px;
@@ -674,15 +664,13 @@ height: 100%;
     h5 {
         font-size: 200%;
     }
+    .newLink {
+        display: block;
+    }
     .title {
         font-size: 20px;
     }
-    #announce {
-        display: none;
-    }
-    #closeAnn {
-        display: none;
-    }
+    #announce,
     #closeAnn {
         display: none;
     }
@@ -694,6 +682,7 @@ height: 100%;
         font-size: 35px;
     }
     #filter {
+        display: block;
         position: absolute;
         margin-top: -5px;
         right: 200px;
@@ -790,6 +779,7 @@ height: 100%;
         font-size: 35px;
     }
     #filter {
+        display: block;
         position: absolute;
         margin-top: -5px;
         right: 200px;
