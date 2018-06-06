@@ -199,7 +199,7 @@
                 <i class="fas fa-pencil-alt">
                     <h2 class="modal-title" id="editModalLabel">Edit Bookmark</h2>
                 </i>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" data-target=".bd-example-modal-lg" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -217,12 +217,16 @@
                 <br>
                 <br>
                 <center class="editTags">
-                    {{#each board.tags}}
-                    <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                        <label>
-                            <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
-                    </li>
-                    {{/each}}
+                    <h4>Select Tags: </h4>
+                    <br>
+                    <div class="row filterButtons" style="padding-left: 20px">
+                        {{#each board.tags}}
+                        <li style="list-style-type: none; padding-right: 20px; font-size: 15px;">
+                            <label>
+                                <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                        </li>
+                        {{/each}}
+                    </div>
                 </center>
             </div>
             <div class="modal-footer">
@@ -257,13 +261,16 @@
                 <br>
                 <br>
                 <center class="postTags">
-                    <h2>Tags</h2>
-                    {{#each board.tags}}
-                    <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                        <label>
-                            <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
-                    </li>
-                    {{/each}}
+                    <h4>Select Tags: </h4>
+                    <br>
+                    <div class="row filterButtons" style="padding-left: 20px">
+                        {{#each board.tags}}
+                        <li style="list-style-type: none; padding-right: 20px; font-size: 15px;">
+                            <label>
+                                <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                        </li>
+                        {{/each}}
+                    </div>
                 </center>
             </div>
             <div class="modal-footer">
