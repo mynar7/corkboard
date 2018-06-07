@@ -372,8 +372,7 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 70%;
-        /*height: 200px; */
+        width: 50%;
         margin-top: 20px;
         height: 50%;
     }
@@ -477,7 +476,6 @@ background: rgb(33, 134, 33);
     }
     .cardImg {
         width: 50%;
-        /*height: 200px; */
         margin-top: 20px;
         height: 50%;
     }
@@ -526,8 +524,8 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 75%;
-        /*height: 200px; */
+        width: 50%;
+        max-height: 70%;
         margin-top: 20px;
         height: 50%;
     }
@@ -624,7 +622,6 @@ background: rgb(33, 134, 33);
     }
     .cardImg {
         width: 75%;
-        height: auto;
         margin-top: 20px;
         /* height: 50%; */
         /*height: 200px; */
