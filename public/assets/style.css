@@ -32,6 +32,7 @@ a:hover {
 
 #filterButtons {
     font-size: 12px;
+    overflow: hidden;
 }
 
 .tagWrapper {
@@ -39,8 +40,8 @@ a:hover {
     margin-bottom: 15px;
     /* margin-left: 40%; */
     /* text-align: center; */
-    display: block;
-    overflow: auto;
+    display: none;
+    overflow: hidden;
 }
 
 .filterSubmit {
@@ -91,6 +92,7 @@ a:hover {
 .btn,
 .newLink {
     background-color: #0094DD !important;
+    margin: 5px;
 }
 
 .newLink,
@@ -345,7 +347,7 @@ background: rgb(33, 134, 33);
     }
     .filterCard {
         position: fixed;
-        display: block;
+        display: none;
         overflow: auto;
         z-index: 1;
         margin-top: 130px;
