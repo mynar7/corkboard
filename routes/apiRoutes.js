@@ -220,7 +220,7 @@ router.get('/boards/:boardId', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'name', 'ASC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
             
         ],
@@ -254,7 +254,7 @@ router.get('/boards/:boardId/tags/:tagId', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'name', 'ASC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']
         ],
         include: [
@@ -290,7 +290,7 @@ router.post('/boards/:boardId/tags', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
+            [{model: db.Tag, as: "tags"},'name', 'ASC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']
         ],
         include: [

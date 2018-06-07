@@ -14,7 +14,7 @@
                     <h2>
 
             </center>
-            <div class="row col-lg-12 col-md-4 col-sm-4 filterButtons">
+            <div class="row col-lg-12 col-md-12 col-sm-12 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
                     <label>
@@ -30,7 +30,7 @@
                         </button> Add a tag to the list.</li>
                     <br>
                     <li>
-                        <button type="button" class="btn filterSubmit">
+                        <button type="button" class="btn filterSubmit" id="tagEdit">
                             <i class="fas fa-pencil-alt"> Edit</i>
                         </button> Edit an existing tag. </li>
                     <br>
@@ -40,7 +40,7 @@
                         </button> Delete an existing tag.</li>
                     <br>
                     <li>
-                        <button type="button" class="btn filterSubmit">
+                        <button type="button" class="btn filterSubmit" id="tagSearch">
                             <i class="fas fa-search"> Search</i>
                         </button> Select tag(s) to display bookmarks associated with each tag.</li>
                     <br>
@@ -57,7 +57,7 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <ul class="navbar-nav mr-auto">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/boards/{{board.id}}">
             <img id="logo" src="/assets/images/cork.png" alt="corkboard">
         </a>
     </ul>
@@ -185,6 +185,28 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary link">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for edit topic -->
+<div class="modal fade" id="editTopicModal" tabindex="-1" role="dialog" aria-labelledby="topicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="editTopicModalLabel">Edit Tag:</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body modal-post">
+                <input type="text" id="editTagModalName">
+                <br>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary link" id="editTagSubmit">Submit</button>
             </div>
         </div>
     </div>

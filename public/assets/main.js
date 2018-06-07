@@ -1,8 +1,6 @@
-let urlField;
-
 $('document').ready(() => {
     // console.log('ready')
-
+    let urlField;
     //filter buttons
     $('#filter, .filterBtn').click(() => {
         $('.filterCard').toggle('blind');
@@ -19,7 +17,6 @@ $('document').ready(() => {
         $('#closeAnn').show();
         $('#close').hide();
         // $('#filter').show();
-
 
     })
 
@@ -221,6 +218,7 @@ $('document').ready(() => {
         });
     });
 
+    //this fx scrapes meta data when url info is entered into the add bookmark url field
     $('#postUrl').change(function (event) {
         let urlInput = event.target.value;
         if (!urlInput.startsWith('http')) {
@@ -240,5 +238,98 @@ $('document').ready(() => {
                 $('#postImgUrl').val(data.image);
             });
         }
+    });
+
+    //this function searches by multiple tags
+    $('#tagSearch').click(()=>{
+        const boardId = $('#boardName').attr("data-boardId")        
+        let checkedTags = [];
+        $('.filterButtons').find('input').each((index, element)=>{
+            if($(element).is(':checked')) {
+                let tagId = $(element).val();
+                checkedTags.push(tagId);
+            }
+        });
+        let data = {
+            tags: checkedTags
+        };
+        $.post(`/boards/${boardId}/tags`, data, function(results){
+            //console.log(results);
+            if($.isEmptyObject(results)) {
+                $("#editTopicModalLabel").text("Please Select Tags to include in Search");
+                $("#editTagSubmit").hide();
+                $("#editTagModalName").hide();
+                $('#editTopicModal').modal();
+            } else {
+                $('body').html(results);
+            }
+        });
+    });
+
+    $('#tagDelete').click(()=>{
+        const boardId = $('#boardName').attr("data-boardId")        
+        let checkedTags = [];
+        let tagId;
+        $('.filterButtons').find('input').each((index, element)=>{
+            if($(element).is(':checked')) {
+                tagId = $(element).val();
+                checkedTags.push(tagId);
+            }
+        });
+        if(checkedTags.length === 1) {
+            $.ajax({
+                method: "DELETE",
+                url: `/api/boards/${boardId}/tags/${tagId}`,
+                success: function (results) {
+                    location.reload();
+                }
+            });
+        } else {
+            $("#editTopicModalLabel").text("Please Select One Tag to Delete");
+            $("#editTagSubmit").hide();
+            $("#editTagModalName").hide();
+            $('#editTopicModal').modal();
+        }
+    });
+
+    //populate and validate edit tag modal
+    $('#tagEdit').click(()=>{
+        let checkedTags = 0;
+        let tagName;
+        let tagId;
+        $('.filterButtons').find('input').each((index, element)=>{
+            if($(element).is(':checked')) {
+                tagName = $(element).closest('label').text();
+                tagId = $(element).val();
+                checkedTags++;
+            }
+        });
+        if(checkedTags !== 1) {
+            $("#editTopicModalLabel").text("Please Select One Tag to Edit");
+            $("#editTagSubmit").hide();
+            $("#editTagModalName").hide();
+            $('#editTopicModal').modal();
+        } else {
+            $("#editTopicModalLabel").text("Edit Tag Name:");
+            $("#editTagSubmit").attr("data-tagId", tagId).show();
+            $("#editTagModalName").val(tagName.trim()).show();
+            $('#editTopicModal').modal();
+        }
+    });
+
+    //send tag edit to server
+    $("#editTagSubmit").click((e)=> {
+        const boardId = $('#boardName').attr("data-boardId");
+        let tagId = $(e.target).attr("data-tagId");
+        let newTagName = $("#editTagModalName").val();
+        let data = {name: newTagName};
+        $.ajax({
+            method: "PUT",
+            url: `/api/boards/${boardId}/tags/${tagId}`,
+            data: data,
+            success: (results) => {
+                location.reload();
+            }
+        })
     });
 }) //end document.ready
