@@ -118,7 +118,7 @@ router.post('/boards/:boardId/tags', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/front/index.html"));
+    res.sendFile(path.join(__dirname, "../public/front2/parallax.html"));
 });
 
 router.get('/boards/:board/*', function(req, res) {
