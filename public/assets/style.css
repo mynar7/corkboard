@@ -165,8 +165,18 @@ body {
     /* background: #6985b6; */
     /* opacity: .8; */
     color: black;
+    overflow: auto;
 }
 
+.annoucementCard-body {
+    height: initial;
+    background: white;
+    padding-left: 10px;
+    /* background: #6985b6; */
+    /* opacity: .8; */
+    color: black;
+    overflow: auto;
+}
 h5 {
     position: absolute;
     top: -25px;
