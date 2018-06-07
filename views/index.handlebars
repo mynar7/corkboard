@@ -14,7 +14,7 @@
                     <h2>
 
             </center>
-            <div class="row col-lg-12 col-md-12 col-sm-12 filterButtons">
+            <div class="card-body row col-lg-12 col-md-12 col-sm-12 filterButtons">
                 {{#each board.tags}}
                 <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
                     <label>
@@ -27,25 +27,20 @@
                     <li>
                         <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
                             <i class="fas fa-plus-circle"> Add</i>
-                        </button> Add a tag to the list.</li>
-                    <br>
-                    <li>
+                        </button> Add a tag to the list.</li><br>
+                        <li>
                         <button type="button" class="btn filterSubmit" id="tagEdit">
                             <i class="fas fa-pencil-alt"> Edit</i>
-                        </button> Edit an existing tag. </li>
-                    <br>
-                    <li>
+                        </button> Edit an existing tag.</li><br>
+                        <li>
                         <button type="button" class="btn filterSubmit" id="tagDelete">
                             <i class="fas fa-minus-circle"> Delete</i>
-                        </button> Delete an existing tag.</li>
-                    <br>
-                    <li>
+                        </button> Delete an existing tag.</li><br>
+                        <li>
                         <button type="button" class="btn filterSubmit" id="tagSearch">
                             <i class="fas fa-search"> Search</i>
-                        </button> Select tag(s) to display bookmarks associated with each tag.</li>
-                    <br>
+                        </button> Select tag(s) to display bookmarks associated with each tag.</li><br>
                 </ul>
-
             </div>
         </div>
     </div>
