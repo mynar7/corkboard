@@ -6,54 +6,57 @@ $('document').ready(() => {
         $('.filterCard').toggle('blind');
         $('#close').show();
         $('#filter').hide();
-        $('.dropAnnounce').hide('blind');
+        $('#dropAnnounce').hide('blind');
     });
 
 
     //show/hide announcements
     $('#announce').click(() => {
-        $('.dropAnnounce').show('blind');
-        $('#announce').hide();
-        $('#closeAnn').show();
-        $('#close').hide();
+        $('#dropAnnounce').show('blind');
+        $('.onPlusClose').show();
+        $('#closeAnn').toggle();
+        $('#announce, #close, .filterCard').hide();
         // $('#filter').show();
 
-    })
+    });
 
     $('#closeAnn').click(() => {
-        $('.dropAnnounce').hide('blind');
+        $('#dropAnnounce').hide('blind');
         $('#announce').show();
         $('#closeAnn').hide();
 
-    })
+    });
 
     //Small menu button
     $('.smallMenu').click(() => {
-        $('.filterCard').hide();
-        $('.dropAnnounce').hide();
-    })
+        $('#dropAnnounce, .filterCard, #closeAnn').hide();
+        $('#announce').show();
+    });
 
     //Small add button
     $('.smallAdd').click(() => {
-        $('#close').hide();
-        $('.dropAnnounce').hide();
+        $('#closeAnn, #close, #dropAnnounce, .onPlusClose').hide();
+        $('#announce').show();
 
-    })
-
+    });
     //X for close
     $('#close').click(() => {
         $('.filterCard').hide('blind');
         $('#filter').show();
         $('#close').hide();
-    })
+    });
 
     //close filter when clicking topMenu buttons
     $('.newLink, .newLink2').click(() => {
         $('.filterCard').hide('blind');
-        // $('#filter').show();
+        $('#filter').show();
         $('#close').hide();
 
-    })
+    });
+
+    $('.newLink2').click(() => {
+        $('#filter').hide();
+    });
     //delete link
     $('.cardDelete').click((event) => {
         let linkId = $(event.target).attr("data-linkId");
@@ -241,11 +244,11 @@ $('document').ready(() => {
     });
 
     //this function searches by multiple tags
-    $('#tagSearch').click(()=>{
-        const boardId = $('#boardName').attr("data-boardId")        
+    $('#tagSearch').click(() => {
+        const boardId = $('#boardName').attr("data-boardId")
         let checkedTags = [];
-        $('.filterButtons').find('input').each((index, element)=>{
-            if($(element).is(':checked')) {
+        $('.filterButtons').find('input').each((index, element) => {
+            if ($(element).is(':checked')) {
                 let tagId = $(element).val();
                 checkedTags.push(tagId);
             }
@@ -253,9 +256,9 @@ $('document').ready(() => {
         let data = {
             tags: checkedTags
         };
-        $.post(`/boards/${boardId}/tags`, data, function(results){
+        $.post(`/boards/${boardId}/tags`, data, function (results) {
             //console.log(results);
-            if($.isEmptyObject(results)) {
+            if ($.isEmptyObject(results)) {
                 $("#editTopicModalLabel").text("Please Select Tags to include in Search");
                 $("#editTagSubmit").hide();
                 $("#editTagModalName").hide();
@@ -266,17 +269,17 @@ $('document').ready(() => {
         });
     });
 
-    $('#tagDelete').click(()=>{
-        const boardId = $('#boardName').attr("data-boardId")        
+    $('#tagDelete').click(() => {
+        const boardId = $('#boardName').attr("data-boardId")
         let checkedTags = [];
         let tagId;
-        $('.filterButtons').find('input').each((index, element)=>{
-            if($(element).is(':checked')) {
+        $('.filterButtons').find('input').each((index, element) => {
+            if ($(element).is(':checked')) {
                 tagId = $(element).val();
                 checkedTags.push(tagId);
             }
         });
-        if(checkedTags.length === 1) {
+        if (checkedTags.length === 1) {
             $.ajax({
                 method: "DELETE",
                 url: `/api/boards/${boardId}/tags/${tagId}`,
@@ -293,18 +296,18 @@ $('document').ready(() => {
     });
 
     //populate and validate edit tag modal
-    $('#tagEdit').click(()=>{
+    $('#tagEdit').click(() => {
         let checkedTags = 0;
         let tagName;
         let tagId;
-        $('.filterButtons').find('input').each((index, element)=>{
-            if($(element).is(':checked')) {
+        $('.filterButtons').find('input').each((index, element) => {
+            if ($(element).is(':checked')) {
                 tagName = $(element).closest('label').text();
                 tagId = $(element).val();
                 checkedTags++;
             }
         });
-        if(checkedTags !== 1) {
+        if (checkedTags !== 1) {
             $("#editTopicModalLabel").text("Please Select One Tag to Edit");
             $("#editTagSubmit").hide();
             $("#editTagModalName").hide();
@@ -318,11 +321,13 @@ $('document').ready(() => {
     });
 
     //send tag edit to server
-    $("#editTagSubmit").click((e)=> {
+    $("#editTagSubmit").click((e) => {
         const boardId = $('#boardName').attr("data-boardId");
         let tagId = $(e.target).attr("data-tagId");
         let newTagName = $("#editTagModalName").val();
-        let data = {name: newTagName};
+        let data = {
+            name: newTagName
+        };
         $.ajax({
             method: "PUT",
             url: `/api/boards/${boardId}/tags/${tagId}`,
