@@ -97,7 +97,7 @@ a:hover {
 
 .newLink,
 .newLink2 {
-    margin-top: 30px;
+    margin-top: 35px;
     margin-left: -35px;
     color: white;
     background: #0B1950;
@@ -180,6 +180,7 @@ body {
     color: black;
     overflow: auto;
 }
+
 h5 {
     position: absolute;
     top: -25px;
@@ -187,10 +188,6 @@ h5 {
 
 .title {
     font-size: 20px;
-}
-
-.card-header {
-    height: 50px;
 }
 
 .bottomsec {
@@ -235,6 +232,7 @@ background: rgb(33, 134, 33);
 .tagsId {
     color: white;
     font-size: 15px;
+    width: 80%;
 }
 
 .topics {
@@ -320,6 +318,9 @@ background: rgb(33, 134, 33);
     #boardNameFull {
         display: none;
     }
+    .dropdown-menu {
+        margin-top: -5px;
+    }
     .menuRight {
         margin-top: 45px;
     }
@@ -350,7 +351,7 @@ background: rgb(33, 134, 33);
         display: none;
         overflow: auto;
         z-index: 1;
-        margin-top: 130px;
+        margin-top: 120px;
         margin-left: 25px;
         height: 100%
     }
@@ -397,7 +398,7 @@ background: rgb(33, 134, 33);
     .sidebar p {
         color: black;
     }
-    .dropAnnounce {
+    #dropAnnounce {
         position: fixed;
         display: none;
         width: 400px;
@@ -438,7 +439,7 @@ background: rgb(33, 134, 33);
     #close {
         display: none;
         position: absolute;
-        margin-top: -15px;
+        margin-top: -10px;
         right: 230px;
         font-size: 35px;
     }
@@ -450,9 +451,9 @@ background: rgb(33, 134, 33);
         color: white;
     }
     .filterCard {
-        margin: 80px 0px 0px 20px;
-        height: 50%;
+        margin: 120px 0px 0px 20px;
         height: 100%;
+        width: 100%;
     }
     #boardName {
         position: absolute;
@@ -477,6 +478,7 @@ background: rgb(33, 134, 33);
         top: 45px;
         right: 0;
         text-align: center;
+        height: 350px;
     }
     .cardImg {
         width: 50%;
@@ -496,7 +498,7 @@ background: rgb(33, 134, 33);
         margin-right: -20px;
         margin-top: -24px;
     }
-    .dropAnnounce {
+    #dropAnnounce {
         position: fixed;
         display: none;
         width: 400px;
@@ -528,7 +530,7 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 50%;
+        width: 100%;
         max-height: 70%;
         margin-top: 20px;
         height: 50%;
@@ -542,7 +544,7 @@ background: rgb(33, 134, 33);
         margin-top: 35px;
         margin-left: 220px;
     }
-    .dropAnnounce {
+    #dropAnnounce {
         position: fixed;
         display: none;
         width: 400px;
@@ -582,7 +584,7 @@ background: rgb(33, 134, 33);
     #close {
         display: none;
         position: absolute;
-        margin-top: -15px;
+        margin-top: -10px;
         right: 230px;
         font-size: 35px;
     }
@@ -594,7 +596,7 @@ background: rgb(33, 134, 33);
         color: white;
     }
     .filterCard {
-        margin: 80px 0px 0px 20px;
+        margin: 120px 0px 0px 20px;
         height: 100%;
         overflow: auto;
     }
@@ -625,8 +627,8 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 75%;
-        margin-top: 20px;
+        width: 100%;
+        /* margin-top: 20px; */
         /* height: 50%; */
         /*height: 200px; */
     }
@@ -688,7 +690,7 @@ background: rgb(33, 134, 33);
     #close {
         display: none;
         position: absolute;
-        margin-top: -15px;
+        margin-top: -10px;
         right: 230px;
         font-size: 35px;
     }
@@ -704,7 +706,6 @@ background: rgb(33, 134, 33);
         margin: 80px 0px 0px 20px;
         height: 100%;
         overflow: auto;
-
     }
     .filterButton {
         font-size: 15px;
@@ -730,7 +731,7 @@ background: rgb(33, 134, 33);
         display: block;
     }
     .imagewrap {
-        margin-top: 10px;
+        margin-top: -30px;
         position: absolute;
         right: 0;
     }
@@ -787,7 +788,7 @@ background: rgb(33, 134, 33);
     #close {
         display: none;
         position: absolute;
-        margin-top: -15px;
+        margin-top: -10px;
         right: 230px;
         font-size: 35px;
     }
@@ -830,6 +831,8 @@ background: rgb(33, 134, 33);
         position: absolute;
         right: 0;
         margin-top: -30px;
+        height: 380px;
+        width: 20%;
     }
     .timestamp {
         white-space: nowrap;
