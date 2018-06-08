@@ -27,7 +27,7 @@ html {
 .pimg2,
 .pimg3 {
   position: relative;
-  opacity: 0.70;
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -86,7 +86,7 @@ html {
 }
 
 .ptext .border.trans {
-  background-color: transparent;
+  background-color: #0c95dac2;
 }
 
 @media(max-width:568px) {
@@ -94,5 +94,11 @@ html {
   .pimg2,
   .pimg3 {
     background-attachment: scroll;
+  }
+  span {
+    font-size: 0.75em
+  }
+  .section {
+    padding: 50px 40px;
   }
 }
