@@ -180,6 +180,7 @@ body {
     color: black;
     overflow: auto;
 }
+
 h5 {
     position: absolute;
     top: -25px;
@@ -477,6 +478,7 @@ background: rgb(33, 134, 33);
         top: 45px;
         right: 0;
         text-align: center;
+        height: 350px;
     }
     .cardImg {
         width: 50%;
@@ -528,7 +530,7 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 50%;
+        width: 100%;
         max-height: 70%;
         margin-top: 20px;
         height: 50%;
@@ -625,8 +627,8 @@ background: rgb(33, 134, 33);
         text-align: center;
     }
     .cardImg {
-        width: 75%;
-        margin-top: 20px;
+        width: 100%;
+        /* margin-top: 20px; */
         /* height: 50%; */
         /*height: 200px; */
     }
@@ -704,7 +706,6 @@ background: rgb(33, 134, 33);
         margin: 80px 0px 0px 20px;
         height: 100%;
         overflow: auto;
-
     }
     .filterButton {
         font-size: 15px;
@@ -730,7 +731,7 @@ background: rgb(33, 134, 33);
         display: block;
     }
     .imagewrap {
-        margin-top: 10px;
+        margin-top: -30px;
         position: absolute;
         right: 0;
     }
@@ -830,6 +831,8 @@ background: rgb(33, 134, 33);
         position: absolute;
         right: 0;
         margin-top: -30px;
+        height: 380px;
+        width: 30%;
     }
     .timestamp {
         white-space: nowrap;
