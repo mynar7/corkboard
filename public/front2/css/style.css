@@ -9,6 +9,11 @@ html {
   color: #666;
 }
 
+#createBoard {
+  padding: 11px 50px;
+  font-size: 15px;
+}
+
 .border {
   border: 1px solid #ddddd3 !important
 }
