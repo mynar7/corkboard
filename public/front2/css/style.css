@@ -23,17 +23,17 @@ body, html{
 }
 
 .pimg1{
-  background-image:url('../img/image5.jpg');
+  background-image:url('../img/image.jpeg');
   min-height:100%;
 }
 
 .pimg2{
-  background-image:url('../img/image7.jpg');
+  background-image:url('../img/image2.jpeg');
   min-height:400px;
 }
 
 .pimg3{
-  background-image:url('../img/image.jpg');
+  background-image:url('../img/image3.jpg');
   min-height:400px;
 }
 
