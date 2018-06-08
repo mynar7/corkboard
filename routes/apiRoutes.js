@@ -95,19 +95,15 @@ router.put('/boards/:boardId/links/:linkId', function(req, res) {
         //tags should be an array of id numbers
         //if null is passed in, all associations will be removed,
         //therefore all tags are removed
-        if(true) {
-            db.Link.findOne({
-                where: {
-                    id : req.params.linkId
-                }
-            }).then(result => 
-                result.setTags(req.body.tags)
-                .then(tagResult => res.json([result, tagResult]))
-                .catch(err => res.json(err))
-            ).catch(err => res.json(err));
-        } else {
-            res.json(results);
-        }
+        db.Link.findOne({
+            where: {
+                id : req.params.linkId
+            }
+        }).then(result => 
+            result.setTags(req.body.tags)
+            .then(tagResult => res.json([result, tagResult]))
+            .catch(err => res.json(err))
+        ).catch(err => res.json(err));
     }).catch(err => res.json(err));
 });
 
@@ -220,7 +216,7 @@ router.get('/boards/:boardId', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'name', 'ASC'],
+            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']            
             
         ],
@@ -254,7 +250,7 @@ router.get('/boards/:boardId/tags/:tagId', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'name', 'ASC'],
+            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']
         ],
         include: [
@@ -290,7 +286,7 @@ router.post('/boards/:boardId/tags', function(req, res) {
         },
         order: [
             [{model: db.Link, as: "links"},'updatedAt', 'DESC'],
-            [{model: db.Tag, as: "tags"},'name', 'ASC'],
+            [{model: db.Tag, as: "tags"},'updatedAt', 'DESC'],
             [{model: db.Message, as: "messages"},'updatedAt', 'DESC']
         ],
         include: [
