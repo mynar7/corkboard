@@ -17,10 +17,10 @@ $('document').ready(() => {
             }
             $.post("/api/boards/new", data, function (data) {
                 if(data.errors) return console.log(data);
-                $('#modalInvite').html(`Your Board URL is: <a href="${location.href}boards/${data.id}">
-                ${location.href}boards/${data.id}</a>`);
+                $('#modalInvite').html(`<a href="${location.href}boards/${data.id}">
+                Click Here For Your Board URL</a>`);
                 boardUrl = $('#modalInvite').html();
-                actualUrl = $("#modalInvite a").html();
+                actualUrl = $("#modalInvite a").attr("href");
                 $('#modalInvite').attr("data-boardName", data.name);
                 //code for emailing an invite
                 let mailData = {

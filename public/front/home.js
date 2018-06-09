@@ -17,8 +17,8 @@ $('document').ready(() => {
             }
             $.post("/api/boards/new", data, function (data) {
                 if(data.errors) return console.log(data);
-                $('#modalInvite').html(`Your Board URL is: <a href="${location.href}boards/${data.id}">
-                ${location.href}boards/${data.id}</a>`);
+                $('#modalInvite').html(`<a href="${location.href}boards/${data.id}">
+                Click Here For Your Board URL</a>`);
                 boardUrl = $('#modalInvite').html();
                 actualUrl = $("#modalInvite a").html();
                 $('#modalInvite').attr("data-boardName", data.name);
@@ -89,6 +89,8 @@ $('document').ready(() => {
             $.post("/api/mail", mailData, function(data2) {
                 $('#modalInvite').html(modalUrlMsg + "<p>Your invite message has been sent!</p>"
                 + "<p>Taking you to your board page in 5 seconds...</p>");
+                $('#inviteEmails').hide();
+                $('#inviteEmailMsg').hide();
                 setTimeout(()=> location.href = aTag, 5000);
             });
 
