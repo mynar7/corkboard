@@ -208,7 +208,7 @@ router.delete('/boards/:boardId/msgs/:msgId', function(req, res) {
     }).then(results => res.json(results))
     .catch(err => res.json(err));
 });
-
+/*
 router.get('/boards/:boardId', function(req, res) {
     db.Board.findOne({
         where: {
@@ -279,6 +279,7 @@ router.get('/boards/:boardId/tags/:tagId', function(req, res) {
     .catch(err => res.json(err));
 });
 
+
 router.post('/boards/:boardId/tags', function(req, res) {
     db.Board.findOne({
         where: {
@@ -318,6 +319,147 @@ router.post('/boards/:boardId/tags', function(req, res) {
         ]
     }).then(results => res.json(results))//res.redirect(`/boards/${req.params.boardId}`))
     .catch(err => res.json(err));
+});
+*/
+router.get('/boards/:board', function(req, res) {
+    db.Board.findOne({
+        where: {
+            id: req.params.board
+        }
+    }).then(result1 =>{
+        db.Link.findAll({
+            where: {
+                BoardId: req.params.board
+            },
+            order: [['updatedAt', 'DESC']],
+            include: [{model: db.Tag}]
+        }).then(result2 =>{
+            db.Tag.findAll({
+                where: {
+                    BoardId: req.params.board
+                },
+            order: [['name', 'ASC']]                
+            }).then(result3 => {
+                db.Message.findAll({
+                    where: {
+                        BoardId: req.params.board
+                    },
+                    order: [['updatedAt', 'DESC']]               
+                }).then(result4 => {
+                    let obj = {
+                        board: {
+                            name: result1.name,
+                            id: result1.id,
+                            links: result2,
+                            tags: result3,
+                            messages: result4
+                        }
+                    }
+                    res.json(obj);                    
+                }).catch(err=>res.json(err))
+            }).catch(err=>res.json(err))
+        }).catch(err=>res.json(err))
+    }).catch(err=>res.json(err))
+});
+
+router.get('/boards/:board/tags/:tagId', function(req, res) {
+    db.Board.findOne({
+        where: {
+            id: req.params.board
+        }
+    }).then(result1 =>{
+        db.Link.findAll({
+            where: {
+                BoardId: req.params.board
+            },
+            order: [['updatedAt', 'DESC']],
+            include: [{
+                model: db.Tag,
+                where: {
+                    id: req.params.tagId
+                }
+            }]
+        }).then(result2 =>{
+            db.Tag.findAll({
+                where: {
+                    BoardId: req.params.board
+                },
+            order: [['name', 'ASC']]                
+            }).then(result3 => {
+                db.Message.findAll({
+                    where: {
+                        BoardId: req.params.board
+                    },
+                    order: [['updatedAt', 'DESC']]               
+                }).then(result4 => {
+                    let obj = {
+                        board: {
+                            name: result1.name,
+                            id: result1.id,
+                            links: result2,
+                            tags: result3,
+                            messages: result4
+                        }
+                    }
+                    res.json(obj);                    
+                }).catch(err=>res.json(err))
+            }).catch(err=>res.json(err))
+        }).catch(err=>res.json(err))
+    }).catch(err=>res.json(err))
+});
+
+router.post('/boards/:boardId/tags', function(req, res) {
+    db.Board.findOne({
+        where: {
+            id: req.params.boardId
+        }
+    }).then(result1 =>{
+        db.Link.findAll({
+            where: {
+                BoardId: req.params.boardId
+            },
+            order: [['updatedAt', 'DESC']],
+            include: {
+                model: db.Tag,
+                as: 'Tags',
+                attributes: ['id', 'name'],
+                through: {
+                    where: {
+                        TagId: {
+                            [db.Sequelize.Op.in]: req.body.tags
+                        }
+                    }
+                },
+                required: true
+            }
+        }).then(result2 =>{
+            db.Tag.findAll({
+                where: {
+                    BoardId: req.params.boardId
+                },
+            order: [['name', 'ASC']]                
+            }).then(result3 => {
+                db.Message.findAll({
+                    where: {
+                        BoardId: req.params.boardId
+                    },
+                    order: [['updatedAt', 'DESC']]               
+                }).then(result4 => {
+                    let obj = {
+                        board: {
+                            name: result1.name,
+                            id: result1.id,
+                            links: result2,
+                            tags: result3,
+                            messages: result4
+                        }
+                    }
+                    
+                    res.json(obj);
+                }).catch(err=>res.json(err))
+            }).catch(err=>res.json(err))
+        }).catch(err=>res.json(err))
+    }).catch(err=>res.json(err))
 });
 
 module.exports = router;
