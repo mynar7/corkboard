@@ -69,7 +69,7 @@ router.get('/boards/:board', function(req, res) {
                         }
                     }
                     
-                    res.json(obj);
+                    res.render('index', obj);
                 }).catch(err=>res.json(err))
             }).catch(err=>res.json(err))
         }).catch(err=>res.json(err))
