@@ -2,7 +2,7 @@ const router = require('express').Router();
 const db = require("../models/index.js");
 const path = require("path");
 
-
+/*
 router.get('/boards/:board', function(req, res) {
     db.Board.findOne({
         where: {
@@ -35,6 +35,45 @@ router.get('/boards/:board', function(req, res) {
         ]
     }).then(results => res.render('index', {board: results}))
     .catch(err => res.json(err));
+});
+*/
+router.get('/boards/:board', function(req, res) {
+    db.Board.findOne({
+        where: {
+            id: req.params.board
+        }
+    }).then(result1 =>{
+        db.Link.findAll({
+            where: {
+                BoardId: req.params.board
+            },
+            include: [{model: db.Tag}]
+        }).then(result2 =>{
+            db.Tag.findAll({
+                where: {
+                    BoardId: req.params.board
+                }
+            }).then(result3 => {
+                db.Message.findAll({
+                    where: {
+                        BoardId: req.params.board
+                    }
+                }).then(result4 => {
+                    let obj = {
+                        board: {
+                            name: result1.name,
+                            id: result1.id,
+                            links: result2,
+                            tags: result3,
+                            messages: result4
+                        }
+                    }
+                    
+                    res.json(obj);
+                }).catch(err=>res.json(err))
+            }).catch(err=>res.json(err))
+        }).catch(err=>res.json(err))
+    }).catch(err=>res.json(err))
 });
 
 router.get('/boards/:board/tags/:tagId', function(req, res) {
