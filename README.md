@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/front2/img/corksmall.JPG" width="256" title="Cork Board Logo">
+  <img src="./public/front2/img/corksmall.JPG" width="1000" title="Cork Board Logo">
 </p>
 
 
