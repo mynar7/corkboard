@@ -45,19 +45,28 @@ After board creation, Cork Board asks for users to invite by email, then after e
 
 ## <a name="Installation"></a>How to Install </center>
 
-The following are instructions for downloading this git repository in order to duplicate this site application.  
+The following are instructions for downloading this GitHub repository in order to duplicate this site application.  
 
 1. First clone this GitHub repository to your local folder. 
 
 <img src="./public/assets/images/githubclone.JPG" style="width: 50%"> 
 
-2. After cloning this github reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="width: 5%">  dependency package files.  
+2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="width: 5%">  dependency package files.  
 
 
 #### Implemented <img src="./public/assets/images/npm.png" style="width: 5%"> Packages
 
 * Body-Paser
 * Metatag-Crawler
+
+* [NodeJS](./public/assets/images/nodejs.png)
+* [Nodemailer](./public/assets/images/nodemailer.png)
+* [Sequelize](./public/assets/images/sequelize.png)
+* [Dotenv](./public/assets/images/dotenv.png)
+* [Express](./public/assets/images/express.png)
+* [Express Handlebars](./public/assets/images/handlebars.png)
+* [MySQL2](./public/assets/images/mysql2.svg)
+
 * <img src="./public/assets/images/nodejs.png" style="width:7%">
 * <img src="./public/assets/images/nodemailer.png" style="width: 7%">
 * <img src="./public/assets/images/sequelize.png" style="width: 7%">
