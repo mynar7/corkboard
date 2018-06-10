@@ -6,10 +6,8 @@
 
 <center>
 
-[Create a New Board](https://corkboard2018.herokuapp.com)
+[Create a New Board](https://corkboard2018.herokuapp.com) | [Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)</center>
 
-[Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)
-</center>
 
 # Table of Contents: 
 
