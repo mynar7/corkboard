@@ -82,7 +82,7 @@ The following are instructions for downloading this GitHub repository in order t
 
 > Create a .env file and post the code below to store the e-mail and password settings for sending e-mail.
 
-<img src="./public/assets/images/env.jpg" width="400" title="DotEnv Content">
+<img src="./public/assets/images/env.jpg" width="600" title="DotEnv Content">
 
 
 <center>
