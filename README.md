@@ -75,7 +75,7 @@ The following are instructions for downloading this GitHub repository in order t
 
 > Create the .gitnore file and post the following code:
 
-<img src="./public/assets/images/gitignore.png" width="800" title=".gitignore Code">
+<img src="./public/assets/images/gitignore.png" width="600" title=".gitignore Code">
 
 
 #### Create a .env 
