@@ -20,14 +20,13 @@
 
 <center>
 
-## <a name="Product"></a>About Our Product
-</center>
+## <a name="Product"></a>About Our Product</center>
 
 #### Purpose
 Cork Board is an easy to use dynamic web application that allows you to create and bookmark a unique board space and invite anyone to read and post to your board. On your board, you can bookmark, tag, and search for your favorite links. You can also add announcements to communicate with your board followers.
 
-It's our hope that through our app you can better pool resources with teammates, friends, and classmates as you work together.
-The Cork Board app allows a team/group/class to have a bulletin board site to share messages and resource links.
+It's our hope that through our app you can better pool resources with teammates, friends, and classmates as you work together. The Cork Board app allows a team/group/class to have a bulletin board site to share messages and resource links.
+
 
 <center>
 
@@ -46,9 +45,41 @@ After board creation, Cork Board asks for users to invite by email, then after e
 
 ## <a name="Installation"></a>How to Install </center>
 
-<img src="./public/assets/images/nodejs.png" style="width:15%">
-<img src="./public/assets/images/npm.png" style="width: 20%">
-<img src="./public/assets/images/npm.png" style="width: 20%">
+The following are instructions for downloading this git repository in order to duplicate this site application.  
+
+1. First clone this GitHub repository to your local folder. 
+
+<img src="./public/assets/images/githubclone.JPG" style="width: 50%"> 
+
+2. After cloning this github reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="width: 5%">  dependency package files.  
+
+
+#### Implemented <img src="./public/assets/images/npm.png" style="width: 5%"> Packages
+
+* Body-Paser
+* Metatag-Crawler
+* <img src="./public/assets/images/nodejs.png" style="width:7%">
+* <img src="./public/assets/images/nodemailer.png" style="width: 7%">
+* <img src="./public/assets/images/sequelize.png" style="width: 7%">
+* <img src="./public/assets/images/dotenv.png" style="width: 7%">
+* <img src="./public/assets/images/express.png" style="width: 7%">
+* <img src="./public/assets/images/handlebars.png" style="width: 7%">
+* <img src="./public/assets/images/mysql2.svg" style="width: 7%">
+
+
+#### Create a .gitnore 
+
+> Create the .gitnore file and post the following code:
+
+<img src="./public/assets/images/gitignore.png" style="width: 50%">
+
+
+#### Create a .env 
+
+> Create a .env file and post the code below to store the e-mail and password settings for sending e-mail.
+
+<img src="./public/assets/images/env.jpg" style="width: 40%">
+
 
 <center>
 
@@ -67,7 +98,7 @@ After board creation, Cork Board asks for users to invite by email, then after e
 * "Reinaldo Llano"<reinaldo@projectcodex.biz> - Application Team Leader and Front End Developer
 * "Lee Warrick" <lee@projectcodex.biz> - Application Co-Team Leader and Full Stack Developer
 * "Jon Disla" <jon@projectcodex.biz> - Full Stack Developer
-* "Hisham G" - Front End Developer
+* "Hisham Galeb" <Hisham.nman@gmail.com> - Front End Developer
 * "Syyad Khan" <syyadkhan@yahoo.com> - Front End Developer
 
 <center>
