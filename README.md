@@ -1,4 +1,7 @@
 
+<!DOCTYPE html>
+<html>
+<body>
 <center><img style="width: 70%" src="./public/front2/img/corksmall.JPG">
 
 
@@ -58,15 +61,6 @@ The following are instructions for downloading this GitHub repository in order t
 
 * Body-Paser
 * Metatag-Crawler
-
-![NodeJS](./public/assets/images/nodejs.png)
-![Nodemailer](./public/assets/images/nodemailer.png)
-![Sequelize](./public/assets/images/sequelize.png)
-![Dotenv](./public/assets/images/dotenv.png)
-![Express](./public/assets/images/express.png)
-![Express Handlebars](./public/assets/images/handlebars.png)
-![MySQL2](./public/assets/images/mysql2.svg)
-
 * <img src="./public/assets/images/nodejs.png" style="max-width:7%">
 * <img src="./public/assets/images/nodemailer.png" style="max-width: 7%">
 * <img src="./public/assets/images/sequelize.png" style="max-width: 7%">
@@ -115,3 +109,5 @@ The following are instructions for downloading this GitHub repository in order t
 ## <a name="License"></a>License</center>
 
 >   [MIT](https://github.com/mynar7/corkboard/blob/master/LICENSE)
+
+</body>
