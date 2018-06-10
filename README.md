@@ -1,6 +1,5 @@
 
-
-# **Project name:** ![Cork Board](.\public\assets\images\corksmall.png)
+# **Project name:** ![Cork Board](./public/assets/images/corksmall.png)
 
 ####  Key Links to Site:
 >   #### 1. [To Create a New Board](https://corkboard2018.herokuapp.com)
