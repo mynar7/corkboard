@@ -1,7 +1,9 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <body>
+
 <center><img style="width: 70%" src="./public/front2/img/corksmall.JPG">
 
 
@@ -111,3 +113,4 @@ The following are instructions for downloading this GitHub repository in order t
 >   [MIT](https://github.com/mynar7/corkboard/blob/master/LICENSE)
 
 </body>
+</html>
