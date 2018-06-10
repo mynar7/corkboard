@@ -49,9 +49,9 @@ The following are instructions for downloading this GitHub repository in order t
 
 1. First clone this GitHub repository to your local folder. 
 
-<img src="./public/assets/images/githubclone.JPG" style="width: 50%"> 
+<img src="./public/assets/images/githubclone.JPG" style="max-width: 50%"> 
 
-2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="width: 5%">  dependency package files.  
+2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="max-width: 5%">  dependency package files.  
 
 
 #### Implemented <img src="./public/assets/images/npm.png" style="width: 5%"> Packages
@@ -67,13 +67,13 @@ The following are instructions for downloading this GitHub repository in order t
 ![Express Handlebars](./public/assets/images/handlebars.png)
 ![MySQL2](./public/assets/images/mysql2.svg)
 
-* <img src="./public/assets/images/nodejs.png" style="width:7%">
-* <img src="./public/assets/images/nodemailer.png" style="width: 7%">
-* <img src="./public/assets/images/sequelize.png" style="width: 7%">
-* <img src="./public/assets/images/dotenv.png" style="width: 7%">
-* <img src="./public/assets/images/express.png" style="width: 7%">
-* <img src="./public/assets/images/handlebars.png" style="width: 7%">
-* <img src="./public/assets/images/mysql2.svg" style="width: 7%">
+* <img src="./public/assets/images/nodejs.png" style="max-width:7%">
+* <img src="./public/assets/images/nodemailer.png" style="max-width: 7%">
+* <img src="./public/assets/images/sequelize.png" style="max-width: 7%">
+* <img src="./public/assets/images/dotenv.png" style="max-width: 7%">
+* <img src="./public/assets/images/express.png" style="max-width: 7%">
+* <img src="./public/assets/images/handlebars.png" style="max-width: 7%">
+* <img src="./public/assets/images/mysql2.svg" style="max-width: 7%">
 
 
 #### Create a .gitnore 
