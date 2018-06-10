@@ -50,9 +50,12 @@ The following are instructions for downloading this GitHub repository in order t
 
 1. First clone this GitHub repository to your local folder. 
 
-<img src="./public/assets/images/githubclone.JPG" width:"400"> 
+<p align="center">
+<img src="./public/assets/images/githubclone.JPG" width="400" title="Git Clone Img">
+</p>
+ 
 
-2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" style="max-width: 5%">  dependency package files.  
+2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" width="50" title="npm logo">  dependency package files.  
 
 
 #### Implemented <img src="./public/assets/images/npm.png" style="width: 5%"> Packages
