@@ -58,31 +58,31 @@ The following are instructions for downloading this GitHub repository in order t
 2. After cloning this GitHub reposirtory on your local folder where you plan to install the application.  Then run ```npm i``` to implement all the required <img src="./public/assets/images/npm.png" width="50" title="npm logo">  dependency package files.  
 
 
-#### Implemented <img src="./public/assets/images/npm.png" style="width: 5%"> Packages
+#### Implemented <img src="./public/assets/images/npm.png" width="50" title="npm logo"> Packages
 
 * Body-Paser
 * Metatag-Crawler
-* <img src="./public/assets/images/nodejs.png" style="max-width:7%">
-* <img src="./public/assets/images/nodemailer.png" style="max-width: 7%">
-* <img src="./public/assets/images/sequelize.png" style="max-width: 7%">
-* <img src="./public/assets/images/dotenv.png" style="max-width: 7%">
-* <img src="./public/assets/images/express.png" style="max-width: 7%">
-* <img src="./public/assets/images/handlebars.png" style="max-width: 7%">
-* <img src="./public/assets/images/mysql2.svg" style="max-width: 7%">
+* <img src="./public/assets/images/nodejs.png" width="200" title="Node JS logo">
+* <img src="./public/assets/images/nodemailer.png" width="200" title="Node Mailer logo">
+* <img src="./public/assets/images/sequelize.png" width="200" title="Sequelize logo">
+* <img src="./public/assets/images/dotenv.png" width="200" title="DotEnv logo">
+* <img src="./public/assets/images/express.png" width="200" title="Express logo">
+* <img src="./public/assets/images/handlebars.png" width="200" title="Handlebars logo">
+* <img src="./public/assets/images/mysql2.svg" width="200" title="MySQL 2 logo">
 
 
 #### Create a .gitnore 
 
 > Create the .gitnore file and post the following code:
 
-<img src="./public/assets/images/gitignore.png" style="width: 50%">
+<img src="./public/assets/images/gitignore.png" width="800" title=".gitignore Code">
 
 
 #### Create a .env 
 
 > Create a .env file and post the code below to store the e-mail and password settings for sending e-mail.
 
-<img src="./public/assets/images/env.jpg" style="width: 40%">
+<img src="./public/assets/images/env.jpg" width="200" title="DotEnv Content">
 
 
 <center>
