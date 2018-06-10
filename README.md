@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,6 +62,9 @@ The following are instructions for downloading this GitHub repository in order t
 
 * Body-Paser
 * Metatag-Crawler
+
+* ![NodeJS](./public/assets/images/nodejs.png =100x20)
+
 * <img src="./public/assets/images/nodejs.png" style="max-width:7%">
 * <img src="./public/assets/images/nodemailer.png" style="max-width: 7%">
 * <img src="./public/assets/images/sequelize.png" style="max-width: 7%">
