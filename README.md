@@ -4,9 +4,7 @@
   <img src="./public/front2/img/corksmall.JPG" width="600" title="Cork Board Logo">
 </p>
 
-<center>
-
-[Create a New Board](https://corkboard2018.herokuapp.com) | [Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)</center>
+>   [Create a New Board](https://corkboard2018.herokuapp.com) | [Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)
 
 
 # Table of Contents: 
@@ -35,12 +33,22 @@ It's our hope that through our app you can better pool resources with teammates,
 
 Cork Board allow users to create a project board for announcements and bookmarks to helpful articles/websites, bookmarks will have a description, url, and topic.
 
-On hitting the home page for the app, users will be able to create a project board. Then they will get a url back that is a link to their new project page. On the project page any user that has that url will be able to add messages or resources to the board.
+![Homepage](./public/assets/gifs/homepage.gif)
 
-The board will also have a search function, that will allow users to show resources by tag/topic. So if a user clicks or asks for "dogs", they will get every resource that has a topic of "dogs".
 
-After board creation, Cork Board asks for users to invite by email, then after entering email addresses, app sends invitation email to users
+On hitting the home page for the app, users will be able to create a project board. Then they will get a url back that is a link to their new project page. On the project page any user that has that url will be able to add messages or resources to the board. After board creation, Cork Board asks for users to invite by email, then after entering email addresses, app sends invitation email to users
 
+![Creating New Board](./public/assets/gifs/createboard.gif)
+
+
+Once a board is created, users have the ability to create tags and add bookmarks.
+
+![Creating Tags and Bookmarks](./public/assets/gifs/createtag.gif)
+
+
+Multiiple tags can be assigned to each item bookmarked to make searching easier, allowing users to show all resources by tag/topic. So if a user clicks or asks for "Javascript", they will get every resource that has a "Javascript" tag.
+
+![Creating Bookmarks](./public/assets/gifs/createpost.gif)
 
 <center>
 
