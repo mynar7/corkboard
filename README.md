@@ -4,11 +4,11 @@
   <img src="./public/front2/img/corksmall.JPG" width="600" title="Cork Board Logo">
 </p>
 
+<center>
 
-<button background-color="#0097d5" color="white" padding="15px 32px" text-align="center"
-    display="inline-block" font-size="14" href="https://corkboard2018.herokuapp.com"><strong>To Create a New Board</strong></button>  <button style="background-color: #0097d5; border: none; color: white; padding: 15px 32px; text-align: center;
-    text-decoration: none; display: inline-block; font-size: 14px; margin: 4px 2px; cursor: pointer;" href="https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#"><strong>To Checkout the Live Coding Boot Camp Resource Board</strong></button> 
+[Create a New Board](https://corkboard2018.herokuapp.com)
 
+[Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)
 </center>
 
 # Table of Contents: 
