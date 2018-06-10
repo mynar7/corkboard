@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<body>
-
-<center><img style="width: 70%" src="./public/front2/img/corksmall.JPG">
+<p align="center">
+  <img src="./public/front2/img/corksmall.JPG" width="256" title="Cork Board Logo">
+</p>
 
 
 <button style="background-color: #0097d5; border: none; color: white; padding: 15px 32px; text-align: center;
@@ -110,6 +107,3 @@ The following are instructions for downloading this GitHub repository in order t
 ## <a name="License"></a>License</center>
 
 >   [MIT](https://github.com/mynar7/corkboard/blob/master/LICENSE)
-
-</body>
-</html>
