@@ -70,7 +70,7 @@ The following are instructions for downloading this GitHub repository in order t
 
 #### Implemented <img src="./public/assets/images/npm.png" width="50" title="npm logo"> Packages
 
-* Body-Paser
+* Body-Parser
 * Metatag-Crawler
 * <img src="./public/assets/images/nodejs.png" width="200" title="Node JS logo">
 * <img src="./public/assets/images/nodemailer.png" width="200" title="Node Mailer logo">
@@ -81,9 +81,9 @@ The following are instructions for downloading this GitHub repository in order t
 * <img src="./public/assets/images/mysql2.svg" width="200" title="MySQL 2 logo">
 
 
-#### Create a .gitnore 
+#### Create a standard .gitnore file 
 
-> Create the .gitnore file and post the following code:
+> Create the .gitnore file and make sure it has the following code:
 
 <img src="./public/assets/images/gitignore.png" width="600" title=".gitignore Code">
 
