@@ -90,7 +90,7 @@ The following are instructions for downloading this GitHub repository in order t
 
 #### Create a .env 
 
-> Create a .env file and post the code below to store the e-mail and password settings for sending e-mail.  Note: The e-mail used must be gmail account.
+> Create a .env file and post the code below to store a gmail e-mail and password for sending e-mail.  (Note: The e-mail used must be for a gmail account.)
 
 <img src="./public/assets/images/env.jpg" width="600" title="DotEnv Content">
 
