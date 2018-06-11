@@ -46,9 +46,11 @@ Once a board is created, users have the ability to create tags and add bookmarks
 ![Creating Tags and Bookmarks](./public/assets/gifs/createtag.gif)
 
 
-Multiiple tags can be assigned to each item bookmarked to make searching easier, allowing users to show all resources by tag/topic. So if a user clicks or asks for "Javascript", they will get every resource that has a "Javascript" tag.
+Multiple tags can be assigned to each item bookmarked to make searching easier, allowing users to show all resources by tag/topic. 
 
 ![Creating Bookmarks](./public/assets/gifs/createpost.gif)
+
+So if a user clicks or asks for "Javascript", they will get every resource that has a "Javascript" tag.
 
 <center>
 
