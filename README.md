@@ -4,7 +4,7 @@
   <img src="./public/front2/img/corksmall.JPG" width="600" title="Cork Board Logo">
 </p>
 
->   [Create a New Board](https://corkboard2018.herokuapp.com) | [Live Boot Camp Resource Board](https://corkboard2018.herokuapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)
+>   [Create a New Board](https://www.mycorkboardapp.com/) | [Live Boot Camp Resource Board](https://www.mycorkboardapp.com/boards/a0cfcbfb-aa24-42cf-a6b5-553e138e0b58#)
 
 
 # Table of Contents: 
