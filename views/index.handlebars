@@ -1,52 +1,3 @@
-<!--NAV-->
-<nav class="navbar navbar-expand-lg navbar-light">
-
-    <!--FILTERS-->
-
-    <div class="card">
-        <div class="card-body filterCard">
-            <center>
-
-                <h2>
-                    <i class="fas fa-tags">ALL TAGS
-
-                    </i>
-                    <h2>
-
-            </center>
-            <div class="card-body row col-lg-12 col-md-12 col-sm-12 filterButtons">
-                {{#each board.tags}}
-                <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
-                    <label>
-                        <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
-                </li>
-                {{/each}}
-            </div>
-            <div class="row col-lg-12 col-md-12 col-sm-12 filterButtons"></div>
-            <hr>
-            <ul>
-                <li>
-                    <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
-                        <i class="fas fa-plus-circle"> Add a Tag</i>
-                    </button>
-                    <button type="button" class="btn filterSubmit" id="tagEdit">
-                        <i class="fas fa-pencil-alt"> Edit a Tag</i>
-                    </button>
-                    <button type="button" class="btn filterSubmit" id="tagDelete">
-                        <i class="fas fa-minus-circle"> Delete a Tag</i>
-                    </button>
-                    <button type="button" class="btn filterSubmit" id="tagSearch">
-                        <i class="fas fa-search"> Search by Tag(s)</i>
-                    </button>
-                </li>
-                <br>
-            </ul>
-        </div>
-    </div>
-    </div>
-    </div>
-</nav>
-
 <!--NAVBAR SECTION-->
 
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -64,18 +15,11 @@
         <i style="color:white" class="fas fa-bars"></i>
     </button>
 
+    <!-- Collapsed menu version-->
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!--DISPLAYS THE BOARD ID-->
-
-        {{!--
-        <ul>
-            <li>
-                <h4 id="boardID">Board ID: {{board.id}}</h4>
-            </li>
-        </ul> --}}
         <!--NAV MENU-->
-
 
         <ul>
             <h1 id="boardNameFull" data-boardId={{board.id}}>{{board.name}}</h1>
@@ -97,17 +41,36 @@
                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <a class="dropdown-item">
                         <ul>
-
                             <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
                                 <button type="button" style="width:155px;color:white;" class="btn filterBtn">
                                     <i class="fas fa-tags"></i>
                                     Tags
                                 </button>
                             </li>
-                            <li style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                                <button type="button" style="width:155px;" class="btn newLink2" data-toggle="modal" data-target="#postModal">
+                            <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn" id='newLink2' data-toggle="modal" data-target="#postModal">
                                     <i class="fas fa-bookmark"></i>
                                     Bookmarks
+                                </button>
+                            </li>
+                             <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn filterSubmit" data-toggle="modal" data-target="#topicModal">
+                                    <i class="fas fa-plus-circle"> Add a Tag</i>
+                                </button>
+                            </li>
+                             <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn filterSubmit" id="tagEdit">
+                                    <i class="fas fa-pencil-alt"> Edit a Tag</i>
+                                </button>
+                            </li>
+                             <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn filterSubmit" id="tagDelete">
+                                    <i class="fas fa-minus-circle"> Delete a Tag</i>
+                                </button>
+                            </li>
+                             <li style="list-style-type: none; margin-left: -35px; font-size: 20px;">
+                                <button type="button" style="width:155px;color:white;" class="btn filterBtn filterSubmit" id="tagSearch">
+                                    <i class="fas fa-search"> Search by Tag(s)</i>
                                 </button>
                             </li>
                         </ul>
@@ -134,7 +97,7 @@
                 </li>
             </a>
             <li id="bookmark" style="list-style-type: none; padding-right: 30px; font-size: 20px;">
-                <button type="button" style="width:155px;" class="btn newLink" data-toggle="modal" data-target="#postModal">
+                <button type="button" style="width:155px;" class="btn newLink" id='newLink' data-toggle="modal" data-target="#postModal">
                     <i class="fas fa-bookmark"></i>
                     Add Bookmark
                 </button>
@@ -423,3 +386,51 @@ height: 100%; width:95%;">
             <a href="#" class="btn btn-primary">Go somewhere</a> --}}
         </div>
     </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <!--FILTERS-->
+
+        <div class="card">
+            <div class="card-body filterCard">
+                <center>
+
+                    <h2>
+                        <i class="fas fa-tags">ALL TAGS
+
+                        </i>
+                        <h2>
+
+                </center>
+                <div class="card-body row col-lg-12 col-md-12 col-sm-12 filterButtons">
+                    {{#each board.tags}}
+                    <li style="list-style-type: none; padding-right: 20px; font-size: 20px;">
+                        <label>
+                            <input value="{{id}}" type="checkbox" class="checkboxBtn">{{name}}</label>
+                    </li>
+                    {{/each}}
+                </div>
+                <div class="row col-lg-12 col-md-12 col-sm-12 filterButtons"></div>
+                <hr>
+                <ul>
+                    <li>
+                        <button type="button" class="btn filterSubmit" data-toggle="modal" data-target="#topicModal">
+                            <i class="fas fa-plus-circle"> Add a Tag</i>
+                        </button>
+                        <button type="button" class="btn filterSubmit" id="tagEdit">
+                            <i class="fas fa-pencil-alt"> Edit a Tag</i>
+                        </button>
+                        <button type="button" class="btn filterSubmit" id="tagDelete">
+                            <i class="fas fa-minus-circle"> Delete a Tag</i>
+                        </button>
+                        <button type="button" class="btn filterSubmit" id="tagSearch">
+                            <i class="fas fa-search"> Search by Tag(s)</i>
+                        </button>
+                    </li>
+                    <br>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>
+</nav>

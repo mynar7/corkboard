@@ -47,7 +47,7 @@ $('document').ready(() => {
     });
 
     //close filter when clicking topMenu buttons
-    $('.newLink, .newLink2').click(() => {
+    $('#newLink, #newLink2').click(() => {
         $('.filterCard').hide('blind');
         $('#filter').show();
         $('#close').hide();
