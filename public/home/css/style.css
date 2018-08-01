@@ -28,6 +28,10 @@ html {
   transform: translate(-50%, -50%)
 }
 
+.btn {
+font-size: 1rem;
+font-weight: 400;
+}
 .pimg1,
 .pimg2,
 .pimg3 {
