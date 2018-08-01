@@ -1,7 +1,19 @@
 const router = require('express').Router();
 const db = require("../models/index.js");
 const path = require("path");
+const admin = require('firebase-admin');
 
+var serviceAccount = require('../corkboard-d68d4-firebase-adminsdk-mezei-4d43a7ee26.json');
+const firebaseAdmin = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://corkboard-d68d4.firebaseio.com"
+})
+
+//MIDDLEWARE
+
+function isAuthenticated(req, res, next) {
+
+}
 /*
 router.get('/boards/:board', function(req, res) {
     db.Board.findOne({
@@ -37,30 +49,38 @@ router.get('/boards/:board', function(req, res) {
     .catch(err => res.json(err));
 });
 */
-router.get('/boards/:board', function(req, res) {
+router.get('/boards/:board', function (req, res) {
     db.Board.findOne({
         where: {
             id: req.params.board
         }
-    }).then(result1 =>{
+    }).then(result1 => {
         db.Link.findAll({
             where: {
                 BoardId: req.params.board
             },
-            order: [['updatedAt', 'DESC']],
-            include: [{model: db.Tag}]
-        }).then(result2 =>{
+            order: [
+                ['updatedAt', 'DESC']
+            ],
+            include: [{
+                model: db.Tag
+            }]
+        }).then(result2 => {
             db.Tag.findAll({
                 where: {
                     BoardId: req.params.board
                 },
-            order: [['name', 'ASC']]                
+                order: [
+                    ['name', 'ASC']
+                ]
             }).then(result3 => {
                 db.Message.findAll({
                     where: {
                         BoardId: req.params.board
                     },
-                    order: [['updatedAt', 'DESC']]               
+                    order: [
+                        ['updatedAt', 'DESC']
+                    ]
                 }).then(result4 => {
                     let obj = {
                         board: {
@@ -71,12 +91,12 @@ router.get('/boards/:board', function(req, res) {
                             messages: result4
                         }
                     }
-                    
+
                     res.render('index', obj);
-                }).catch(err=>res.json(err))
-            }).catch(err=>res.json(err))
-        }).catch(err=>res.json(err))
-    }).catch(err=>res.json(err))
+                }).catch(err => res.json(err))
+            }).catch(err => res.json(err))
+        }).catch(err => res.json(err))
+    }).catch(err => res.json(err))
 });
 
 /*
@@ -118,35 +138,41 @@ router.get('/boards/:board/tags/:tagId', function(req, res) {
 });
 */
 
-router.get('/boards/:board/tags/:tagId', function(req, res) {
+router.get('/boards/:board/tags/:tagId', function (req, res) {
     db.Board.findOne({
         where: {
             id: req.params.board
         }
-    }).then(result1 =>{
+    }).then(result1 => {
         db.Link.findAll({
             where: {
                 BoardId: req.params.board
             },
-            order: [['updatedAt', 'DESC']],
+            order: [
+                ['updatedAt', 'DESC']
+            ],
             include: [{
                 model: db.Tag,
                 where: {
                     id: req.params.tagId
                 }
             }]
-        }).then(result2 =>{
+        }).then(result2 => {
             db.Tag.findAll({
                 where: {
                     BoardId: req.params.board
                 },
-            order: [['name', 'ASC']]                
+                order: [
+                    ['name', 'ASC']
+                ]
             }).then(result3 => {
                 db.Message.findAll({
                     where: {
                         BoardId: req.params.board
                     },
-                    order: [['updatedAt', 'DESC']]               
+                    order: [
+                        ['updatedAt', 'DESC']
+                    ]
                 }).then(result4 => {
                     let obj = {
                         board: {
@@ -157,12 +183,12 @@ router.get('/boards/:board/tags/:tagId', function(req, res) {
                             messages: result4
                         }
                     }
-                    
+
                     res.render('index', obj);
-                }).catch(err=>res.json(err))
-            }).catch(err=>res.json(err))
-        }).catch(err=>res.json(err))
-    }).catch(err=>res.json(err))
+                }).catch(err => res.json(err))
+            }).catch(err => res.json(err))
+        }).catch(err => res.json(err))
+    }).catch(err => res.json(err))
 });
 
 /*
@@ -210,17 +236,19 @@ router.post('/boards/:boardId/tags', function(req, res) {
 });
 */
 
-router.post('/boards/:boardId/tags', function(req, res) {
+router.post('/boards/:boardId/tags', function (req, res) {
     db.Board.findOne({
         where: {
             id: req.params.boardId
         }
-    }).then(result1 =>{
+    }).then(result1 => {
         db.Link.findAll({
             where: {
                 BoardId: req.params.boardId
             },
-            order: [['updatedAt', 'DESC']],
+            order: [
+                ['updatedAt', 'DESC']
+            ],
             include: {
                 model: db.Tag,
                 as: 'Tags',
@@ -234,18 +262,22 @@ router.post('/boards/:boardId/tags', function(req, res) {
                 },
                 required: true
             }
-        }).then(result2 =>{
+        }).then(result2 => {
             db.Tag.findAll({
                 where: {
                     BoardId: req.params.boardId
                 },
-            order: [['name', 'ASC']]                
+                order: [
+                    ['name', 'ASC']
+                ]
             }).then(result3 => {
                 db.Message.findAll({
                     where: {
                         BoardId: req.params.boardId
                     },
-                    order: [['updatedAt', 'DESC']]               
+                    order: [
+                        ['updatedAt', 'DESC']
+                    ]
                 }).then(result4 => {
                     let obj = {
                         board: {
@@ -256,23 +288,26 @@ router.post('/boards/:boardId/tags', function(req, res) {
                             messages: result4
                         }
                     }
-                    
+
                     res.render('index', obj);
-                }).catch(err=>res.json(err))
-            }).catch(err=>res.json(err))
-        }).catch(err=>res.json(err))
-    }).catch(err=>res.json(err))
+                }).catch(err => res.json(err))
+            }).catch(err => res.json(err))
+        }).catch(err => res.json(err))
+    }).catch(err => res.json(err))
 });
 
+router.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/home/home.html"));
+});
 
-router.get('/', function(req, res) {
+router.get('/front', function (req, res) {
     res.sendFile(path.join(__dirname, "../public/front2/parallax.html"));
 });
 
-router.get('/boards/:board/*', function(req, res) {
+router.get('/boards/:board/*', function (req, res) {
     res.redirect(`/boards/${req.params.board}`);
 });
-router.get('*', function(req, res) {
+router.get('*', function (req, res) {
     res.redirect('/');
 });
 

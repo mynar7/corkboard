@@ -7,11 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>The Board</title>
   <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDwj62_I12yqaMAQqHIaHV0j4LlqDZfIu0",
+      authDomain: "corkboard-d68d4.firebaseapp.com",
+      databaseURL: "https://corkboard-d68d4.firebaseio.com",
+      projectId: "corkboard-d68d4",
+      storageBucket: "corkboard-d68d4.appspot.com",
+      messagingSenderId: "210047964236"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- Externals and CDNs -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/lumen/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="/front2/css/style.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/home/css/style.css">
 </head>
 
 <body>
@@ -20,11 +37,16 @@
       <img src="./assets/images/cork.png" alt="" class="box-img">
     </div>
   </div>
-
+  <!-- Log in -->
   <section class="section section-dark">
-    <h2>Create Your Boardfff</h2>
-    <!-- Create New Board Code -->
-    <form id="start-board">
+    <h1>Welcome to Corkboard</h1>
+    <h3 id="google-displayName"></h3>
+    <img id="google-pic" src="" />
+    <p id="google-email"></p>
+    <button class="btn btn" id="signinbtn" type="button" onclick="signInWithGoogle()">
+      Sign In With Google
+    </button>
+    <form id="start-board" style="display:none;">
       <div class="container">
         <div class="flex-row row justify-content-center">
           <div class="col-6-md col-12-xs">
@@ -39,8 +61,40 @@
           </div>
         </div>
     </form>
+    <center>
+      <button class="btn btn" id="signout" onclick="signOut()" style="display:none;">
+        Sign Out
+      </button>
+    </center>
+    <script>
+      function signInWithGoogle() {
+        var googleAuthProvider = new firebase.auth.GoogleAuthProvider;
+        firebase.auth().signInWithPopup(googleAuthProvider)
+          .then(function (data) {
+            console.log(data);
 
+            var idToken = data.credential.idToken;
+            localStorage.setItem('firebase_idToken', idToken);
 
+            if (localStorage.getItem('firebase_idToken')) {
+              document.getElementById('signinbtn').style.visibility = 'hidden';
+              document.getElementById('signout').style.display = 'block';
+              document.getElementById('start-board').style.display = 'block';
+            } else {
+              alert('else')
+            }
+
+            var googleImage = data.additionalUserInfo.profile.picture
+            document.getElementById('google-displayName').append(data.additionalUserInfo.profile.name);
+            document.getElementById('google-pic').setAttribute('src', googleImage);
+            document.getElementById('google-email').append(data.additionalUserInfo.profile.email);
+          })
+
+          .catch(function (error) {
+            console.log(error);
+          })
+      };
+    </script>
   </section>
 
   <div class="pimg2">
@@ -146,9 +200,8 @@
     </div>
   </div>
 
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="./public/front2/home.js"></script>
+  <script src="/home/home.js"></script>
 </body>
 
 </html>
